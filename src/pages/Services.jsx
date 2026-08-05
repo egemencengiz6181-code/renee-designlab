@@ -107,7 +107,7 @@ export default function Services() {
                 }}
               >
                 <span className="row" style={{ gap: ".5rem" }}>
-                  <Sparkle size={10} color="#8766e8" />
+                  <Sparkle size={10} variant="purple" />
                   <span className="mono-label">Adım {p.n}</span>
                 </span>
                 <h3 className="h4" style={{ marginTop: "1rem" }}>

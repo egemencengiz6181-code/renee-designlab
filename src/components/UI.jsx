@@ -12,7 +12,7 @@ export function SectionHead({ label, title, right, id }) {
       <div className="stack gap-s">
         {label && (
           <span className="mono-label row" style={{ gap: ".55rem" }}>
-            <Sparkle size={9} color="#8766e8" />
+            <Sparkle size={9} variant="purple" />
             {label}
           </span>
         )}
@@ -62,7 +62,7 @@ export function PageHead({ label, title, lede, crumbs = [] }) {
             className="mono-label row"
             style={{ gap: ".55rem", marginBottom: "1.2rem" }}
           >
-            <Sparkle size={9} color="#c9fc4a" />
+            <Sparkle size={9} variant="lime" />
             {label}
           </p>
         )}
@@ -235,7 +235,7 @@ export function CtaBand({
               className="mono-label row"
               style={{ gap: ".55rem", marginBottom: "1.2rem" }}
             >
-              <Sparkle size={9} color="#c9fc4a" />
+              <Sparkle size={9} variant="lime" />
               {label}
             </p>
             <Reveal>

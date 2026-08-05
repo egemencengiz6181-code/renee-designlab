@@ -31,7 +31,13 @@
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-io: cubic-bezier(0.65, 0, 0.35, 1);
 
-  --nav-h: 76px;
+  --nav-h: 96px;
+}
+
+@media (max-width: 900px) {
+  :root {
+    --nav-h: 74px;
+  }
 }
 
 *,
@@ -454,8 +460,9 @@ h5 {
 }
 
 .nav-logo img {
-  height: 30px;
+  height: clamp(26px, 2.9vw, 42px);
   width: auto;
+  display: block;
 }
 
 .nav-links {
@@ -1373,7 +1380,7 @@ h5 {
   display: block;
   width: min(100%, 780px);
   height: auto;
-  max-height: clamp(90px, 14vw, 190px);
+  max-height: clamp(70px, 11vw, 150px);
   object-fit: contain;
   object-position: left center;
   margin-top: clamp(2rem, 5vw, 3.5rem);

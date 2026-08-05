@@ -43,10 +43,10 @@ export default function Nav() {
             aria-label={`${company.name} — anasayfa`}
           >
             <img
-              src="/media/brand/renee-logo-white.png"
+              src="/media/brand/renee-logo-white-trim.png"
               alt=""
-              width="120"
-              height="30"
+              width="210"
+              height="91"
             />
             <span className="sr-only">{company.name}</span>
           </Link>
@@ -114,7 +114,7 @@ export default function Nav() {
               {company.email}
             </a>
             <span className="row" style={{ gap: ".4rem" }}>
-              <Sparkle size={9} color="#c9fc4a" />
+              <Sparkle size={9} variant="lime" />
               {company.address.line2}
             </span>
           </div>

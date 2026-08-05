@@ -124,12 +124,12 @@ export default function Footer() {
         </div>
 
         <img
-          src="/media/brand/renee-logo-white.png"
+          src="/media/brand/renee-logo-white-trim.png"
           alt=""
           className="footer-word"
           loading="lazy"
-          width="1400"
-          height="360"
+          width="840"
+          height="364"
         />
 
         <div className="footer-bottom">
@@ -137,7 +137,7 @@ export default function Footer() {
             © {new Date().getFullYear()} {company.name}. Tüm hakları saklıdır.
           </span>
           <span className="row" style={{ gap: ".5rem" }}>
-            <Sparkle size={9} color="#8766e8" />
+            <Sparkle size={9} variant="purple" />
             {company.claim}
           </span>
           <AnkaraClock />

@@ -112,7 +112,7 @@ export default function CaseStudy() {
           <div className="grid-12" style={{ rowGap: "3rem" }}>
             <Reveal className="c4">
               <p className="mono-label row" style={{ gap: ".5rem" }}>
-                <Sparkle size={9} color="#8766e8" /> Problem
+                <Sparkle size={9} variant="purple" /> Problem
               </p>
               <p className="body" style={{ marginTop: "1.2rem" }}>
                 {item.challenge}
@@ -120,7 +120,7 @@ export default function CaseStudy() {
             </Reveal>
             <Reveal delay={0.07} className="c4">
               <p className="mono-label row" style={{ gap: ".5rem" }}>
-                <Sparkle size={9} color="#c9fc4a" /> Yaklaşım
+                <Sparkle size={9} variant="lime" /> Yaklaşım
               </p>
               <p className="body" style={{ marginTop: "1.2rem" }}>
                 {item.approach}
@@ -128,7 +128,7 @@ export default function CaseStudy() {
             </Reveal>
             <Reveal delay={0.14} className="c4">
               <p className="mono-label row" style={{ gap: ".5rem" }}>
-                <Sparkle size={9} color="#8766e8" /> Sonuç
+                <Sparkle size={9} variant="purple" /> Sonuç
               </p>
               <p className="body" style={{ marginTop: "1.2rem" }}>
                 {item.result}

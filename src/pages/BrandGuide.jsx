@@ -2,7 +2,7 @@ import { useState } from "react";
 import { brandGuide, company } from "../data/site";
 import useSeo from "../hooks/useSeo";
 import Reveal, { useReveal } from "../components/Reveal";
-import { Arc, ArrowUpRight, BrandMark, Sparkle } from "../components/Mark";
+import { ArrowUpRight, BrandMark, Sparkle } from "../components/Mark";
 import { CtaBand, PageHead, SectionHead } from "../components/UI";
 
 function ColorCard({ c, i }) {
@@ -138,7 +138,7 @@ export default function BrandGuide() {
                   padding: "2rem",
                 }}
               >
-                <BrandMark size={90} color="#8766e8" />
+                <BrandMark size={90} variant="purple" />
               </div>
               <div
                 style={{
@@ -149,7 +149,7 @@ export default function BrandGuide() {
                   padding: "2rem",
                 }}
               >
-                <BrandMark size={90} color="#c9fc4a" />
+                <BrandMark size={90} variant="lime" />
               </div>
               <div
                 style={{
@@ -161,7 +161,7 @@ export default function BrandGuide() {
                 }}
               >
                 <img
-                  src="/media/brand/renee-logo-white.png"
+                  src="/media/brand/renee-logo-white-trim.png"
                   alt="Renee logosunun mor zemin üzerindeki beyaz versiyonu"
                   style={{ maxWidth: "78%" }}
                 />
@@ -176,7 +176,7 @@ export default function BrandGuide() {
                 }}
               >
                 <img
-                  src="/media/brand/renee-logo.png"
+                  src="/media/brand/renee-logo-trim.png"
                   alt="Renee logosunun beyaz zemin üzerindeki ana versiyonu"
                   style={{ maxWidth: "78%" }}
                 />
@@ -215,7 +215,7 @@ export default function BrandGuide() {
                     {s.use}
                   </p>
                 </div>
-                <BrandMark size={54 - i * 10} color="#8766e8" />
+                <BrandMark size={54 - i * 10} variant="purple" />
               </Reveal>
             ))}
           </div>
@@ -370,11 +370,11 @@ export default function BrandGuide() {
                   style={{ display: "grid", placeItems: "center" }}
                 >
                   {i % 2 === 0 ? (
-                    <Sparkle size={34} color="#c9fc4a" />
+                    <Sparkle size={30} variant="lime" />
                   ) : (
-                    <Arc
-                      size={30}
-                      color="#c9fc4a"
+                    <BrandMark
+                      size={38}
+                      variant="lime"
                       style={{ transform: `rotate(${(i % 4) * 90}deg)` }}
                     />
                   )}

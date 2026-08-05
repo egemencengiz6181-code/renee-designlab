@@ -53,7 +53,7 @@ export default function About() {
           <div className="grid-12" style={{ rowGap: "2.5rem" }}>
             <div className="c4">
               <p className="mono-label row" style={{ gap: ".55rem" }}>
-                <Sparkle size={9} color="#8766e8" />
+                <Sparkle size={9} variant="purple" />
                 Renee hakkında
               </p>
               <h2
@@ -201,7 +201,7 @@ export default function About() {
               {p}
               <Sparkle
                 size={18}
-                color="#c9fc4a"
+                variant="lime"
                 style={{ display: "inline-block", marginLeft: "2.5rem" }}
               />
             </span>
@@ -275,7 +275,7 @@ export default function About() {
                     gap: "1.2rem",
                   }}
                 >
-                  <Sparkle size={11} color="#c9fc4a" />
+                  <Sparkle size={11} variant="lime" />
                   <span style={{ fontSize: "clamp(1rem, 1.6vw, 1.3rem)" }}>
                     {s}
                   </span>

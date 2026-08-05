@@ -35,7 +35,7 @@ export default function NotFound() {
         className="spin-slow"
         style={{ position: "absolute", left: "6vw", bottom: "8vh", zIndex: 0 }}
       >
-        <BrandMark size={180} color="rgba(201,252,74,.18)" />
+        <BrandMark size={180} variant="lime" />
       </div>
 
       <div className="wrap" style={{ position: "relative", zIndex: 1 }}>

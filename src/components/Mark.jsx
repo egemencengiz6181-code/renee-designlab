@@ -1,81 +1,55 @@
-/* Renee marka işaretinin SVG karşılıkları — dört köşeli yıldız ve yay. */
+/**
+ * Marka işaretleri.
+ *
+ * Yıldız ve simge biçimleri çizilmez; kurumsal kimlikle birlikte teslim edilen
+ * PNG dosyasından gelir. Renk varyantları da aynı dosyadan üretilmiştir.
+ */
 
-export function Sparkle({
-  size = 24,
-  color = "currentColor",
-  className = "",
-  style,
-}) {
+const ICON = {
+  purple: "/media/brand/renee-icon.png",
+  lime: "/media/brand/renee-icon-lime.png",
+  white: "/media/brand/renee-icon-white.png",
+};
+
+const STAR = {
+  purple: "/media/brand/renee-star.png",
+  lime: "/media/brand/renee-star-lime.png",
+  white: "/media/brand/renee-star-white.png",
+};
+
+/** Küçük yıldız aksanı (marka simgesinden alınmıştır). */
+export function Sparkle({ size = 12, variant = "purple", className = "", style }) {
   return (
-    <svg
+    <img
+      src={STAR[variant] || STAR.purple}
+      alt=""
+      aria-hidden="true"
       width={size}
       height={size}
-      viewBox="0 0 100 100"
-      fill="none"
-      aria-hidden="true"
+      decoding="async"
       className={className}
-      style={style}
-    >
-      <path
-        d="M50 0C50 27.6142 72.3858 50 100 50C72.3858 50 50 72.3858 50 100C50 72.3858 27.6142 50 0 50C27.6142 50 50 27.6142 50 0Z"
-        fill={color}
-      />
-    </svg>
+      style={{ width: size, height: size, flexShrink: 0, ...style }}
+    />
   );
 }
 
-export function Arc({
-  size = 24,
-  color = "currentColor",
-  className = "",
-  style,
-}) {
+/** Marka simgesinin tamamı: yıldız + yay. */
+export function BrandMark({ size = 56, variant = "purple", className = "", style }) {
   return (
-    <svg
+    <img
+      src={ICON[variant] || ICON.purple}
+      alt=""
+      aria-hidden="true"
       width={size}
       height={size}
-      viewBox="0 0 100 100"
-      fill="none"
-      aria-hidden="true"
+      decoding="async"
       className={className}
-      style={style}
-    >
-      <path
-        d="M100 0V26C100 66.8691 66.8691 100 26 100H0V74H26C52.5097 74 74 52.5097 74 26V0H100Z"
-        fill={color}
-      />
-    </svg>
+      style={{ width: size, height: size, ...style }}
+    />
   );
 }
 
-/* Yıldız + yay bileşimi: markanın simgesi */
-export function BrandMark({
-  size = 56,
-  color = "currentColor",
-  className = "",
-  style,
-}) {
-  return (
-    <svg
-      width={size}
-      height={size}
-      viewBox="0 0 200 200"
-      fill="none"
-      aria-hidden="true"
-      className={className}
-      style={style}
-    >
-      <path
-        d="M62 6C62 36.928 86.072 61 117 61C86.072 61 62 85.072 62 116C62 85.072 37.928 61 7 61C37.928 61 62 36.928 62 6Z"
-        fill={color}
-      />
-      <path
-        d="M194 62V96C194 150.124 150.124 194 96 194H62V160H96C131.346 160 160 131.346 160 96V62H194Z"
-        fill={color}
-      />
-    </svg>
-  );
-}
+/* --------------------------------------------------------- arayüz okları */
 
 export function ArrowUpRight({ size = 16, className = "" }) {
   return (

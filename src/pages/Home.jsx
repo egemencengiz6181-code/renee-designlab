@@ -51,7 +51,7 @@ function Hero() {
           top: "clamp(6rem, 18vh, 12rem)",
         }}
       >
-        <BrandMark size={220} color="rgba(135,102,232,.85)" />
+        <BrandMark size={220} variant="purple" />
       </div>
 
       <div className="wrap" style={{ position: "relative", zIndex: 2 }}>
@@ -63,7 +63,7 @@ function Hero() {
             "--rv-delay": "0.2s",
           }}
         >
-          <Sparkle size={10} color="#c9fc4a" />
+          <Sparkle size={10} variant="lime" />
           Ankara · Tasarım ve Reklam Ajansı
         </p>
 
@@ -156,7 +156,7 @@ function ClaimTicker() {
             {w}
             <Sparkle
               size={20}
-              color="#8766e8"
+              variant="purple"
               style={{ display: "inline-block", marginLeft: "2.5rem" }}
             />
           </span>
@@ -219,7 +219,7 @@ function Intro() {
         <div className="grid-12" style={{ rowGap: "3rem" }}>
           <div className="c5">
             <p className="mono-label row" style={{ gap: ".55rem" }}>
-              <Sparkle size={9} color="#8766e8" />
+              <Sparkle size={9} variant="purple" />
               Biz kimiz
             </p>
             <Reveal delay={0.05}>

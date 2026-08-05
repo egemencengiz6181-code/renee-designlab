@@ -76,13 +76,16 @@ export default function ServiceDetail() {
       <section>
         <div className="wrap">
           <Reveal>
+            {/* Görsel kırpılmadan, kendi en-boy oranıyla gösterilir. */}
             <img
               src={service.image}
               alt={service.imageAlt}
               style={{
+                display: "block",
                 width: "100%",
-                height: "clamp(260px, 56svh, 640px)",
-                objectFit: "cover",
+                maxWidth: "1040px",
+                height: "auto",
+                margin: "0 auto",
               }}
             />
           </Reveal>
@@ -95,7 +98,7 @@ export default function ServiceDetail() {
           <div className="grid-12" style={{ rowGap: "2.5rem" }}>
             <div className="c4">
               <p className="mono-label row" style={{ gap: ".55rem" }}>
-                <Sparkle size={9} color="#c9fc4a" />
+                <Sparkle size={9} variant="lime" />
                 Yaklaşımımız
               </p>
             </div>

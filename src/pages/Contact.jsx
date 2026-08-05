@@ -135,7 +135,7 @@ export default function Contact() {
           <div className="grid-12" style={{ rowGap: "3rem" }}>
             <div className="c4">
               <p className="mono-label row" style={{ gap: ".55rem" }}>
-                <Sparkle size={9} color="#8766e8" />
+                <Sparkle size={9} variant="purple" />
                 Teklif formu
               </p>
               <h2
@@ -285,7 +285,7 @@ export default function Contact() {
                     style={{ gap: ".5rem", fontSize: ".9rem", "--rv-y": "8px" }}
                     role="status"
                   >
-                    <Sparkle size={11} color="#c9fc4a" />
+                    <Sparkle size={11} variant="lime" />
                     E-posta taslağınız hazırlandı.
                   </span>
                 )}

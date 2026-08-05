@@ -156,8 +156,9 @@ export const services = [
     hero: "Doğru zamanda, doğru mesaj.",
     intro:
       "Sosyal medya, markanızın hedef kitlesiyle doğrudan iletişim kurduğu en önemli platformlardan biridir. Marka kimliğinize uygun stratejik planlama, kreatif içerik üretimi ve etkili kampanya yönetimiyle takipçilerinizi müşteriye dönüştürüyoruz. Hedef kitlenize doğru zamanda, doğru mesajı ulaştırarak etkileşimi artırıyoruz.",
-    image: "/media/work/deru/1.jpg",
-    imageAlt: "Deru kahve markası için tasarlanan bardak ve ambalaj serisi",
+    image: "/media/services/sosyal-medya.jpg",
+    imageAlt:
+      "Every markası için hazırlanan duvar grafiği ve marka iletişimi uygulaması",
     deliverables: [
       "Sosyal medya stratejisi ve içerik takvimi",
       "Kreatif post, story ve reels tasarımları",
@@ -191,9 +192,9 @@ export const services = [
       "Kurumsal kimlik, markanızın kişiliğini temsil eder. Logo, renk paleti, tipografi, kartvizit, antetli kağıt ve diğer görsel unsurlarla markanızın tutarlı ve güçlü bir imaj oluşturmasını sağlarız. İhtiyacınıza özel kimlik tasarımları ile sektörde fark yaratmanızı destekleriz.",
     intro2:
       "Renee olarak markanızın vizyonunu, değerlerini ve hedef kitlesini analiz ederek benzersiz bir marka kimliği oluşturuyoruz. Logodan tipografiye, renk paletinden görsel iletişim diline kadar her detayı özenle planlıyoruz. Markanızın tüm mecralarda tutarlı ve etkili bir şekilde temsil edilmesini sağlıyoruz.",
-    image: "/media/work/erts/3.jpg",
+    image: "/media/services/kurumsal-kimlik.jpg",
     imageAlt:
-      "ERTS marka kimliği için hazırlanan logo yapısı ve oran çalışması",
+      "Kurumsal kimliğin bina cephesindeki bayrak uygulaması",
     deliverables: [
       "Marka analizi ve konsept geliştirme",
       "Logo ve marka işareti sistemi",
@@ -228,8 +229,9 @@ export const services = [
       "Dijital dünyada markanızın görünürlüğünü artırmak için SEO ve dijital pazarlama stratejileri geliştiriyoruz. Arama motoru optimizasyonu (SEO), Google Ads kampanyaları ve sosyal medya reklam yönetimi ile hedef kitlenize hızlı ve etkili bir şekilde ulaşmanızı sağlıyoruz.",
     intro2:
       "Arama motoru optimizasyonu, web sitenizin Google gibi arama motorlarında daha üst sıralarda yer almasını sağlayarak organik trafik almanızı sağlar. Renee Design Lab, SEO konusunda uzmanlaşmış ekibiyle sitenizin teknik altyapısından içerik optimizasyonuna kadar her yönünü iyileştirir. Anahtar kelime araştırmasından backlink stratejilerine kadar, her aşamada site performansınızı artırmaya yönelik kapsamlı çözümler sunuyoruz.",
-    image: "/media/general/renee-2.jpg",
-    imageAlt: "Renee marka billboard uygulaması",
+    image: "/media/services/seo.jpg",
+    imageAlt:
+      "Arama motoru performansının izlendiği analiz ekranı",
     deliverables: [
       "Teknik SEO denetimi ve iyileştirme",
       "Anahtar kelime araştırması ve içerik optimizasyonu",
@@ -263,8 +265,9 @@ export const services = [
       "Markanızın vizyonunu ve değerlerini yansıtan, modern, minimalist ve akılda kalıcı logolar tasarlıyoruz. Hedef kitlenizin zihninde yer edecek güçlü görsel simgeler oluştururuz.",
     intro2:
       "İyi tasarlanmış bir logo, bir şirketin kimliğini, değerlerini ve misyonunu yansıtan güçlü bir simgedir. Aynı zamanda, markalaşma sürecindeki tüm tasarım unsurlarının üzerine inşa edildiği sağlam bir temel oluşturur.",
-    image: "/media/work/arni/1.jpg",
-    imageAlt: "Arni marka işaretinin dijital uygulaması",
+    image: "/media/services/logo-tasarimi.jpg",
+    imageAlt:
+      "Tipografik marka duvarı uygulaması",
     deliverables: [
       "Konsept araştırması ve moodboard",
       "Ana logo, ikincil kilit ve marka simgesi",
@@ -298,8 +301,9 @@ export const services = [
       "İşletmenizin dijital dünyadaki vitrini olan web sitelerini, kullanıcı dostu arayüzlerle ve mobil uyumlu tasarımlarla geliştiriyoruz. Hızlı, estetik ve SEO uyumlu web çözümleriyle online görünürlüğünüzü artırarak hedef kitlenize etkili bir şekilde ulaşmanızı sağlıyoruz.",
     intro2:
       "Markanızın web sitesini güncel normlara göre sıfırdan yaratıyoruz. Sadece tasarımını değil bütün tabanını kullanıcı deneyimi odaklı tasarlıyoruz.",
-    image: "/media/work/tepsta/w7.jpg",
-    imageAlt: "Tepsta markası için hazırlanan dijital arayüz uygulaması",
+    image: "/media/services/web-tasarim.jpg",
+    imageAlt:
+      "Tasarlanan web sitesinin dizüstü bilgisayardaki görünümü",
     deliverables: [
       "Modern ve Kullanıcı Dostu Tasarım — hedef kitlenizin ihtiyaçlarına uygun, şık ve kullanımı kolay web siteleri",
       "Mobil Uyumluluk — tüm cihazlarda sorunsuz çalışan, tamamen duyarlı arayüzler",
@@ -331,8 +335,9 @@ export const services = [
     hero: "Markanızı pazarda sağlam bir yere oturtun.",
     intro:
       "Markanızın hedeflerini, rekabet avantajlarını ve değerlerini analiz ederek uzun vadeli stratejiler oluşturuyoruz. Markanızı güçlendiren, pazardaki yerinizi sağlamlaştıran ve müşteri bağlılığını artıran çözümler geliştiriyoruz.",
-    image: "/media/work/erts/w1.jpg",
-    imageAlt: "ERTS markasının açık hava uygulaması",
+    image: "/media/services/strateji.jpg",
+    imageAlt:
+      "Marka stratejisi çalışma masası: eskizler, notlar ve planlar",
     deliverables: [
       "Marka denetimi ve rekabet analizi",
       "Konumlandırma ve marka mimarisi",
@@ -364,8 +369,9 @@ export const services = [
     hero: "3D dünyanızı yeniden şekillendirin.",
     intro:
       "3D ürün renderı ve animasyonları, markanızın ürünlerini etkileyici bir şekilde sergilemenin en yenilikçi yollarından biridir. Yüksek kaliteli görselleştirmeler ve gerçekçi animasyonlarla ürünlerinizin hikayesini anlatıyor, potansiyel müşterilerinizde güçlü bir etki bırakıyoruz. Tasarım sürecinden teslimata kadar, markanızın ihtiyaçlarına uygun yaratıcı çözümler üretiyoruz.",
-    image: "/media/general/renee-3.jpg",
-    imageAlt: "Renee marka uygulamalarının 3D görselleştirmesi",
+    image: "/media/services/3d-render.jpg",
+    imageAlt:
+      "Bir ürünün 3D modelleme ve render çalışması",
     deliverables: [
       "Gerçekçi Görselleştirme — yüksek kaliteli 3D modelleme ve render çalışmaları",
       "Etkileyici Animasyonlar — ürün detaylarını ve işleyişini anlatan hareketli kurgular",
@@ -395,8 +401,9 @@ export const services = [
       "Prodüksiyon, markanızın vizyonunu gerçeğe dönüştürmenin en etkili yollarından biridir. Profesyonel ekipman ve yaratıcı bakış açısıyla, marka hikayenizi görsel bir şölene dönüştürüyoruz. Video çekimlerinden fotoğraf prodüksiyonuna kadar her aşamada kaliteli ve özgün içerikler üretiyoruz.",
     intro2:
       "Yaratıcı hikayelerle görselleştirme ve profesyonel çekimler: en son teknoloji ekipmanlar ve uzman kadromuzla, markanızın ihtiyacına uygun yüksek kaliteli prodüksiyon hizmeti sunuyoruz. Her detayı özenle işleyerek markanızı görsel olarak en iyi şekilde temsil ediyoruz.",
-    image: "/media/work/every/2.jpg",
-    imageAlt: "Every markası için hazırlanan çizgi illüstrasyon",
+    image: "/media/services/produksiyon.jpg",
+    imageAlt:
+      "Stüdyo ortamında çekilen ürün fotoğrafı",
     deliverables: [
       "Kreatif konsept ve storyboard",
       "Ürün ve mekan fotoğrafı",
@@ -430,8 +437,9 @@ export const services = [
       "Google ve Meta reklam yönetimi, markanızı doğru hedef kitleyle buluşturmanın en etkili dijital pazarlama araçlarından biridir. Stratejik planlama, hedefleme ve analiz süreçleriyle reklam kampanyalarınızı optimize ediyoruz. Markanız için dönüşüm odaklı çözümler sunarak, bütçenizi en verimli şekilde kullanmanızı sağlıyoruz.",
     intro2:
       "Dijital reklamlar, markaların potansiyel müşterilere ulaşmasının en hızlı ve etkili yoludur. Renee Design Lab, Google Ads ve Meta reklam platformlarında hedef odaklı kampanyalar tasarlar ve yönetir. Bu reklamlar sayesinde markanız daha fazla görünürlük kazanır, dönüşüm oranlarınız artar ve bütçeniz en verimli şekilde kullanılır.",
-    image: "/media/work/tepsta/w2.jpg",
-    imageAlt: "Tepsta markasının kampanya görselleri",
+    image: "/media/services/reklam.jpg",
+    imageAlt:
+      "Reklam kampanyalarının performans paneli",
     deliverables: [
       "Hesap kurulumu ve dönüşüm takibi",
       "Hedef kitle ve yeniden pazarlama kurgusu",
@@ -463,8 +471,9 @@ export const services = [
     hero: "Hedef kitlenizle doğrudan bir bağ.",
     intro:
       "Influencer marketing, markanızın hedef kitlesine samimi ve etkili bir şekilde ulaşmanın en güçlü yollarından biridir. Doğru influencer iş birlikleriyle, ürün veya hizmetlerinizin güvenilir bir şekilde tanıtılmasını sağlıyoruz. Marka kimliğinize uygun içerik stratejileri geliştirerek, hedef kitlenizle doğrudan bir bağ kurmanıza yardımcı oluyoruz. Etkileşim ve dönüşüm odaklı kampanyalarla markanızın bilinirliğini artırıyor, dijital dünyada fark yaratıyoruz.",
-    image: "/media/work/deru/8.jpg",
-    imageAlt: "Deru markası için hazırlanan kampanya görseli",
+    image: "/media/services/influencer.jpg",
+    imageAlt:
+      "Marka çantasıyla sokakta yürüyen kişi",
     deliverables: [
       "Influencer araştırması ve uygunluk analizi",
       "İş birliği kurgusu ve brief hazırlığı",
