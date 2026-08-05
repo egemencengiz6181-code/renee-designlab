@@ -702,13 +702,7 @@ h5 {
   user-select: none;
   gap: 0;
   width: 100%;
-  mask-image: linear-gradient(
-    90deg,
-    transparent,
-    #000 6%,
-    #000 94%,
-    transparent
-  );
+  mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
   -webkit-mask-image: linear-gradient(
     90deg,
     transparent,
@@ -718,18 +712,17 @@ h5 {
   );
 }
 
+/* Şerit genişliği içeriğe göre belirlenir; yüzde kaydırma ancak böyle
+   kusursuz halkalanır. */
 .marquee-track {
   display: flex;
   align-items: center;
   gap: 2.5rem;
   padding-right: 2.5rem;
-  flex-shrink: 0;
-  min-width: 100%;
+  flex: 0 0 auto;
+  width: max-content;
   animation: marquee var(--speed, 34s) linear infinite;
-}
-
-.marquee:hover .marquee-track {
-  animation-play-state: paused;
+  will-change: transform;
 }
 
 .marquee.rev .marquee-track {
@@ -737,8 +730,18 @@ h5 {
 }
 
 @keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
   to {
     transform: translateX(-100%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none !important;
+    transform: none !important;
   }
 }
 
@@ -1042,7 +1045,7 @@ h5 {
   width: auto;
   height: auto;
   object-fit: contain;
-  filter: grayscale(1) brightness(0) invert(1) opacity(0.55);
+  filter: grayscale(1) invert(1) opacity(0.62);
   transition:
     filter 0.5s var(--ease),
     transform 0.6s var(--ease);
@@ -1076,15 +1079,28 @@ h5 {
 
 /* logo strip (marquee variant) */
 
+/* Hücreler sabit ölçüde; böylece şeridin genişliği görseller yüklenmeden
+   de bellidir ve kayma animasyonu baştan doğru hizada başlar. */
+.logo-strip a {
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  width: clamp(104px, 11vw, 168px);
+  height: clamp(44px, 5vw, 68px);
+}
+
 .logo-strip img {
-  height: clamp(26px, 3vw, 42px);
+  max-width: 100%;
+  max-height: 100%;
   width: auto;
-  filter: grayscale(1) brightness(0) invert(1) opacity(0.45);
+  height: auto;
+  object-fit: contain;
+  filter: grayscale(1) invert(1) opacity(0.55);
   transition: filter 0.4s var(--ease);
 }
 
 .logo-strip a:hover img {
-  filter: brightness(0) invert(1) opacity(1);
+  filter: grayscale(1) invert(1) opacity(1);
 }
 
 /* --------------------------------------------------------------- case study */

@@ -65,16 +65,30 @@ export default function Contact() {
   const contactLines = [
     {
       label: "Telefon",
-      value: company.phone,
-      href: `tel:${company.phoneIntl}`,
+      values: [{ value: company.phone, href: `tel:${company.phoneIntl}` }],
     },
-    { label: "E-posta", value: company.email, href: `mailto:${company.email}` },
+    {
+      label: "E-posta",
+      values: [
+        { value: company.email, href: `mailto:${company.email}` },
+        { value: company.email2, href: `mailto:${company.email2}` },
+      ],
+    },
     {
       label: "Adres",
-      value: `${company.address.line1}, ${company.address.line2}`,
-      href: "https://maps.google.com/?q=YDA+Center+Kızılırmak+Çankaya+Ankara",
+      external: true,
+      values: [
+        {
+          value: `${company.address.line1}, ${company.address.line2}`,
+          href: `https://maps.google.com/?q=${encodeURIComponent(company.mapQuery)}`,
+        },
+      ],
     },
-    { label: "Web", value: company.site, href: `https://${company.site}` },
+    {
+      label: "Web",
+      external: true,
+      values: [{ value: company.site, href: `https://${company.site}` }],
+    },
   ];
 
   return (
@@ -95,34 +109,36 @@ export default function Contact() {
       <section className="section-tight">
         <div className="wrap">
           <div
-            className="grid-12"
             style={{
-              rowGap: "2rem",
+              display: "grid",
+              gridTemplateColumns:
+                "repeat(auto-fit, minmax(min(100%, 220px), 1fr))",
+              gap: "2rem",
               borderTop: "1px solid var(--line-soft)",
               paddingTop: "2.5rem",
             }}
           >
             {contactLines.map((c, i) => (
-              <Reveal key={c.label} delay={i * 0.06} className="c3">
+              <Reveal key={c.label} delay={i * 0.06}>
                 <p className="mono-label">{c.label}</p>
-                <a
-                  href={c.href}
-                  className="link-u"
-                  target={
-                    c.label === "Adres" || c.label === "Web"
-                      ? "_blank"
-                      : undefined
-                  }
-                  rel="noreferrer"
-                  style={{
-                    display: "inline-block",
-                    marginTop: ".9rem",
-                    fontSize: "clamp(1rem, 1.4vw, 1.2rem)",
-                    letterSpacing: "-.02em",
-                  }}
-                >
-                  {c.value}
-                </a>
+                <span className="stack gap-xs" style={{ marginTop: ".9rem" }}>
+                  {c.values.map((v) => (
+                    <a
+                      key={v.value}
+                      href={v.href}
+                      className="link-u"
+                      target={c.external ? "_blank" : undefined}
+                      rel={c.external ? "noreferrer" : undefined}
+                      style={{
+                        display: "inline-block",
+                        fontSize: "clamp(1rem, 1.4vw, 1.2rem)",
+                        letterSpacing: "-.02em",
+                      }}
+                    >
+                      {v.value}
+                    </a>
+                  ))}
+                </span>
               </Reveal>
             ))}
           </div>
@@ -307,7 +323,7 @@ export default function Contact() {
           >
             <iframe
               title="Renee Design Lab ofis konumu"
-              src="https://www.google.com/maps?q=YDA%20Center%20K%C4%B1z%C4%B1l%C4%B1rmak%20%C3%87ankaya%20Ankara&output=embed"
+              src={`https://www.google.com/maps?q=${encodeURIComponent(company.mapQuery)}&output=embed`}
               width="100%"
               height="440"
               style={{
@@ -329,7 +345,7 @@ export default function Contact() {
               {company.address.line3}
             </address>
             <a
-              href="https://maps.google.com/?q=YDA+Center+Kızılırmak+Çankaya+Ankara"
+              href={`https://maps.google.com/?q=${encodeURIComponent(company.mapQuery)}`}
               target="_blank"
               rel="noreferrer"
               className="link-u t-lime row"

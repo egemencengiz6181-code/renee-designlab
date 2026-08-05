@@ -17,7 +17,7 @@ export default function References() {
   useSeo({
     title: "Referanslarımız",
     description:
-      "Eğitimden sağlığa, teknolojiden perakendeye 36 marka Renee Design Lab ile çalıştı. Final Okulları, Bayer, Medicana, Yataş Bedding, Altava Group ve daha fazlası.",
+      "Eğitimden sağlığa, teknolojiden perakendeye 90'ı aşkın marka Renee Design Lab ile çalıştı. Final Okulları, Bayer, Medicana, Yataş Bedding, Altava Group ve daha fazlası.",
     path: "/referanslar",
   });
 
@@ -30,7 +30,7 @@ export default function References() {
             Bizimle çalışan <span className="serif-i t-lime">markalar</span>.
           </>
         }
-        lede="Eğitimden sağlığa, teknolojiden perakendeye kadar farklı sektörlerden markalarla; kimlik, dijital ve iletişim projelerinde birlikte çalıştık."
+        lede="Eğitimden sağlığa, teknolojiden perakendeye kadar 90'ı aşkın markayla; kimlik, dijital ve iletişim projelerinde birlikte çalıştık. Aşağıda bu markalardan bir seçki yer alıyor."
         crumbs={[{ label: "Anasayfa", to: "/" }, { label: "Referanslar" }]}
       />
 

@@ -109,6 +109,9 @@ export default function Footer() {
               <a href={`mailto:${company.email}`} className="link-u">
                 {company.email}
               </a>
+              <a href={`mailto:${company.email2}`} className="link-u">
+                {company.email2}
+              </a>
               <a href={`tel:${company.phoneIntl}`} className="link-u">
                 {company.phone}
               </a>

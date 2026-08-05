@@ -16,12 +16,14 @@ export const company = {
   phoneRaw: "05325046606",
   phoneIntl: "+905325046606",
   email: "info@reneedesignlab.com",
+  email2: "egemen@reneedesignlab.com",
   site: "reneedesignlab.com",
   address: {
-    line1: "Kızılırmak, YDA Center",
+    line1: "ODTÜ Teknokent",
     line2: "Çankaya / Ankara",
     line3: "TÜRKİYE",
   },
+  mapQuery: "ODTÜ Teknokent Çankaya Ankara",
   founder: "Egemen Cengiz",
 };
 
@@ -977,7 +979,7 @@ export const brandGuide = {
 
 export const stats = [
   {
-    n: "36",
+    n: "+90",
     label: "Referans marka",
     sub: "Eğitimden sağlığa, teknolojiden perakendeye",
   },
@@ -987,7 +989,7 @@ export const stats = [
     sub: "Strateji, tasarım, dijital ve prodüksiyon",
   },
   {
-    n: "06",
+    n: "+45",
     label: "Kurumsal kimlik vakası",
     sub: "Konseptten uygulamaya tam kapsam",
   },

@@ -170,6 +170,15 @@ function LogoBand() {
   const rowA = references.slice(0, 18);
   const rowB = references.slice(18);
 
+  // Şerit sürekli döndüğü için görseller tembel yüklenmez; aksi hâlde
+  // ekrandan çıkan logolar geç yüklenip akışta boşluk bırakır.
+  const row = (items) =>
+    items.map((r) => (
+      <Link key={r.n} to="/referanslar" title={r.name}>
+        <img src={r.src} alt={r.name} width="160" height="64" />
+      </Link>
+    ));
+
   return (
     <section className="section-tight">
       <div className="wrap">
@@ -181,29 +190,9 @@ function LogoBand() {
         </p>
       </div>
       <div className="stack gap-m logo-strip">
-        <Marquee speed={52}>
-          {rowA.map((r) => (
-            <Link
-              key={r.n}
-              to="/referanslar"
-              title={r.name}
-              style={{ display: "flex", alignItems: "center" }}
-            >
-              <img src={r.src} alt={r.name} loading="lazy" />
-            </Link>
-          ))}
-        </Marquee>
+        <Marquee speed={52}>{row(rowA)}</Marquee>
         <Marquee speed={58} reverse>
-          {rowB.map((r) => (
-            <Link
-              key={r.n}
-              to="/referanslar"
-              title={r.name}
-              style={{ display: "flex", alignItems: "center" }}
-            >
-              <img src={r.src} alt={r.name} loading="lazy" />
-            </Link>
-          ))}
+          {row(rowB)}
         </Marquee>
       </div>
     </section>
