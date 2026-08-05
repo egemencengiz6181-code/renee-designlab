@@ -7,12 +7,19 @@ Hizmet Sunumu** dokümanlarından türetilmiştir.
 ## Çalıştırma
 
 ```bash
-cd site
 npm install
 npm run dev      # geliştirme sunucusu
 npm run build    # üretim derlemesi -> dist/
 npm run preview  # derlemeyi yerelde önizle
 ```
+
+## Yayına alma
+
+Proje deponun kök dizinindedir; Vercel ve Netlify ek ayar gerektirmeden algılar.
+
+- Framework: Vite · Build: `npm run build` · Çıktı: `dist`
+- Tek sayfa uygulaması olduğu için derin bağlantı yönlendirmeleri hazırdır:
+  Vercel için `vercel.json`, Netlify için `public/_redirects`.
 
 ## Sayfalar
 
@@ -63,8 +70,7 @@ Görseller `public/media/` altındadır: `brand/`, `general/`, `refs/`,
 - SEO: sayfa başına başlık/açıklama/canonical (`src/hooks/useSeo.js`),
   `public/sitemap.xml`, `public/robots.txt` ve `index.html` içinde JSON-LD.
 - Tek sayfa uygulaması olduğu için derin bağlantıların çalışması adına sunucuda
-  yönlendirme gerekir: Netlify için `public/_redirects`, Vercel için `vercel.json`
-  hazır durumdadır.
+  yönlendirme gerekir; ilgili dosyalar depoda hazırdır.
 
 ## İletişim formu
 
