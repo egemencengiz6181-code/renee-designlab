@@ -1,3 +1,22 @@
+# Eski sitenin (WordPress) indekslenmiş adresleri yeni karşılıklarına.
+/sosyal-medya-yonetimi  /hizmetler/sosyal-medya-yonetimi  301
+/sosyal-medya-yonetimi/  /hizmetler/sosyal-medya-yonetimi  301
+/sosyal-medya-tasarimlari  /hizmetler/sosyal-medya-yonetimi  301
+/sosyal-medya-tasarimlari/  /hizmetler/sosyal-medya-yonetimi  301
+/kurumsal-tasarim  /hizmetler/kurumsal-kimlik-tasarimi  301
+/kurumsal-tasarim/  /hizmetler/kurumsal-kimlik-tasarimi  301
+/baskiya-hazir  /hizmetler/kurumsal-kimlik-tasarimi  301
+/baskiya-hazir/  /hizmetler/kurumsal-kimlik-tasarimi  301
+/fotograf-ve-video-cekimi  /hizmetler/produksiyon  301
+/fotograf-ve-video-cekimi/  /hizmetler/produksiyon  301
+/iletisime-gec  /iletisim  301
+/iletisime-gec/  /iletisim  301
+/sektorler  /referanslar  301
+/sektorler/  /referanslar  301
+/blog  /  301
+/blog/  /  301
+/blog/*  /  301
+
 # Her sayfa derlemede ön-çizilir (dist/*.html). Bilinmeyen adresler
 # gerçek 404 durum koduyla 404.html sayfasını görür.
 /*    /404.html   404

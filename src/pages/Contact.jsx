@@ -100,7 +100,15 @@ export default function Contact() {
     {
       label: c.web,
       external: true,
-      values: [{ value: company.site, href: `https://${company.site}` }],
+      values: [{ value: company.site, href: `https://www.${company.site}` }],
+    },
+    {
+      label: c.social,
+      external: true,
+      values: company.social.map((s) => ({
+        value: `${s.name} ${s.handle}`,
+        href: s.url,
+      })),
     },
   ];
 
@@ -136,7 +144,7 @@ export default function Contact() {
                       href={v.href}
                       className="link-u"
                       target={line.external ? "_blank" : undefined}
-                      rel={line.external ? "noreferrer" : undefined}
+                      rel={line.external ? "noopener noreferrer" : undefined}
                       style={{
                         display: "inline-block",
                         fontSize: "clamp(1rem, 1.4vw, 1.2rem)",

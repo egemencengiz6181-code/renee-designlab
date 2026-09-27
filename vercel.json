@@ -1,6 +1,53 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/sosyal-medya-yonetimi",
+      "destination": "/hizmetler/sosyal-medya-yonetimi",
+      "permanent": true
+    },
+    {
+      "source": "/sosyal-medya-tasarimlari",
+      "destination": "/hizmetler/sosyal-medya-yonetimi",
+      "permanent": true
+    },
+    {
+      "source": "/kurumsal-tasarim",
+      "destination": "/hizmetler/kurumsal-kimlik-tasarimi",
+      "permanent": true
+    },
+    {
+      "source": "/baskiya-hazir",
+      "destination": "/hizmetler/kurumsal-kimlik-tasarimi",
+      "permanent": true
+    },
+    {
+      "source": "/fotograf-ve-video-cekimi",
+      "destination": "/hizmetler/produksiyon",
+      "permanent": true
+    },
+    {
+      "source": "/iletisime-gec",
+      "destination": "/iletisim",
+      "permanent": true
+    },
+    {
+      "source": "/sektorler",
+      "destination": "/referanslar",
+      "permanent": true
+    },
+    {
+      "source": "/blog",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/:path*",
+      "destination": "/",
+      "permanent": true
+    }
+  ],
   "headers": [
     {
       "source": "/media/(.*)",
@@ -23,8 +70,14 @@
     {
       "source": "/(.*)",
       "headers": [
-        { "key": "X-Content-Type-Options", "value": "nosniff" },
-        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
         {
           "key": "Strict-Transport-Security",
           "value": "max-age=63072000; includeSubDomains; preload"

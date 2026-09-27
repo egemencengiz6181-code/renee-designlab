@@ -118,6 +118,20 @@ export default function Footer() {
               <a href={`tel:${company.phoneIntl}`} className="link-u">
                 {company.phone}
               </a>
+              <span className="row" style={{ gap: ".9rem", marginTop: ".6rem" }}>
+                {company.social.map((s) => (
+                  <a
+                    key={s.name}
+                    href={s.url}
+                    className="link-u"
+                    target="_blank"
+                    rel="noopener me"
+                    aria-label={`${company.name} ${s.name}`}
+                  >
+                    {s.name}
+                  </a>
+                ))}
+              </span>
               <span style={{ marginTop: ".6rem" }}>
                 {company.address.line1}
                 <br />

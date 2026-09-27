@@ -8,7 +8,9 @@ import { toLang } from "../i18n";
    adreste doğru başlığı, açıklamayı ve yapılandırılmış veriyi görür.
    ========================================================================== */
 
-export const SITE = "https://reneedesignlab.com";
+// Vercel çıplak alan adını www'ye yönlendirdiği için asıl adres www'dur;
+// canonical ve sitemap adresleri yönlendirmeye düşmemeli.
+export const SITE = "https://www.reneedesignlab.com";
 export const BRAND = "Renee Design Lab";
 export const ORG_ID = `${SITE}/#organization`;
 export const DEFAULT_IMAGE = "/media/general/renee-2.jpg";

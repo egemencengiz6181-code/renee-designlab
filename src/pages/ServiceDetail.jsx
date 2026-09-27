@@ -133,6 +133,39 @@ export default function ServiceDetail() {
         </div>
       </section>
 
+      {/* ------------------------------------------------------ öne çıkanlar */}
+      {service.details?.length > 0 && (
+        <section className="section-tight">
+          <div className="wrap">
+            <SectionHead label={st.whyLabel} title={st.whyTitle} />
+            <div className="grid-12" style={{ rowGap: "2rem" }}>
+              {service.details.map((w, i) => (
+                <Reveal key={w.title} delay={i * 0.07} className="c4">
+                  <div
+                    style={{
+                      border: "1px solid var(--line-soft)",
+                      padding: "clamp(1.5rem, 3vw, 2.4rem)",
+                      height: "100%",
+                    }}
+                  >
+                    <span className="chip chip-lime">{`0${i + 1}`}</span>
+                    <h3 className="h4" style={{ marginTop: "1.3rem" }}>
+                      {w.title}
+                    </h3>
+                    <p
+                      className="body"
+                      style={{ marginTop: ".8rem", fontSize: ".93rem" }}
+                    >
+                      {w.text}
+                    </p>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* ----------------------------------------------------------- kapsam */}
       <section className="section-tight">
         <div className="wrap">

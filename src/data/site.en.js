@@ -148,6 +148,20 @@ export const services = [
       "Community management and engagement tracking",
       "Campaign planning and performance reporting",
     ],
+    details: [
+      {
+        title: "Strategy comes first",
+        text: "Instead of random posting, we analyze your audience, competitors and brand tone to build a content strategy. Every post has a purpose: awareness, engagement or conversion.",
+      },
+      {
+        title: "A consistent visual language",
+        text: "With templates and design rules aligned with your corporate identity, your feed clearly comes from one brand. Consistency helps followers recognize you at first glance.",
+      },
+      {
+        title: "A plan that adapts to data",
+        text: "We track reach, engagement and conversion data regularly, scaling formats that work and reworking those that don't. We review results together at our Ankara office or in online meetings.",
+      },
+    ],
     faq: [
       {
         q: "Which formats does content production cover?",
@@ -156,6 +170,18 @@ export const services = [
       {
         q: "How does reporting work?",
         a: "We report reach, engagement and conversion metrics comparatively on a periodic basis, and update the next period's content and campaign plan based on that data.",
+      },
+      {
+        q: "Which platforms do you work on?",
+        a: "We work on the platforms where your audience is — mainly Instagram, LinkedIn, X, TikTok and Facebook. Rather than posting the same content everywhere, we adapt the format and tone to each platform.",
+      },
+      {
+        q: "Can we approve content before it goes live?",
+        a: "Yes. We share the content calendar and designs for your approval before publishing and revise them based on your feedback.",
+      },
+      {
+        q: "Does social media management include ads?",
+        a: "Organic content management and paid advertising complement each other. If needed, we can run them under one plan together with our Google and Meta ads management service.",
       },
     ],
   },
@@ -180,6 +206,20 @@ export const services = [
       "Digital set: social media, presentation and email signature templates",
       "Corporate identity guidelines (brand book)",
     ],
+    details: [
+      {
+        title: "It shapes the first impression",
+        text: "Customers often meet you first through your logo, business card or website. A well-considered identity conveys your brand's credibility and character at the very first touchpoint.",
+      },
+      {
+        title: "The same brand on every channel",
+        text: "With rules for color, typography, icons and layout, your identity speaks the same language from print to social media and from signage to presentations. Your team and suppliers can produce consistent work with the same rules.",
+      },
+      {
+        title: "A long-lasting system",
+        text: "An identity built on your brand strategy rather than passing trends can be used for years. Delivered with guidelines, the system easily extends to new products or sub-brands.",
+      },
+    ],
     faq: [
       {
         q: "Why do we need brand guidelines?",
@@ -188,6 +228,18 @@ export const services = [
       {
         q: "Can you refresh our existing identity?",
         a: "Yes. We run a refresh process that starts with a brand audit, preserves the strengths of your current identity and reworks its weak points.",
+      },
+      {
+        q: "What is the difference between a corporate identity and a logo?",
+        a: "A logo is only one part of an identity. A corporate identity is the whole system: the logo along with the color palette, typography, visual language, print and digital applications, and the rules for using them.",
+      },
+      {
+        q: "How does the process work?",
+        a: "We start with discovery and analysis, move through strategy and concept, then on to design and applications. We present at every stage, revise based on your feedback, and finally deliver all files together with the brand guidelines.",
+      },
+      {
+        q: "Which applications are delivered?",
+        a: "Depending on your needs, we prepare print and digital applications such as business cards, letterhead, envelopes, folders, email signatures, and social media and presentation templates. You can see our own guidelines as an example on our Brand Identity page.",
       },
     ],
   },
@@ -210,6 +262,20 @@ export const services = [
       "Local SEO and Google Business Profile optimization",
       "Conversion-focused measurement setup and reporting",
     ],
+    details: [
+      {
+        title: "Be visible to people already searching",
+        text: "Someone searching for your service already knows what they need. Ranking high for the right keywords brings qualified visitors without depending on an ad budget.",
+      },
+      {
+        title: "Technical foundation and content together",
+        text: "We combine technical foundations — site speed, mobile-friendliness, crawlability and structured data — with content that answers search intent. When one is missing, the other's impact is limited too.",
+      },
+      {
+        title: "Stand out in local search",
+        text: "For customers searching in Ankara or the region you serve, we increase your visibility with Google Business Profile optimization, local keywords and consistent business information.",
+      },
+    ],
     faq: [
       {
         q: "Does SEO work differently for local businesses?",
@@ -218,6 +284,18 @@ export const services = [
       {
         q: "How long does it take to see results?",
         a: "Technical fixes become measurable within weeks, while the lasting impact of content and authority work usually matures over a few months. We track every stage with reports.",
+      },
+      {
+        q: "What is the difference between SEO and Google Ads?",
+        a: "Google Ads puts you in the ad section of search results for as long as you spend on it. SEO aims for lasting visibility in organic results. The best results usually come when both are planned together.",
+      },
+      {
+        q: "Can you do SEO on our existing website?",
+        a: "Yes. We first audit the technical setup and content to map the current state, then apply an improvement plan in order of priority. If needed, our web design team also takes on infrastructure changes.",
+      },
+      {
+        q: "How will we track the SEO work?",
+        a: "We monitor rankings, organic traffic and conversions through Google Search Console and analytics tools, and share them in periodic reports.",
       },
     ],
   },
@@ -240,6 +318,20 @@ export const services = [
       "Minimum size and clear space definitions",
       "Applications on different backgrounds and file package",
     ],
+    details: [
+      {
+        title: "One memorable mark",
+        text: "A good logo should be simple, distinctive and memorable. We distill your brand's story into a single form that stays in your audience's mind.",
+      },
+      {
+        title: "Works at every size",
+        text: "Your logo must be legible on an app icon as well as a building facade. By planning sizes, backgrounds and single-color use from the start, we make sure it looks right everywhere.",
+      },
+      {
+        title: "The foundation of your identity",
+        text: "The logo is the foundation on which the whole identity is built, from the color palette and typography to your social media language. That's why we start the design process with brand analysis.",
+      },
+    ],
     faq: [
       {
         q: "How many concepts do you present?",
@@ -248,6 +340,18 @@ export const services = [
       {
         q: "Which file formats do you deliver?",
         a: "Along with vector source files, we deliver all formats prepared for print and digital use, together with usage guidelines.",
+      },
+      {
+        q: "Can you redesign our existing logo?",
+        a: "Yes. We can simplify your logo without losing recognition, redraw it for current usage needs, or propose an entirely new direction.",
+      },
+      {
+        q: "How does the logo design process start?",
+        a: "We start with a discovery call about your brand, audience and competitors. Based on what we learn, we prepare concept research and a moodboard.",
+      },
+      {
+        q: "Who owns the rights to the logo?",
+        a: "The approved logo and all delivered files are created for your brand and handed over to you. For legal processes such as trademark registration, we provide the files in suitable formats.",
       },
     ],
   },
@@ -270,6 +374,20 @@ export const services = [
       "Fast Loading Times — performance optimization that enhances user experience",
       "Customizable Solutions — flexible and extensible website architecture",
     ],
+    details: [
+      {
+        title: "A storefront that works 24/7",
+        text: "Your website is where someone meeting your brand for the first time evaluates you. With a clear message, easy navigation and strong visuals, we build an experience that turns visitors into customers.",
+      },
+      {
+        title: "Speed and mobile first",
+        text: "Most visitors arrive on their phones, and slow pages are penalized by both users and Google. We build sites mobile-first and performance-focused.",
+      },
+      {
+        title: "Search-ready from day one",
+        text: "We build SEO fundamentals — proper heading structure, meaningful URLs, structured data and sitemaps — into the design from the very first day.",
+      },
+    ],
     faq: [
       {
         q: "Can we manage the site ourselves?",
@@ -278,6 +396,18 @@ export const services = [
       {
         q: "Can you redesign our existing site?",
         a: "We can audit your current site for performance, accessibility and SEO, then redesign it and rebuild its infrastructure while preserving your content.",
+      },
+      {
+        q: "Can the website be multilingual?",
+        a: "Yes. We build multilingual sites with content and URLs structured separately for each language, serving the right version to both visitors and search engines.",
+      },
+      {
+        q: "Do you help with domains and hosting?",
+        a: "We guide you through domain, hosting and launch, and make sure the site runs on a secure (HTTPS) and fast infrastructure.",
+      },
+      {
+        q: "We don't have a corporate identity yet — how do we start a website?",
+        a: "Starting web design with identity fundamentals (logo, color, typography) is the healthiest route. We can run corporate identity and web design together in a single process.",
       },
     ],
   },
@@ -298,6 +428,20 @@ export const services = [
       "Brand voice and messaging framework",
       "Communication roadmap and implementation plan",
     ],
+    details: [
+      {
+        title: "Clarifies what you say, to whom and why",
+        text: "Strong brands know what they are saying and who they are saying it to. Strategy work creates a shared framework that guides all your communication decisions.",
+      },
+      {
+        title: "Standing apart from competitors",
+        text: "By analyzing the market and your competitors, we find the space your brand can own and define a positioning that makes customers choose you for reasons beyond price.",
+      },
+      {
+        title: "An actionable roadmap",
+        text: "Strategy shouldn't stay in a document. We turn design, digital and communication steps into a prioritized plan and stay by your side during implementation.",
+      },
+    ],
     faq: [
       {
         q: "Should strategy work come before design?",
@@ -306,6 +450,18 @@ export const services = [
       {
         q: "How does the consulting process work?",
         a: "It progresses in four main steps — discovery interviews, analysis, workshops and a strategy document — and we stay by your side during implementation.",
+      },
+      {
+        q: "Who needs a brand strategy?",
+        a: "New brands, companies entering a new market or product category, and established brands whose communication has become scattered benefit most from strategy work.",
+      },
+      {
+        q: "What is delivered at the end?",
+        a: "We deliver a strategy document covering positioning, target audience, brand voice and messaging framework, along with a prioritized communication roadmap.",
+      },
+      {
+        q: "How is our team involved?",
+        a: "We bring your team's knowledge and perspective into the process through discovery interviews and workshops, so the resulting strategy is owned internally as well.",
       },
     ],
   },
@@ -326,6 +482,20 @@ export const services = [
       "Visual sets for campaigns and catalogs",
       "Adaptation to social media formats",
     ],
+    details: [
+      {
+        title: "Angles photography can't reach",
+        text: "With 3D you can show your product from the inside, in an exploded view or in scenes that would be hard to build in reality. Light, materials and camera are fully under control.",
+      },
+      {
+        title: "One model, endless visuals",
+        text: "A product modeled once can be reused for different color options, angles and campaign scenes. You keep producing content without organizing a new shoot.",
+      },
+      {
+        title: "Start selling before the product is ready",
+        text: "Working from technical drawings or references, you can prepare e-commerce, catalog and launch visuals before the product is manufactured.",
+      },
+    ],
     faq: [
       {
         q: "Can visuals be produced without a physical product?",
@@ -334,6 +504,18 @@ export const services = [
       {
         q: "Which industries do you work with?",
         a: "Architecture, e-commerce, industrial design and fashion in particular — and any industry where a product needs visual storytelling.",
+      },
+      {
+        q: "Can people tell a render from a photo?",
+        a: "With accurate modeling, materials and lighting we achieve photorealistic results. The goal is to faithfully reflect how the product really looks.",
+      },
+      {
+        q: "What files do we need to provide?",
+        a: "Technical drawings, dimensions, CAD files or product photos, if available, are enough. Sharing material and color details brings the result even closer to reality.",
+      },
+      {
+        q: "Where can the animations be used?",
+        a: "We deliver them in different formats and lengths for websites, social media, ad campaigns, trade fair screens and presentations.",
       },
     ],
   },
@@ -356,6 +538,20 @@ export const services = [
       "Editing, color grading and sound design",
       "Format adaptations for each channel",
     ],
+    details: [
+      {
+        title: "Every frame planned",
+        text: "A good shoot begins before the shoot day. By finalizing concept, storyboard, location and crew planning together, we keep surprises to a minimum.",
+      },
+      {
+        title: "A visual language that fits your brand",
+        text: "We choose lighting, color and editing to match your corporate identity, so your videos and photos look like they come from the same brand as the rest of your communication.",
+      },
+      {
+        title: "Output for every channel",
+        text: "From a single shoot we plan different outputs: a commercial, vertical short videos for social media, website visuals and catalog photos.",
+      },
+    ],
     faq: [
       {
         q: "How does pre-production work?",
@@ -364,6 +560,18 @@ export const services = [
       {
         q: "Are social media formats included?",
         a: "Yes. Alongside the main edit, we also deliver short versions in vertical and square formats.",
+      },
+      {
+        q: "Where do the shoots take place?",
+        a: "Depending on the product and concept, we shoot in a studio, at your business or on location. We choose the location together during the concept phase.",
+      },
+      {
+        q: "Are editing and color grading included?",
+        a: "Yes. Editing, color grading, sound design and format adaptation for each channel are part of the production process.",
+      },
+      {
+        q: "Are the product photos suitable for e-commerce?",
+        a: "We prepare product photos that meet e-commerce platforms' background and size requirements, as well as lifestyle visuals for campaigns and social media.",
       },
     ],
   },
@@ -386,6 +594,20 @@ export const services = [
       "A/B testing and budget optimization",
       "Weekly performance reporting",
     ],
+    details: [
+      {
+        title: "The right person, at the right moment",
+        text: "On Google you reach people searching for your service; on Meta you reach audiences selected by interests and behavior. We plan both platforms together around your goals.",
+      },
+      {
+        title: "Every step is measurable",
+        text: "By setting up conversion tracking correctly from the start, we see which ad brings a form, call or sale. Budget shifts to the campaigns that deliver.",
+      },
+      {
+        title: "Creative and copy in one place",
+        text: "Ad visuals and copy are produced in-house in line with your brand identity and tested in multiple variations.",
+      },
+    ],
     faq: [
       {
         q: "How big should our ad budget be?",
@@ -394,6 +616,18 @@ export const services = [
       {
         q: "Do you create the ad creatives?",
         a: "Yes. Campaign creatives, copy and variations are produced in-house, in line with your brand identity.",
+      },
+      {
+        q: "Whose name are the ad accounts in?",
+        a: "Ad accounts and data belong to your brand. We set up the accounts in your name or work in your existing accounts with granted access.",
+      },
+      {
+        q: "Is Google Ads or Meta ads a better fit?",
+        a: "If people actively search for your service, Google Ads stands out; if you need to create demand or showcase a visually strong product, Meta ads do. For most brands, planning both together works best.",
+      },
+      {
+        q: "How often are campaigns optimized?",
+        a: "We monitor campaigns regularly, update targeting, bids, budgets and creatives based on performance data, and report weekly.",
       },
     ],
   },
@@ -415,6 +649,20 @@ export const services = [
       "Campaign performance measurement",
       "Long-term brand ambassador programs",
     ],
+    details: [
+      {
+        title: "A transfer of trust",
+        text: "People trust recommendations from those they follow more than ads. The right partnership introduces your brand to new audiences in a genuine voice.",
+      },
+      {
+        title: "Audience fit comes before follower count",
+        text: "Rather than follower count, we look at how well the audience matches your target customers and how genuine the engagement is. Niche, trusted accounts often perform better.",
+      },
+      {
+        title: "End-to-end management",
+        text: "We manage the whole process — from influencer research and briefing to content approval, publication tracking and reporting — while protecting your brand's tone.",
+      },
+    ],
     faq: [
       {
         q: "How do you choose the right influencer?",
@@ -423,6 +671,18 @@ export const services = [
       {
         q: "How is campaign success measured?",
         a: "Beyond reach and engagement, we also track and report conversion metrics such as clicks, sign-ups and sales.",
+      },
+      {
+        q: "Do you work with micro-influencers too?",
+        a: "Yes. Depending on your goal, we plan campaigns with large accounts as well as micro and niche influencers who have a close relationship with their audience.",
+      },
+      {
+        q: "Does the brand keep control of the content?",
+        a: "We agree on the brief and key messages before the partnership and submit the content for your approval before publishing, keeping the influencer's natural voice while making sure your message comes across correctly.",
+      },
+      {
+        q: "How are ad and partnership disclosures handled?",
+        a: "We make sure partnership content is labeled as advertising or a paid partnership in line with platform rules and applicable regulations.",
       },
     ],
   },

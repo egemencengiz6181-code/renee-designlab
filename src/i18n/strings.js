@@ -133,6 +133,8 @@ const tr = {
   service: {
     tag: "Hizmet",
     approach: "Yaklaşımımız",
+    whyLabel: "Öne çıkanlar",
+    whyTitle: "Neden önemli?",
     scopeLabel: "Kapsam",
     scopeTitle: "Neleri içerir?",
     processLabel: "Süreç",
@@ -232,6 +234,7 @@ const tr = {
     email: "E-posta",
     address: "Adres",
     web: "Web",
+    social: "Sosyal medya",
     formLabel: "Teklif formu",
     formTitle: "Birkaç soruyla başlayalım.",
     formNote: [
@@ -412,6 +415,8 @@ const en = {
   service: {
     tag: "Service",
     approach: "Our approach",
+    whyLabel: "Highlights",
+    whyTitle: "Why it matters.",
     scopeLabel: "Scope",
     scopeTitle: "What's included?",
     processLabel: "Process",
@@ -511,6 +516,7 @@ const en = {
     email: "Email",
     address: "Address",
     web: "Web",
+    social: "Social media",
     formLabel: "Quote form",
     formTitle: "Let's start with a few questions.",
     formNote: [

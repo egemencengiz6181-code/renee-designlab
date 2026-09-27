@@ -24,6 +24,11 @@ export const company = {
     line3: "TÜRKİYE",
   },
   mapQuery: "ODTÜ Teknokent Çankaya Ankara",
+  social: [
+    { name: "Instagram", handle: "@reneedesignlab", url: "https://www.instagram.com/reneedesignlab/" },
+    { name: "X", handle: "@ReneeDesignLab", url: "https://x.com/ReneeDesignLab" },
+    { name: "Tumblr", handle: "renee-design-lab", url: "https://renee-design-lab.tumblr.com/" },
+  ],
   founder: "Egemen Cengiz",
 };
 
@@ -172,6 +177,20 @@ export const services = [
       "Topluluk yönetimi ve etkileşim takibi",
       "Kampanya kurgusu ve performans raporlaması",
     ],
+    details: [
+      {
+        title: "Strateji önce gelir",
+        text: "Rastgele paylaşım yerine hedef kitlenizi, rakiplerinizi ve markanızın tonunu analiz ederek bir içerik stratejisi kuruyoruz. Her gönderinin bir amacı olur: bilinirlik, etkileşim ya da dönüşüm.",
+      },
+      {
+        title: "Tutarlı görsel dil",
+        text: "Kurumsal kimliğinizle uyumlu şablonlar ve tasarım kurallarıyla akışınız tek bir markadan çıktığı belli olacak şekilde ilerler. Tutarlılık, takipçinin markanızı ilk bakışta tanımasını sağlar.",
+      },
+      {
+        title: "Veriyle yön değiştiren plan",
+        text: "Erişim, etkileşim ve dönüşüm verilerini düzenli izliyor; iyi çalışan formatları büyütüp çalışmayanları yeniden kurguluyoruz. Ankara'daki ofisimizde ya da online toplantılarla sonuçları birlikte değerlendiriyoruz.",
+      },
+    ],
     faq: [
       {
         q: "İçerik üretimi hangi formatları kapsıyor?",
@@ -180,6 +199,18 @@ export const services = [
       {
         q: "Raporlama nasıl ilerliyor?",
         a: "Dönemsel olarak erişim, etkileşim ve dönüşüm metriklerini karşılaştırmalı biçimde raporluyor; bir sonraki dönemin içerik ve kampanya planını bu veriye göre güncelliyoruz.",
+      },
+      {
+        q: "Hangi platformlarda hizmet veriyorsunuz?",
+        a: "Instagram, LinkedIn, X, TikTok ve Facebook başta olmak üzere hedef kitlenizin bulunduğu platformlarda çalışıyoruz. Her platforma aynı içeriği koymak yerine formatı ve dili o platforma göre uyarlıyoruz.",
+      },
+      {
+        q: "İçerikleri yayınlamadan önce onaylayabilir miyiz?",
+        a: "Evet. Dönemsel içerik takvimini ve tasarımları yayından önce onayınıza sunuyor, geri bildirimlerinize göre düzenliyoruz.",
+      },
+      {
+        q: "Sosyal medya yönetimi reklamları da kapsıyor mu?",
+        a: "Organik içerik yönetimi ve ücretli reklam yönetimi birbirini tamamlar. İhtiyacınıza göre Google ve Meta reklam yönetimi hizmetimizle birlikte tek bir plan altında yürütebiliriz.",
       },
     ],
     related: [
@@ -213,6 +244,20 @@ export const services = [
       "Dijital set: sosyal medya, sunum ve e-posta imzası şablonları",
       "Kurumsal kimlik rehberi (marka kılavuzu)",
     ],
+    details: [
+      {
+        title: "İlk izlenimi yönetir",
+        text: "Müşterileriniz sizi çoğu zaman önce logonuz, kartvizitiniz ya da web siteniz üzerinden tanır. Düşünülmüş bir kimlik, markanızın ciddiyetini ve karakterini ilk temasta anlatır.",
+      },
+      {
+        title: "Her mecrada aynı marka",
+        text: "Renk, tipografi, ikon ve düzen kurallarıyla kimliğiniz basılı işlerden sosyal medyaya, tabeladan sunumlara kadar aynı dili konuşur. Ekibiniz ve tedarikçileriniz de bu kurallarla tutarlı üretim yapabilir.",
+      },
+      {
+        title: "Uzun ömürlü bir sistem",
+        text: "Moda akımlara değil markanızın stratejisine dayanan bir kimlik yıllarca kullanılabilir. Rehberle birlikte teslim edilen sistem, yeni ürün ya da alt markalara da kolayca genişletilir.",
+      },
+    ],
     faq: [
       {
         q: "Kurumsal kimlik rehberi neden gerekli?",
@@ -221,6 +266,18 @@ export const services = [
       {
         q: "Mevcut kimliğimi yenileyebilir misiniz?",
         a: "Evet. Marka denetimiyle başlayıp mevcut kimliğin güçlü yönlerini koruyan, zayıf noktalarını yeniden kurgulayan bir yenileme süreci yürütüyoruz.",
+      },
+      {
+        q: "Kurumsal kimlik ile logo arasındaki fark nedir?",
+        a: "Logo, kimliğin yalnızca bir parçasıdır. Kurumsal kimlik; logoyla birlikte renk paleti, tipografi, görsel dil, basılı ve dijital uygulamalar ile bunların kullanım kurallarını içeren bütün sistemdir.",
+      },
+      {
+        q: "Süreç nasıl ilerliyor?",
+        a: "Keşif ve analizle başlıyor, strateji ve konsept aşamasından sonra tasarım ve uygulamalara geçiyoruz. Her aşamada sunum yapıp geri bildirimlerinize göre revizyon yapıyor, sonunda tüm dosyaları kimlik rehberiyle teslim ediyoruz.",
+      },
+      {
+        q: "Hangi uygulamalar teslim ediliyor?",
+        a: "İhtiyacınıza göre kartvizit, antetli kağıt, zarf, dosya, e-posta imzası, sosyal medya ve sunum şablonları gibi basılı ve dijital uygulamaları hazırlıyoruz. Kendi rehberimizi Kurumsal Kimlik sayfamızda örnek olarak inceleyebilirsiniz.",
       },
     ],
     related: [
@@ -253,6 +310,20 @@ export const services = [
       "Yerel SEO ve Google My Business optimizasyonu",
       "Dönüşüm odaklı ölçümleme kurulumu ve raporlama",
     ],
+    details: [
+      {
+        title: "Arayan müşteriye görünmek",
+        text: "Hizmetinizi arayan kişi zaten ihtiyacını bilir. Doğru anahtar kelimelerde üst sıralarda yer almak, reklam bütçesine bağımlı kalmadan nitelikli ziyaretçi getirir.",
+      },
+      {
+        title: "Teknik altyapı ve içerik birlikte",
+        text: "Site hızı, mobil uyumluluk, taranabilirlik ve yapılandırılmış veri gibi teknik temelleri; arama niyetine cevap veren içerikle birleştiriyoruz. Biri eksik kaldığında diğerinin etkisi de sınırlı kalır.",
+      },
+      {
+        title: "Yerel aramalarda öne çıkmak",
+        text: "Ankara'da ya da hizmet verdiğiniz bölgede arama yapan müşteriler için Google İşletme Profili, yerel anahtar kelimeler ve tutarlı işletme bilgileriyle görünürlüğünüzü artırıyoruz.",
+      },
+    ],
     faq: [
       {
         q: "Yerel işletmeler için SEO farklı mı çalışıyor?",
@@ -261,6 +332,18 @@ export const services = [
       {
         q: "Sonuçlar ne kadar sürede görülür?",
         a: "Teknik düzeltmelerin etkisi haftalar içinde ölçülebilir hale gelirken, içerik ve otorite çalışmalarının kalıcı etkisi genellikle birkaç aylık bir süreçte olgunlaşır. Her aşamayı raporla takip ederiz.",
+      },
+      {
+        q: "SEO ile Google Ads arasındaki fark nedir?",
+        a: "Google Ads, bütçe ayırdığınız sürece arama sonuçlarının reklam alanında görünmenizi sağlar. SEO ise organik sonuçlarda kalıcı görünürlük hedefler. En iyi sonuç genellikle ikisi birlikte planlandığında alınır.",
+      },
+      {
+        q: "Mevcut sitemizde SEO çalışması yapabilir misiniz?",
+        a: "Evet. Önce teknik ve içerik denetimiyle mevcut durumu çıkarıyor, ardından öncelik sırasına göre bir iyileştirme planı uyguluyoruz. Gerekirse web tasarım ekibimizle altyapı değişikliklerini de üstleniyoruz.",
+      },
+      {
+        q: "SEO çalışmasını nasıl takip edeceğiz?",
+        a: "Sıralamalar, organik trafik ve dönüşümleri Google Search Console ve analiz araçları üzerinden izleyip dönemsel raporlarla paylaşıyoruz.",
       },
     ],
     related: [
@@ -293,6 +376,20 @@ export const services = [
       "Minimum kullanım ölçüleri ve güvenli alan tanımı",
       "Farklı zemin uygulamaları ve dosya paketi",
     ],
+    details: [
+      {
+        title: "Akılda kalan tek bir işaret",
+        text: "İyi bir logo sade, ayırt edici ve hatırlanabilir olmalıdır. Markanızın hikayesini tek bir forma indirgeyerek hedef kitlenizin zihninde yer edecek bir işaret tasarlıyoruz.",
+      },
+      {
+        title: "Her boyutta çalışır",
+        text: "Logonuz bir uygulama ikonunda da bina cephesinde de okunabilir olmalı. Farklı boyut, zemin ve tek renk kullanımlarını baştan planlayarak her ortamda doğru görünmesini sağlıyoruz.",
+      },
+      {
+        title: "Kimliğin temeli",
+        text: "Logo, renk paleti ve tipografiden sosyal medya diline kadar tüm kimliğin üzerine kurulduğu temeldir. Bu yüzden tasarım sürecine marka analiziyle başlıyoruz.",
+      },
+    ],
     faq: [
       {
         q: "Kaç konsept sunuluyor?",
@@ -301,6 +398,18 @@ export const services = [
       {
         q: "Hangi dosya formatlarını teslim ediyorsunuz?",
         a: "Vektörel kaynak dosyaların yanı sıra baskı ve dijital kullanım için hazırlanmış tüm formatları, kullanım kurallarıyla birlikte teslim ediyoruz.",
+      },
+      {
+        q: "Mevcut logomuzu yenileyebilir misiniz?",
+        a: "Evet. Markanızın tanınırlığını kaybetmeden logonuzu sadeleştirebilir, güncel kullanım ihtiyaçlarına göre yeniden çizebilir ya da tamamen yeni bir yön önerebiliriz.",
+      },
+      {
+        q: "Logo tasarımı süreci nasıl başlıyor?",
+        a: "Markanızı, hedef kitlenizi ve rakiplerinizi konuştuğumuz bir keşif görüşmesiyle başlıyoruz. Bu görüşmeden çıkan bilgilerle konsept araştırması ve moodboard hazırlıyoruz.",
+      },
+      {
+        q: "Logonun kullanım hakları kime ait?",
+        a: "Onaylanan logo ve teslim edilen tüm dosyalar markanız için hazırlanır ve size teslim edilir. Tescil başvurusu gibi hukuki süreçler için dosyaları uygun formatlarda sağlıyoruz.",
       },
     ],
     related: [
@@ -333,6 +442,20 @@ export const services = [
       "Hızlı Yükleme Süreleri — kullanıcı deneyimini artıran performans optimizasyonu",
       "Özelleştirilebilir Çözümler — esnek ve genişletilebilir web sitesi mimarisi",
     ],
+    details: [
+      {
+        title: "7/24 çalışan vitrin",
+        text: "Web siteniz, markanızla ilk kez karşılaşan birinin sizi değerlendirdiği yerdir. Net bir mesaj, kolay gezinme ve güçlü görsellerle ziyaretçiyi müşteriye dönüştüren bir deneyim kuruyoruz.",
+      },
+      {
+        title: "Hız ve mobil öncelik",
+        text: "Ziyaretçilerin büyük bölümü siteye telefondan gelir; yavaş açılan sayfalar hem kullanıcı hem Google tarafından cezalandırılır. Siteleri mobil öncelikli ve performans odaklı geliştiriyoruz.",
+      },
+      {
+        title: "Arama motoruna hazır altyapı",
+        text: "Doğru başlık yapısı, anlamlı adresler, yapılandırılmış veri ve site haritası gibi SEO temellerini tasarımın bir parçası olarak ilk günden kuruyoruz.",
+      },
+    ],
     faq: [
       {
         q: "Site yönetimini kendimiz yapabilir miyiz?",
@@ -341,6 +464,18 @@ export const services = [
       {
         q: "Mevcut sitemizi yenileyebilir misiniz?",
         a: "Mevcut sitenizin performans, erişilebilirlik ve SEO denetimini yapıp; içeriği koruyarak tasarım ve altyapı yenilemesi gerçekleştirebiliriz.",
+      },
+      {
+        q: "Web sitesi çok dilli olabilir mi?",
+        a: "Evet. İçeriği ve adresleri her dil için ayrı kurgulayarak hem ziyaretçilere hem de arama motorlarına doğru dil sürümünü sunan çok dilli siteler geliştiriyoruz.",
+      },
+      {
+        q: "Alan adı ve barındırma konusunda destek veriyor musunuz?",
+        a: "Alan adı, barındırma ve yayına alma süreçlerinde yönlendirme yapıyor, sitenin güvenli (HTTPS) ve hızlı bir altyapıda çalışmasını sağlıyoruz.",
+      },
+      {
+        q: "Kurumsal kimliğimiz yoksa web sitesine nasıl başlarız?",
+        a: "Web tasarımına kimlik temelleri (logo, renk, tipografi) ile başlamak en sağlıklı yoldur. Kurumsal kimlik ve web tasarımını tek bir süreçte birlikte yürütebiliriz.",
       },
     ],
     related: [
@@ -371,6 +506,20 @@ export const services = [
       "Marka tonu ve mesaj çerçevesi",
       "İletişim yol haritası ve uygulama planı",
     ],
+    details: [
+      {
+        title: "Neyi, kime, neden anlattığınızı netleştirir",
+        text: "Güçlü markalar ne söylediklerini ve kime söylediklerini bilir. Strateji çalışması, tüm iletişim kararlarınıza yön veren ortak bir çerçeve oluşturur.",
+      },
+      {
+        title: "Rakiplerden ayrışma",
+        text: "Pazarı ve rakiplerinizi analiz ederek markanızın sahiplenebileceği boşlukları buluyor, sizi fiyat dışında tercih ettirecek konumlandırmayı tanımlıyoruz.",
+      },
+      {
+        title: "Uygulanabilir bir yol haritası",
+        text: "Strateji, bir dokümanda kalmamalı. Tasarım, dijital ve iletişim adımlarını önceliklendirilmiş bir plana dönüştürüyor, uygulama sürecinde de yanınızda oluyoruz.",
+      },
+    ],
     faq: [
       {
         q: "Strateji çalışması tasarımdan önce mi yapılmalı?",
@@ -379,6 +528,18 @@ export const services = [
       {
         q: "Danışmanlık süreci nasıl ilerliyor?",
         a: "Keşif görüşmeleri, analiz, atölye çalışması ve strateji dokümanı olmak üzere dört ana adımda ilerler; uygulama aşamasında da yanınızda oluruz.",
+      },
+      {
+        q: "Marka stratejisine kimlerin ihtiyacı var?",
+        a: "Yeni kurulan markalar, yeni bir pazara ya da ürün grubuna açılan şirketler ve iletişimi dağınık hale gelmiş köklü markalar strateji çalışmasından en çok fayda sağlayanlardır.",
+      },
+      {
+        q: "Çalışmanın sonunda ne teslim ediliyor?",
+        a: "Konumlandırma, hedef kitle, marka tonu ve mesaj çerçevesini içeren bir strateji dokümanı ile önceliklendirilmiş bir iletişim yol haritası teslim ediyoruz.",
+      },
+      {
+        q: "Ekibimiz sürece nasıl dahil oluyor?",
+        a: "Keşif görüşmeleri ve atölye çalışmalarında ekibinizin bilgisini ve bakış açısını sürece katıyoruz; böylece ortaya çıkan strateji içeride de sahiplenilir.",
       },
     ],
     related: [
@@ -409,6 +570,20 @@ export const services = [
       "Kampanya ve katalog için görsel seti",
       "Sosyal medya formatlarına uyarlama",
     ],
+    details: [
+      {
+        title: "Fotoğrafın ulaşamadığı açılar",
+        text: "3D ile ürününüzü içinden, patlatılmış görünümde ya da gerçekte kurulması zor sahnelerde gösterebilirsiniz. Işık, malzeme ve kamera tamamen kontrol altındadır.",
+      },
+      {
+        title: "Tek model, sınırsız görsel",
+        text: "Bir kez modellenen ürün; farklı renk seçenekleri, açılar ve kampanya sahneleri için tekrar tekrar kullanılabilir. Yeni bir çekim organize etmeden içerik üretmeye devam edersiniz.",
+      },
+      {
+        title: "Satışa ürün hazır olmadan başlayın",
+        text: "Teknik çizim ya da referanslardan yola çıkarak ürün üretilmeden önce e-ticaret, katalog ve lansman görsellerini hazırlayabilirsiniz.",
+      },
+    ],
     faq: [
       {
         q: "Fiziksel ürün olmadan görsel üretilebilir mi?",
@@ -417,6 +592,18 @@ export const services = [
       {
         q: "Hangi sektörlerde çalışıyorsunuz?",
         a: "Mimari, e-ticaret, endüstriyel tasarım ve moda başta olmak üzere, ürünün görsel anlatıma ihtiyaç duyduğu her sektörde.",
+      },
+      {
+        q: "Render ile fotoğraf arasındaki fark anlaşılır mı?",
+        a: "Doğru modelleme, malzeme ve ışık kurgusuyla fotogerçekçi sonuçlar elde ediyoruz. Amaç, ürünün gerçekteki görünümünü sadık biçimde yansıtmaktır.",
+      },
+      {
+        q: "Hangi dosyaları sağlamamız gerekiyor?",
+        a: "Varsa teknik çizim, ölçüler, CAD dosyası ya da ürün fotoğrafları yeterlidir. Malzeme ve renk bilgilerini de paylaşmanız sonucu gerçeğe yaklaştırır.",
+      },
+      {
+        q: "Animasyonlar hangi mecralarda kullanılabilir?",
+        a: "Web sitesi, sosyal medya, reklam kampanyaları, fuar ekranları ve sunumlar için farklı format ve sürelerde teslim ediyoruz.",
       },
     ],
     related: ["produksiyon", "logo-tasarimi", "sosyal-medya-yonetimi"],
@@ -445,6 +632,20 @@ export const services = [
       "Kurgu, renk düzenlemesi ve ses tasarımı",
       "Mecralara göre format uyarlaması",
     ],
+    details: [
+      {
+        title: "Planlanmış her kare",
+        text: "İyi bir çekim, çekim gününden önce başlar. Konsept, storyboard, mekan ve ekip planlamasını birlikte netleştirerek sürprizleri en aza indiriyoruz.",
+      },
+      {
+        title: "Markaya uygun görsel dil",
+        text: "Işık, renk ve kurgu tercihlerini kurumsal kimliğinizle uyumlu belirliyoruz; böylece videolarınız ve fotoğraflarınız diğer iletişiminizle aynı markadan çıkmış gibi görünür.",
+      },
+      {
+        title: "Her mecraya uygun çıktı",
+        text: "Tek bir çekimden reklam filmi, sosyal medya için dikey kısa videolar, web sitesi görselleri ve katalog fotoğrafları gibi farklı çıktılar planlıyoruz.",
+      },
+    ],
     faq: [
       {
         q: "Çekim öncesi hazırlık nasıl ilerliyor?",
@@ -453,6 +654,18 @@ export const services = [
       {
         q: "Sosyal medya formatları dahil mi?",
         a: "Evet. Ana kurgunun yanı sıra dikey ve kare formatlarda kısa versiyonlar da teslim ediyoruz.",
+      },
+      {
+        q: "Çekimler nerede yapılıyor?",
+        a: "Ürüne ve konsepte göre stüdyoda, işletmenizde ya da dış mekanda çekim yapıyoruz. Mekan seçimini konsept aşamasında birlikte belirliyoruz.",
+      },
+      {
+        q: "Kurgu ve renk düzenlemesi dahil mi?",
+        a: "Evet. Kurgu, renk düzenlemesi, ses tasarımı ve mecralara göre format uyarlaması prodüksiyon sürecinin parçasıdır.",
+      },
+      {
+        q: "Ürün fotoğrafı e-ticaret için uygun mu?",
+        a: "E-ticaret platformlarının istediği arka plan ve ölçülere uygun ürün fotoğraflarının yanı sıra kampanya ve sosyal medya için yaşam tarzı görselleri de hazırlıyoruz.",
       },
     ],
     related: [
@@ -485,6 +698,20 @@ export const services = [
       "A/B testleri ve bütçe optimizasyonu",
       "Haftalık performans raporlaması",
     ],
+    details: [
+      {
+        title: "Doğru kişiye, doğru anda",
+        text: "Google'da hizmetinizi arayan kişiye, Meta'da ise ilgi alanları ve davranışlarına göre seçilen kitleye ulaşırsınız. İki platformu hedeflerinize göre birlikte kurguluyoruz.",
+      },
+      {
+        title: "Ölçülebilir her adım",
+        text: "Dönüşüm takibini baştan doğru kurarak hangi reklamın form, arama ya da satış getirdiğini görüyoruz. Bütçe, sonuç getiren kampanyalara kaydırılır.",
+      },
+      {
+        title: "Kreatif ve metin tek elden",
+        text: "Reklam görselleri ve metinleri marka kimliğinize uygun olarak ajans bünyesinde hazırlanır ve farklı varyasyonlarla test edilir.",
+      },
+    ],
     faq: [
       {
         q: "Reklam bütçesi ne kadar olmalı?",
@@ -493,6 +720,18 @@ export const services = [
       {
         q: "Kreatifleri siz mi hazırlıyorsunuz?",
         a: "Evet. Kampanya kreatifleri, metinleri ve varyasyonları marka kimliğinize uygun şekilde ajans bünyesinde üretilir.",
+      },
+      {
+        q: "Reklam hesapları kimin adına açılıyor?",
+        a: "Reklam hesapları ve veriler markanıza aittir. Hesapları sizin adınıza kuruyor ya da mevcut hesaplarınızda yetkilendirmeyle çalışıyoruz.",
+      },
+      {
+        q: "Google Ads mi Meta reklamları mı daha uygun?",
+        a: "Hizmetiniz aktif olarak aranıyorsa Google Ads, talep yaratmanız ya da görsel olarak güçlü bir ürün tanıtmanız gerekiyorsa Meta reklamları öne çıkar. Çoğu marka için ikisinin birlikte planlanması en iyi sonucu verir.",
+      },
+      {
+        q: "Kampanyalar ne sıklıkla optimize ediliyor?",
+        a: "Kampanyaları düzenli olarak izliyor; hedefleme, teklif, bütçe ve kreatifleri performans verisine göre güncelliyor ve haftalık raporluyoruz.",
       },
     ],
     related: [
@@ -523,6 +762,20 @@ export const services = [
       "Kampanya performans ölçümü",
       "Uzun vadeli marka elçiliği programları",
     ],
+    details: [
+      {
+        title: "Güven transferi",
+        text: "İnsanlar takip ettikleri kişilerin önerilerine reklamlardan daha çok güvenir. Doğru iş birliği, markanızı samimi bir dille yeni kitlelerle tanıştırır.",
+      },
+      {
+        title: "Kitle uyumu, takipçi sayısından önce gelir",
+        text: "Takipçi sayısından çok, kitlenin markanızın hedef kitlesiyle örtüşmesine ve etkileşimin gerçekliğine bakıyoruz. Niş ve güvenilir hesaplar çoğu zaman daha iyi sonuç verir.",
+      },
+      {
+        title: "Uçtan uca yönetim",
+        text: "Influencer araştırmasından brief'e, içerik onayından yayın takibi ve raporlamaya kadar tüm süreci yönetiyor; markanızın tonunun korunmasını sağlıyoruz.",
+      },
+    ],
     faq: [
       {
         q: "Doğru influencer nasıl seçiliyor?",
@@ -531,6 +784,18 @@ export const services = [
       {
         q: "Kampanya başarısı nasıl ölçülüyor?",
         a: "Erişim ve etkileşimin yanında; tıklama, kayıt ve satış gibi dönüşüm metriklerini de takip ederek raporluyoruz.",
+      },
+      {
+        q: "Mikro influencer'larla da çalışıyor musunuz?",
+        a: "Evet. Hedefinize göre büyük hesapların yanı sıra kitlesiyle yakın ilişkisi olan mikro ve niş influencer'larla da kampanyalar kurguluyoruz.",
+      },
+      {
+        q: "İçerikler markanın kontrolünde mi?",
+        a: "İş birliği öncesinde brief ve ana mesajları birlikte belirliyor, içerikleri yayından önce onayınıza sunuyoruz. Influencer'ın doğal dilini korurken marka mesajının doğru iletilmesini sağlıyoruz.",
+      },
+      {
+        q: "Reklam ve iş birliği bildirimleri nasıl yönetiliyor?",
+        a: "İş birliği içeriklerinin, platform kuralları ve ilgili mevzuata uygun şekilde reklam/iş birliği olarak etiketlenmesini sağlıyoruz.",
       },
     ],
     related: [

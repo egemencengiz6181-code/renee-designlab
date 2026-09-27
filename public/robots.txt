@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://reneedesignlab.com/sitemap.xml
+Sitemap: https://www.reneedesignlab.com/sitemap.xml
