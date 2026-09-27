@@ -5,7 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && vite build --ssr src/entry-server.jsx --outDir dist-ssr --emptyOutDir && node scripts/prerender.mjs",
+    "build:strict": "vite build && vite build --ssr src/entry-server.jsx --outDir dist-ssr --emptyOutDir && node scripts/prerender.mjs --strict",
+    "images": "node scripts/optimize-images.mjs",
     "lint": "oxlint",
     "preview": "vite preview"
   },
@@ -19,6 +21,7 @@
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^6.0.4",
     "oxlint": "^1.75.0",
+    "sharp": "^0.35.5",
     "vite": "^8.2.0"
   }
 }

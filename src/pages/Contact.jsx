@@ -3,6 +3,7 @@ import { useSearchParams } from "react-router-dom";
 import { useLang } from "../i18n";
 import Hl from "../components/Hl";
 import useSeo from "../hooks/useSeo";
+import { breadcrumbLd } from "../seo/head";
 import Reveal from "../components/Reveal";
 import Magnetic from "../components/Magnetic";
 import { ArrowUpRight, Sparkle } from "../components/Mark";
@@ -28,6 +29,12 @@ export default function Contact() {
     title: c.seoTitle,
     description: c.seoDesc(company),
     path: "/iletisim",
+    jsonLd: [
+      breadcrumbLd(lang, [
+        { name: t.common.home, path: "/" },
+        { name: c.crumb, path: "/iletisim" },
+      ]),
+    ],
   });
 
   // Hizmet sayfasından gelindiyse ilgili hizmeti önceden seç.

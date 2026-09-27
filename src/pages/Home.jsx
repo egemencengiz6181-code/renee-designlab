@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { useLang } from "../i18n";
 import Hl from "../components/Hl";
 import useSeo from "../hooks/useSeo";
+import { BRAND, ORG_ID, SITE } from "../seo/head";
 import useParallax from "../hooks/useParallax";
 import Reveal, { RevealLines, RevealWords } from "../components/Reveal";
 import Marquee from "../components/Marquee";
@@ -112,7 +113,7 @@ function Hero() {
           style={{
             gap: ".6rem",
             marginTop: "clamp(1.5rem, 4vw, 2.5rem)",
-            color: "#6b6b6b",
+            color: "var(--mute-2)",
             fontSize: ".72rem",
             letterSpacing: ".2em",
             textTransform: "uppercase",
@@ -272,7 +273,7 @@ function Showreel() {
       >
         <img
           ref={imgRef}
-          src="/media/general/renee-3.jpg"
+          src="/media/general/renee-3.webp"
           alt={t.home.showreelAlt}
           style={{
             width: "100%",
@@ -474,9 +475,20 @@ function ProcessBlock() {
 export default function Home() {
   const { t } = useLang();
   useSeo({
-    title: t.home.seoTitle,
+    fullTitle: t.home.seoTitle,
     description: t.home.seoDesc,
     path: "/",
+    jsonLd: [
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "@id": `${SITE}/#website`,
+        name: BRAND,
+        url: `${SITE}/`,
+        inLanguage: ["tr", "en"],
+        publisher: { "@id": ORG_ID },
+      },
+    ],
   });
 
   return (

@@ -1,14 +1,16 @@
 import { Link, Navigate, useParams } from "react-router-dom";
 import { useLang } from "../i18n";
 import useSeo from "../hooks/useSeo";
+import { BRAND, breadcrumbLd, faqLd, serviceLd } from "../seo/head";
 import Reveal from "../components/Reveal";
 import Magnetic from "../components/Magnetic";
 import { ArrowUpRight, Sparkle } from "../components/Mark";
 import { Accordion, SectionHead } from "../components/UI";
+import { size } from "../data/media";
 
 export default function ServiceDetail() {
   const { slug } = useParams();
-  const { t, d, lp, slugOf } = useLang();
+  const { lang, t, d, lp, slugOf } = useLang();
   const { about, services } = d;
   const service = services.find((s) => slugOf(s) === slug);
   // Diğer dilin slug'ıyla gelindiyse doğru adrese yönlendir.
@@ -18,12 +20,21 @@ export default function ServiceDetail() {
   const st = t.service;
 
   useSeo({
-    title: service?.title,
-    description: service
-      ? `${service.short} ${service.intro}`.slice(0, 300)
-      : "",
+    fullTitle: service && `${service.seoTitle} | ${BRAND}`,
+    description: service?.seoDesc,
     path: `/hizmetler/${service?.slug ?? slug}`,
     image: service?.image,
+    jsonLd: service
+      ? [
+          serviceLd(lang, service),
+          breadcrumbLd(lang, [
+            { name: t.common.home, path: "/" },
+            { name: t.services.crumb, path: "/hizmetler" },
+            { name: service.title, path: `/hizmetler/${service.slug}` },
+          ]),
+          ...(service.faq?.length ? [faqLd(service.faq)] : []),
+        ]
+      : [],
   });
 
   if (moved) {
@@ -90,6 +101,8 @@ export default function ServiceDetail() {
             <img
               src={service.image}
               alt={service.imageAlt}
+              {...size(service.image)}
+              fetchPriority="high"
               style={{
                 display: "block",
                 width: "100%",

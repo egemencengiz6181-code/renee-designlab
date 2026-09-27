@@ -1,0 +1,39 @@
+# SEO ve kalite denetimi
+#
+# - Her push ve pull request'te: derleme + ön-çizim SEO denetimi (hatada
+#   başarısız olur) ve seçili sayfalarda Lighthouse.
+# - Her pazartesi 06:00 (TSİ): aynı denetim, siteye dokunulmasa bile
+#   bağımlılık/araç değişikliklerinden doğan gerilemeleri yakalamak için.
+#
+# Raporlar "Actions" sekmesinde, iş çıktısındaki bağlantıdan görülebilir.
+name: SEO denetimi
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  schedule:
+    - cron: "0 3 * * 1"
+  workflow_dispatch:
+
+jobs:
+  seo:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Derleme + ön-çizim + SEO denetimi
+        run: npm run build:strict
+
+      - name: Lighthouse
+        run: npx --yes @lhci/cli@0.14.x autorun

@@ -2,13 +2,14 @@ import { Link } from "react-router-dom";
 import { useLang } from "../i18n";
 import Hl from "../components/Hl";
 import useSeo from "../hooks/useSeo";
+import { breadcrumbLd } from "../seo/head";
 import Reveal from "../components/Reveal";
 import Marquee from "../components/Marquee";
 import { ArrowUpRight, Sparkle } from "../components/Mark";
 import { CtaBand, PageHead, SectionHead } from "../components/UI";
 
 export default function About() {
-  const { t, d, lp } = useLang();
+  const { lang, t, d, lp } = useLang();
   const { about, company } = d;
   const a = t.about;
 
@@ -16,6 +17,12 @@ export default function About() {
     title: a.seoTitle,
     description: a.seoDesc,
     path: "/hakkimizda",
+    jsonLd: [
+      breadcrumbLd(lang, [
+        { name: t.common.home, path: "/" },
+        { name: a.crumb, path: "/hakkimizda" },
+      ]),
+    ],
   });
 
   return (
@@ -33,7 +40,7 @@ export default function About() {
           <Reveal>
             <div style={{ position: "relative", overflow: "hidden" }}>
               <img
-                src="/media/general/renee-1.jpg"
+                src="/media/general/renee-1.webp"
                 alt={a.imageAlt}
                 style={{
                   width: "100%",

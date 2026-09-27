@@ -2,19 +2,19 @@
  * Marka işaretleri.
  *
  * Yıldız ve simge biçimleri çizilmez; kurumsal kimlikle birlikte teslim edilen
- * PNG dosyasından gelir. Renk varyantları da aynı dosyadan üretilmiştir.
+ * görselden gelir (WebP kopyaları: npm run images). Renk varyantları da aynı dosyadan üretilmiştir.
  */
 
 const ICON = {
-  purple: "/media/brand/renee-icon.png",
-  lime: "/media/brand/renee-icon-lime.png",
-  white: "/media/brand/renee-icon-white.png",
+  purple: "/media/brand/renee-icon.webp",
+  lime: "/media/brand/renee-icon-lime.webp",
+  white: "/media/brand/renee-icon-white.webp",
 };
 
 const STAR = {
-  purple: "/media/brand/renee-star.png",
-  lime: "/media/brand/renee-star-lime.png",
-  white: "/media/brand/renee-star-white.png",
+  purple: "/media/brand/renee-star-sm.webp",
+  lime: "/media/brand/renee-star-lime-sm.webp",
+  white: "/media/brand/renee-star-white-sm.webp",
 };
 
 /** Küçük yıldız aksanı (marka simgesinden alınmıştır). */

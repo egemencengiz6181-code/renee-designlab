@@ -37,9 +37,9 @@ const tr = {
     work: "Çalışmaları inceleyin",
   },
   home: {
-    seoTitle: "Yaratıcılığın işaret ettiği sınırların ötesinde",
+    seoTitle: "Renee Design Lab | Ankara Tasarım ve Reklam Ajansı",
     seoDesc:
-      "Renee Design Lab; kurumsal kimlik, logo tasarımı, web tasarım, sosyal medya yönetimi, SEO, 3D render ve prodüksiyon hizmetleri sunan Ankara merkezli tasarım ve reklam ajansı.",
+      "Ankara tasarım ve reklam ajansı Renee Design Lab: kurumsal kimlik, logo tasarımı, web tasarım, sosyal medya yönetimi, SEO, 3D render ve prodüksiyon.",
     heroLabel: "Ankara · Tasarım ve Reklam Ajansı",
     heroLines: ["Yaratıcılığın", "işaret ettiği"],
     heroLast: ["", "sınırların", " ötesinde"],
@@ -79,9 +79,9 @@ const tr = {
     processTitle: "Dört adımda net bir akış.",
   },
   about: {
-    seoTitle: "Hakkımızda",
+    seoTitle: "Hakkımızda — Ankara Tasarım Ajansı",
     seoDesc:
-      "Renee Design Lab; yaratıcılık, estetik ve stratejiyi birleştirerek markalara geleceği inşa eden yenilikçi çözümler sunan bir tasarım ve reklam ajansıdır. Misyonumuz, vizyonumuz ve çalışma kültürümüz.",
+      "Renee Design Lab; yaratıcılık, estetik ve stratejiyi birleştiren Ankara merkezli bir tasarım ve reklam ajansı. Misyonumuz, vizyonumuz ve çalışma kültürümüz.",
     label: "Biz kimiz",
     title: ["Markaların ", "yol arkadaşı", " olan bir tasarım laboratuvarı."],
     crumb: "Hakkımızda",
@@ -111,9 +111,9 @@ const tr = {
       `${addr} adresindeki ofisimizde ya da online olarak, projenizi birlikte konuşalım.`,
   },
   services: {
-    seoTitle: "Hizmetlerimiz",
+    seoTitle: "Hizmetler — Kimlik, Web, SEO ve Reklam",
     seoDesc:
-      "Sosyal medya yönetimi, kurumsal kimlik tasarımı, dijital pazarlama ve SEO, logo tasarımı, web tasarım ve geliştirme, marka stratejisi, 3D render, prodüksiyon, Google ve Meta reklam yönetimi, influencer marketing.",
+      "Kurumsal kimlik, logo, web tasarım, SEO, sosyal medya, Google ve Meta reklam, 3D render ve prodüksiyon: Ankara'da uçtan uca tasarım ve reklam hizmetleri.",
     label: "Hizmetlerimiz",
     title: ["Strateji, tasarım ve dijital ", "tek çatı", " altında."],
     lede: "Kurumsal kimlikten dijital dönüşüme, sosyal medya yönetiminden 3D görselleştirmeye kadar geniş bir hizmet yelpazesiyle markanızın iletişim ihtiyaçlarına uçtan uca çözümler üretiyoruz.",
@@ -147,9 +147,9 @@ const tr = {
     next: "Sonraki hizmet",
   },
   work: {
-    seoTitle: "Çalışmalar",
+    seoTitle: "Çalışmalar — Kurumsal Kimlik Projeleri",
     seoDesc:
-      "Arni, Deru, ERTS, Every, Peralta ve Tepsta markaları için hazırladığımız kurumsal kimlik çalışmaları — konseptten uygulamaya vaka incelemeleri.",
+      "Arni, Deru, ERTS, Every, Peralta ve Tepsta için hazırladığımız kurumsal kimlik ve logo tasarımı projeleri: problemden uygulamaya vaka incelemeleri.",
     label: "Çalışmalar",
     title: ["Marka marka, ", "kimlik", " hikayeleri."],
     lede: "Her proje kendi hikayesiyle başlar. Aşağıda; problemi, kurduğumuz sistemi ve ortaya çıkan uygulamaları marka marka inceleyebilirsiniz.",
@@ -161,6 +161,7 @@ const tr = {
       "Yeni bir kimlik ya da mevcut kimliğin yenilenmesi — hangi noktada olursanız olun, süreci sizin için netleştirelim.",
   },
   case: {
+    seoTitle: (c) => `${c.name} — ${c.kind} Vaka Çalışması`,
     brand: "Marka",
     sector: "Sektör",
     year: "Yıl",
@@ -175,9 +176,9 @@ const tr = {
     next: "Sonraki çalışma",
   },
   refs: {
-    seoTitle: "Referanslarımız",
+    seoTitle: "Referanslar — 90+ Marka ile Çalıştık",
     seoDesc:
-      "Eğitimden sağlığa, teknolojiden perakendeye 90'ı aşkın marka Renee Design Lab ile çalıştı. Final Okulları, Bayer, Medicana, Yataş Bedding, Altava Group ve daha fazlası.",
+      "Eğitimden sağlığa, teknolojiden perakendeye 90'ı aşkın marka Renee Design Lab ile çalıştı: Bayer, Medicana, Yataş Bedding, Altava Group ve daha fazlası.",
     label: "Referanslar",
     title: ["Bizimle çalışan ", "markalar", "."],
     lede: "Eğitimden sağlığa, teknolojiden perakendeye kadar 90'ı aşkın markayla; kimlik, dijital ve iletişim projelerinde birlikte çalıştık. Aşağıda bu markalardan bir seçki yer alıyor.",
@@ -193,7 +194,7 @@ const tr = {
   guide: {
     seoTitle: "Kurumsal Kimlik Rehberi",
     seoDesc:
-      "Renee Design Lab kurumsal kimlik rehberi: logo kullanımı, renk paleti (#8766e8, #c9fc4a, #000000), Helvetica Neue tipografi sistemi, kurumsal dokümanlar ve ikon anlayışı.",
+      "Renee Design Lab kurumsal kimlik rehberi: logo kullanımı, renk paleti, Helvetica Neue tipografi sistemi, kurumsal dokümanlar ve ikon anlayışı.",
     label: "Kurumsal kimlik rehberi",
     title: ["Kendi ", "kimliğimizi", " nasıl kuruyoruz?"],
     crumb: "Kurumsal Kimlik",
@@ -220,7 +221,7 @@ const tr = {
       "Logodan tipografiye, renk paletinden görsel iletişim diline kadar her detayı özenle planlıyor; markanızın tüm mecralarda tutarlı temsil edilmesini sağlıyoruz.",
   },
   contact: {
-    seoTitle: "İletişim",
+    seoTitle: "İletişim — Teklif Alın",
     seoDesc: (c) =>
       `Renee Design Lab ile iletişime geçin. ${c.address.line1}, ${c.address.line2}. Telefon: ${c.phone} — E-posta: ${c.email}`,
     label: "Tanışalım",
@@ -272,7 +273,8 @@ const tr = {
   },
   notFound: {
     seoTitle: "Sayfa bulunamadı",
-    seoDesc: "Aradığınız sayfa taşınmış ya da hiç var olmamış olabilir.",
+    seoDesc:
+      "Aradığınız sayfa taşınmış ya da hiç var olmamış olabilir.",
     label: "Hata 404",
     title: ["Kayıp ", "sayfa", ""],
     text: "Aradığınız sayfa taşınmış ya da hiç var olmamış olabilir. Aşağıdaki bağlantılardan devam edebilirsiniz.",
@@ -314,9 +316,9 @@ const en = {
     work: "Explore our work",
   },
   home: {
-    seoTitle: "Beyond the boundaries creativity points to",
+    seoTitle: "Renee Design Lab | Design & Advertising Agency in Ankara",
     seoDesc:
-      "Renee Design Lab is an Ankara-based design and advertising agency offering corporate identity, logo design, web design, social media management, SEO, 3D rendering and production services.",
+      "Renee Design Lab is a design and advertising agency in Ankara: corporate identity, logo design, web design, social media, SEO, 3D rendering and production.",
     heroLabel: "Ankara · Design & Advertising Agency",
     heroLines: ["Beyond the", "boundaries"],
     heroLast: ["", "creativity", " points to"],
@@ -356,9 +358,9 @@ const en = {
     processTitle: "A clear flow in four steps.",
   },
   about: {
-    seoTitle: "About Us",
+    seoTitle: "About Us — Design Agency in Ankara",
     seoDesc:
-      "Renee Design Lab is a design and advertising agency that combines creativity, aesthetics and strategy to offer brands innovative solutions that build the future. Our mission, vision and culture.",
+      "Renee Design Lab is an Ankara-based design and advertising agency combining creativity, aesthetics and strategy. Our mission, vision and company culture.",
     label: "Who we are",
     title: ["A design lab that is a ", "companion", " to brands."],
     crumb: "About",
@@ -388,9 +390,9 @@ const en = {
       `Let's discuss your project together — at our office in ${addr}, or online.`,
   },
   services: {
-    seoTitle: "Our Services",
+    seoTitle: "Services — Branding, Web, SEO & Ads",
     seoDesc:
-      "Social media management, corporate identity design, digital marketing and SEO, logo design, web design and development, brand strategy, 3D rendering, production, Google and Meta ads management, influencer marketing.",
+      "Corporate identity, logo design, web design, SEO, social media, Google and Meta ads, 3D rendering and production: end-to-end design services in Ankara.",
     label: "Our services",
     title: ["Strategy, design and digital ", "under one roof", "."],
     lede: "With a wide range of services from corporate identity to digital transformation, and from social media management to 3D visualization, we deliver end-to-end solutions for your brand's communication needs.",
@@ -424,9 +426,9 @@ const en = {
     next: "Next service",
   },
   work: {
-    seoTitle: "Work",
+    seoTitle: "Work — Corporate Identity Case Studies",
     seoDesc:
-      "Corporate identity projects for Arni, Deru, ERTS, Every, Peralta and Tepsta — case studies from concept to application.",
+      "Corporate identity and logo design projects for Arni, Deru, ERTS, Every, Peralta and Tepsta: case studies from the challenge to the final applications.",
     label: "Work",
     title: ["Brand by brand, ", "identity", " stories."],
     lede: "Every project starts with its own story. Below, you can explore the problem, the system we built and the resulting applications, brand by brand.",
@@ -438,6 +440,7 @@ const en = {
       "A new identity or a refresh of your existing one — wherever you are, we'll make the process clear for you.",
   },
   case: {
+    seoTitle: (c) => `${c.name} — ${c.kind} Case Study`,
     brand: "Brand",
     sector: "Industry",
     year: "Year",
@@ -452,9 +455,9 @@ const en = {
     next: "Next project",
   },
   refs: {
-    seoTitle: "Our References",
+    seoTitle: "References — 90+ Brands We've Worked With",
     seoDesc:
-      "More than 90 brands, from education to healthcare and technology to retail, have worked with Renee Design Lab. Final Okulları, Bayer, Medicana, Yataş Bedding, Altava Group and more.",
+      "More than 90 brands from education to healthcare and technology to retail have worked with Renee Design Lab, including Bayer, Medicana and Yataş Bedding.",
     label: "References",
     title: ["Brands we've ", "worked with", "."],
     lede: "We have worked with more than 90 brands, from education to healthcare and technology to retail, on identity, digital and communication projects. Below is a selection of these brands.",
@@ -470,7 +473,7 @@ const en = {
   guide: {
     seoTitle: "Brand Identity Guidelines",
     seoDesc:
-      "Renee Design Lab brand identity guidelines: logo usage, color palette (#8766e8, #c9fc4a, #000000), the Helvetica Neue typography system, corporate documents and icon approach.",
+      "Renee Design Lab brand identity guidelines: logo usage, color palette, the Helvetica Neue typography system, corporate documents and icon approach.",
     label: "Brand identity guidelines",
     title: ["How do we build our own ", "identity", "?"],
     crumb: "Brand Identity",
@@ -497,7 +500,7 @@ const en = {
       "We carefully plan every detail, from logo to typography and from color palette to visual language, so your brand is represented consistently across every channel.",
   },
   contact: {
-    seoTitle: "Contact",
+    seoTitle: "Contact — Get a Quote",
     seoDesc: (c) =>
       `Get in touch with Renee Design Lab. ${c.address.line1}, ${c.address.line2}. Phone: ${c.phoneIntl} — Email: ${c.email}`,
     label: "Let's talk",
@@ -549,7 +552,8 @@ const en = {
   },
   notFound: {
     seoTitle: "Page not found",
-    seoDesc: "The page you're looking for may have moved or never existed.",
+    seoDesc:
+      "The page you're looking for may have moved or never existed.",
     label: "Error 404",
     title: ["Lost ", "page", ""],
     text: "The page you're looking for may have moved or never existed. You can continue from the links below.",

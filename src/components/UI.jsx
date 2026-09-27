@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useLang } from "../i18n";
 import { ArrowUpRight, Plus, Sparkle } from "./Mark";
 import Reveal from "./Reveal";
+import { size } from "../data/media";
 
 /* ------------------------------------------------------------------ başlık */
 
@@ -188,7 +189,12 @@ export function CaseCard({ item, index = 0 }) {
     <Reveal delay={(index % 3) * 0.08} y={30}>
       <Link to={lp(`/calismalar/${item.slug}`)} className="card">
         <div className="card-media">
-          <img src={item.cover} alt={item.coverAlt} loading="lazy" />
+          <img
+            src={item.cover}
+            alt={item.coverAlt}
+            {...size(item.cover)}
+            loading="lazy"
+          />
         </div>
         <div className="card-body">
           <div className="row between" style={{ gap: "1rem" }}>

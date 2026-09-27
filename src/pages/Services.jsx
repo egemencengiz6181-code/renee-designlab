@@ -2,12 +2,14 @@ import { Link } from "react-router-dom";
 import { useLang } from "../i18n";
 import Hl from "../components/Hl";
 import useSeo from "../hooks/useSeo";
+import { SITE, breadcrumbLd } from "../seo/head";
 import Reveal from "../components/Reveal";
 import { ArrowUpRight, Sparkle } from "../components/Mark";
 import { CtaBand, PageHead, SectionHead, ServiceList } from "../components/UI";
+import { size } from "../data/media";
 
 export default function Services() {
-  const { t, d, lp } = useLang();
+  const { lang, t, d, lp } = useLang();
   const { about, services } = d;
   const sv = t.services;
 
@@ -15,6 +17,22 @@ export default function Services() {
     title: sv.seoTitle,
     description: sv.seoDesc,
     path: "/hizmetler",
+    jsonLd: [
+      breadcrumbLd(lang, [
+        { name: t.common.home, path: "/" },
+        { name: sv.crumb, path: "/hizmetler" },
+      ]),
+      {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        itemListElement: services.map((s, i) => ({
+          "@type": "ListItem",
+          position: i + 1,
+          name: s.title,
+          url: `${SITE}${lp(`/hizmetler/${s.slug}`)}`,
+        })),
+      },
+    ],
   });
 
   return (
@@ -63,7 +81,12 @@ export default function Services() {
                     className="card-media"
                     style={{ aspectRatio: "16 / 10" }}
                   >
-                    <img src={s.image} alt={s.imageAlt} loading="lazy" />
+                    <img
+                      src={s.image}
+                      alt={s.imageAlt}
+                      {...size(s.image)}
+                      loading="lazy"
+                    />
                   </div>
                   <div className="card-body">
                     <span className="mono-label t-purple">{s.num}</span>

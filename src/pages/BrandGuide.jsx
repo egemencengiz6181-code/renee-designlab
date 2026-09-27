@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useLang } from "../i18n";
 import Hl from "../components/Hl";
 import useSeo from "../hooks/useSeo";
+import { breadcrumbLd } from "../seo/head";
 import Reveal, { useReveal } from "../components/Reveal";
 import { ArrowUpRight, BrandMark, Sparkle } from "../components/Mark";
 import { CtaBand, PageHead, SectionHead } from "../components/UI";
@@ -67,7 +68,7 @@ function ColorCard({ c, i }) {
 }
 
 export default function BrandGuide() {
-  const { t, d } = useLang();
+  const { lang, t, d } = useLang();
   const { brandGuide, company } = d;
   const g = t.guide;
 
@@ -75,6 +76,12 @@ export default function BrandGuide() {
     title: g.seoTitle,
     description: g.seoDesc,
     path: "/kurumsal-kimlik",
+    jsonLd: [
+      breadcrumbLd(lang, [
+        { name: t.common.home, path: "/" },
+        { name: g.crumb, path: "/kurumsal-kimlik" },
+      ]),
+    ],
   });
 
   return (
@@ -161,7 +168,7 @@ export default function BrandGuide() {
                 }}
               >
                 <img
-                  src="/media/brand/renee-logo-white-trim.png"
+                  src="/media/brand/renee-logo-white-trim.webp"
                   alt={g.logoWhiteAlt}
                   style={{ maxWidth: "78%" }}
                 />
@@ -176,7 +183,7 @@ export default function BrandGuide() {
                 }}
               >
                 <img
-                  src="/media/brand/renee-logo-trim.png"
+                  src="/media/brand/renee-logo-trim.webp"
                   alt={g.logoMainAlt}
                   style={{ maxWidth: "78%" }}
                 />

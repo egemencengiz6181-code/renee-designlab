@@ -1,24 +1,46 @@
 import { Link, Navigate, useParams } from "react-router-dom";
 import { useLang } from "../i18n";
 import useSeo from "../hooks/useSeo";
+import { ORG_ID, SITE, breadcrumbLd } from "../seo/head";
 import useParallax from "../hooks/useParallax";
 import Reveal from "../components/Reveal";
 import { ArrowUpRight, Sparkle } from "../components/Mark";
 import { SectionHead } from "../components/UI";
+import { size } from "../data/media";
 
 export default function CaseStudy() {
   const { slug } = useParams();
-  const { t, d, lp } = useLang();
+  const { lang, t, d, lp } = useLang();
   const { cases } = d;
   const item = cases.find((c) => c.slug === slug);
   const ct = t.case;
   const bgRef = useParallax({ transform: (p) => `translateY(${p * 18}%)` });
 
   useSeo({
-    title: item ? `${item.name} — ${item.kind}` : undefined,
+    title: item && ct.seoTitle(item),
     description: item?.summary,
     path: `/calismalar/${slug}`,
     image: item?.cover,
+    jsonLd: item
+      ? [
+          breadcrumbLd(lang, [
+            { name: t.common.home, path: "/" },
+            { name: t.work.crumb, path: "/calismalar" },
+            { name: item.name, path: `/calismalar/${item.slug}` },
+          ]),
+          {
+            "@context": "https://schema.org",
+            "@type": "CreativeWork",
+            name: ct.seoTitle(item),
+            description: item.summary,
+            image: `${SITE}${item.cover}`,
+            dateCreated: item.year,
+            inLanguage: lang,
+            creator: { "@id": ORG_ID },
+            about: item.services,
+          },
+        ]
+      : [],
   });
 
   if (!item) return <Navigate to={lp("/calismalar")} replace />;
@@ -31,7 +53,12 @@ export default function CaseStudy() {
       {/* --------------------------------------------------------------- hero */}
       <section className="case-hero">
         <div className="case-hero-bg" ref={bgRef}>
-          <img src={item.hero} alt={item.heroAlt} />
+          <img
+            src={item.hero}
+            alt={item.heroAlt}
+            {...size(item.hero)}
+            fetchPriority="high"
+          />
         </div>
 
         <div className="wrap" style={{ position: "relative", zIndex: 1 }}>
@@ -187,7 +214,12 @@ export default function CaseStudy() {
                 duration={0.9}
               >
                 <div className="g-figure">
-                  <img src={img.src} alt={img.alt} loading="lazy" />
+                  <img
+                    src={img.src}
+                    alt={img.alt}
+                    {...size(img.src)}
+                    loading="lazy"
+                  />
                 </div>
                 <figcaption className="g-cap">{img.alt}</figcaption>
               </Reveal>

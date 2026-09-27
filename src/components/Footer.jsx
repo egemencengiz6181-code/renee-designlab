@@ -130,7 +130,7 @@ export default function Footer() {
         </div>
 
         <img
-          src="/media/brand/renee-logo-white-trim.png"
+          src="/media/brand/renee-logo-white-trim.webp"
           alt=""
           className="footer-word"
           loading="lazy"

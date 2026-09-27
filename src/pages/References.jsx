@@ -2,10 +2,12 @@ import { useMemo, useState } from "react";
 import { useLang } from "../i18n";
 import Hl from "../components/Hl";
 import useSeo from "../hooks/useSeo";
+import { breadcrumbLd } from "../seo/head";
 import { CtaBand, PageHead } from "../components/UI";
+import { size } from "../data/media";
 
 export default function References() {
-  const { t, d } = useLang();
+  const { lang, t, d } = useLang();
   const { refSectors, references } = d;
   const rf = t.refs;
   const ALL = refSectors[0];
@@ -23,6 +25,12 @@ export default function References() {
     title: rf.seoTitle,
     description: rf.seoDesc,
     path: "/referanslar",
+    jsonLd: [
+      breadcrumbLd(lang, [
+        { name: t.common.home, path: "/" },
+        { name: rf.crumb, path: "/referanslar" },
+      ]),
+    ],
   });
 
   return (
@@ -77,7 +85,12 @@ export default function References() {
                 style={{ "--rv-delay": `${(i % 12) * 0.02}s` }}
                 title={r.name}
               >
-                <img src={r.src} alt={rf.logoAlt(r.name)} loading="lazy" />
+                <img
+                  src={r.src}
+                  alt={rf.logoAlt(r.name)}
+                  {...size(r.src)}
+                  loading="lazy"
+                />
                 <span className="ref-name">{r.name}</span>
               </div>
             ))}

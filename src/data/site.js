@@ -156,10 +156,13 @@ export const services = [
     num: "01",
     title: "Sosyal Medya Yönetimi",
     short: "Takipçiyi müşteriye dönüştüren içerik ve kampanya yönetimi.",
+    seoTitle: "Sosyal Medya Yönetimi Ajansı Ankara",
+    seoDesc:
+      "Ankara'da sosyal medya yönetimi: strateji, içerik takvimi, reels ve post tasarımı, topluluk yönetimi ve raporlama. Takipçilerinizi müşteriye dönüştürün.",
     hero: "Doğru zamanda, doğru mesaj.",
     intro:
       "Sosyal medya, markanızın hedef kitlesiyle doğrudan iletişim kurduğu en önemli platformlardan biridir. Marka kimliğinize uygun stratejik planlama, kreatif içerik üretimi ve etkili kampanya yönetimiyle takipçilerinizi müşteriye dönüştürüyoruz. Hedef kitlenize doğru zamanda, doğru mesajı ulaştırarak etkileşimi artırıyoruz.",
-    image: "/media/services/sosyal-medya.jpg",
+    image: "/media/services/sosyal-medya.webp",
     imageAlt:
       "Every markası için hazırlanan duvar grafiği ve marka iletişimi uygulaması",
     deliverables: [
@@ -191,12 +194,15 @@ export const services = [
     num: "02",
     title: "Kurumsal Kimlik Tasarımı",
     short: "Markanızın kişiliğini tüm temas noktalarında tutarlı kılan sistem.",
+    seoTitle: "Kurumsal Kimlik Tasarımı Ankara",
+    seoDesc:
+      "Ankara'da kurumsal kimlik tasarımı: logo, renk paleti, tipografi, kartvizit ve marka rehberi. Markanızı tüm mecralarda tutarlı ve güçlü gösterin.",
     hero: "Bir markanın gücü, tutarlı bir kimliğe sahip olmasından gelir.",
     intro:
       "Kurumsal kimlik, markanızın kişiliğini temsil eder. Logo, renk paleti, tipografi, kartvizit, antetli kağıt ve diğer görsel unsurlarla markanızın tutarlı ve güçlü bir imaj oluşturmasını sağlarız. İhtiyacınıza özel kimlik tasarımları ile sektörde fark yaratmanızı destekleriz.",
     intro2:
       "Renee olarak markanızın vizyonunu, değerlerini ve hedef kitlesini analiz ederek benzersiz bir marka kimliği oluşturuyoruz. Logodan tipografiye, renk paletinden görsel iletişim diline kadar her detayı özenle planlıyoruz. Markanızın tüm mecralarda tutarlı ve etkili bir şekilde temsil edilmesini sağlıyoruz.",
-    image: "/media/services/kurumsal-kimlik.jpg",
+    image: "/media/services/kurumsal-kimlik.webp",
     imageAlt:
       "Kurumsal kimliğin bina cephesindeki bayrak uygulaması",
     deliverables: [
@@ -229,12 +235,15 @@ export const services = [
     num: "03",
     title: "Dijital Pazarlama ve SEO",
     short: "Arama motorlarında görünürlük, dijitalde sürdürülebilir trafik.",
+    seoTitle: "SEO ve Dijital Pazarlama Ajansı Ankara",
+    seoDesc:
+      "Ankara SEO ajansı: teknik SEO, anahtar kelime araştırması, içerik optimizasyonu, yerel SEO ve Google Ads ile arama motorlarında üst sıralara çıkın.",
     hero: "Arama motorlarında zirveye çıkın.",
     intro:
       "Dijital dünyada markanızın görünürlüğünü artırmak için SEO ve dijital pazarlama stratejileri geliştiriyoruz. Arama motoru optimizasyonu (SEO), Google Ads kampanyaları ve sosyal medya reklam yönetimi ile hedef kitlenize hızlı ve etkili bir şekilde ulaşmanızı sağlıyoruz.",
     intro2:
       "Arama motoru optimizasyonu, web sitenizin Google gibi arama motorlarında daha üst sıralarda yer almasını sağlayarak organik trafik almanızı sağlar. Renee Design Lab, SEO konusunda uzmanlaşmış ekibiyle sitenizin teknik altyapısından içerik optimizasyonuna kadar her yönünü iyileştirir. Anahtar kelime araştırmasından backlink stratejilerine kadar, her aşamada site performansınızı artırmaya yönelik kapsamlı çözümler sunuyoruz.",
-    image: "/media/services/seo.jpg",
+    image: "/media/services/seo.webp",
     imageAlt:
       "Arama motoru performansının izlendiği analiz ekranı",
     deliverables: [
@@ -266,12 +275,15 @@ export const services = [
     num: "04",
     title: "Logo Tasarımı",
     short: "Markanın yüzü: modern, minimalist ve akılda kalıcı simgeler.",
+    seoTitle: "Profesyonel Logo Tasarımı Ankara",
+    seoDesc:
+      "Ankara'da profesyonel logo tasarımı: vizyonunuzu yansıtan modern, minimalist ve akılda kalıcı logolar. Tüm dosya formatları ve kullanım kılavuzu dahil.",
     hero: "Logo, bir markanın yüzüdür.",
     intro:
       "Markanızın vizyonunu ve değerlerini yansıtan, modern, minimalist ve akılda kalıcı logolar tasarlıyoruz. Hedef kitlenizin zihninde yer edecek güçlü görsel simgeler oluştururuz.",
     intro2:
       "İyi tasarlanmış bir logo, bir şirketin kimliğini, değerlerini ve misyonunu yansıtan güçlü bir simgedir. Aynı zamanda, markalaşma sürecindeki tüm tasarım unsurlarının üzerine inşa edildiği sağlam bir temel oluşturur.",
-    image: "/media/services/logo-tasarimi.jpg",
+    image: "/media/services/logo-tasarimi.webp",
     imageAlt:
       "Tipografik marka duvarı uygulaması",
     deliverables: [
@@ -303,12 +315,15 @@ export const services = [
     num: "05",
     title: "Web Tasarım ve Geliştirme",
     short: "Dijital vitrininizi sıfırdan, deneyim odaklı kurgulıyoruz.",
+    seoTitle: "Web Tasarım ve Geliştirme Ankara",
+    seoDesc:
+      "Ankara'da web tasarım ve geliştirme: hızlı, mobil uyumlu, SEO dostu ve kullanıcı odaklı kurumsal web siteleri. Dijital vitrininizi sıfırdan kuralım.",
     hero: "WEB'te yeni bir adım.",
     intro:
       "İşletmenizin dijital dünyadaki vitrini olan web sitelerini, kullanıcı dostu arayüzlerle ve mobil uyumlu tasarımlarla geliştiriyoruz. Hızlı, estetik ve SEO uyumlu web çözümleriyle online görünürlüğünüzü artırarak hedef kitlenize etkili bir şekilde ulaşmanızı sağlıyoruz.",
     intro2:
       "Markanızın web sitesini güncel normlara göre sıfırdan yaratıyoruz. Sadece tasarımını değil bütün tabanını kullanıcı deneyimi odaklı tasarlıyoruz.",
-    image: "/media/services/web-tasarim.jpg",
+    image: "/media/services/web-tasarim.webp",
     imageAlt:
       "Tasarlanan web sitesinin dizüstü bilgisayardaki görünümü",
     deliverables: [
@@ -340,10 +355,13 @@ export const services = [
     num: "06",
     title: "Marka Stratejisi ve Danışmanlık",
     short: "Uzun vadeli konumlandırma ve rekabet avantajı kurgusu.",
+    seoTitle: "Marka Stratejisi ve Danışmanlık Ankara",
+    seoDesc:
+      "Marka stratejisi ve danışmanlık: marka denetimi, rekabet analizi, konumlandırma ve iletişim yol haritasıyla markanızı pazarda sağlam bir yere oturtun.",
     hero: "Markanızı pazarda sağlam bir yere oturtun.",
     intro:
       "Markanızın hedeflerini, rekabet avantajlarını ve değerlerini analiz ederek uzun vadeli stratejiler oluşturuyoruz. Markanızı güçlendiren, pazardaki yerinizi sağlamlaştıran ve müşteri bağlılığını artıran çözümler geliştiriyoruz.",
-    image: "/media/services/strateji.jpg",
+    image: "/media/services/strateji.webp",
     imageAlt:
       "Marka stratejisi çalışma masası: eskizler, notlar ve planlar",
     deliverables: [
@@ -375,10 +393,13 @@ export const services = [
     num: "07",
     title: "3D Ürün Renderı ve Animasyonları",
     short: "Ürünlerinizi dijital dünyada gerçekçi biçimde sahneleyin.",
+    seoTitle: "3D Ürün Render ve Animasyon Hizmeti",
+    seoDesc:
+      "3D ürün render ve animasyon: e-ticaret, katalog ve kampanyalar için gerçekçi ürün görselleri. Ürününüz üretilmeden pazarlama görsellerini hazırlayın.",
     hero: "3D dünyanızı yeniden şekillendirin.",
     intro:
       "3D ürün renderı ve animasyonları, markanızın ürünlerini etkileyici bir şekilde sergilemenin en yenilikçi yollarından biridir. Yüksek kaliteli görselleştirmeler ve gerçekçi animasyonlarla ürünlerinizin hikayesini anlatıyor, potansiyel müşterilerinizde güçlü bir etki bırakıyoruz. Tasarım sürecinden teslimata kadar, markanızın ihtiyaçlarına uygun yaratıcı çözümler üretiyoruz.",
-    image: "/media/services/3d-render.jpg",
+    image: "/media/services/3d-render.webp",
     imageAlt:
       "Bir ürünün 3D modelleme ve render çalışması",
     deliverables: [
@@ -406,12 +427,15 @@ export const services = [
     num: "08",
     title: "Prodüksiyon",
     short: "Marka hikayenizi görsel bir şölene dönüştüren çekim ve kurgu.",
+    seoTitle: "Reklam Filmi ve Ürün Çekimi Prodüksiyon",
+    seoDesc:
+      "Ankara'da reklam filmi, tanıtım videosu ve ürün fotoğrafı prodüksiyonu: konsept, storyboard, çekim, kurgu ve renk düzenlemesi tek ekipte.",
     hero: "Ürünlerinize yeni bir bakış açısı.",
     intro:
       "Prodüksiyon, markanızın vizyonunu gerçeğe dönüştürmenin en etkili yollarından biridir. Profesyonel ekipman ve yaratıcı bakış açısıyla, marka hikayenizi görsel bir şölene dönüştürüyoruz. Video çekimlerinden fotoğraf prodüksiyonuna kadar her aşamada kaliteli ve özgün içerikler üretiyoruz.",
     intro2:
       "Yaratıcı hikayelerle görselleştirme ve profesyonel çekimler: en son teknoloji ekipmanlar ve uzman kadromuzla, markanızın ihtiyacına uygun yüksek kaliteli prodüksiyon hizmeti sunuyoruz. Her detayı özenle işleyerek markanızı görsel olarak en iyi şekilde temsil ediyoruz.",
-    image: "/media/services/produksiyon.jpg",
+    image: "/media/services/produksiyon.webp",
     imageAlt:
       "Stüdyo ortamında çekilen ürün fotoğrafı",
     deliverables: [
@@ -443,12 +467,15 @@ export const services = [
     num: "09",
     title: "Google ve Meta Reklam Yönetimi",
     short: "Veri odaklı optimizasyonla yüksek geri dönüşlü kampanyalar.",
+    seoTitle: "Google Ads ve Meta Reklam Yönetimi",
+    seoDesc:
+      "Google Ads ve Meta (Facebook, Instagram) reklam yönetimi: dönüşüm takibi, hedefleme, A/B testleri ve bütçe optimizasyonuyla yüksek reklam getirisi.",
     hero: "Performans odaklı reklam yönetimi ile yüksek ROI.",
     intro:
       "Google ve Meta reklam yönetimi, markanızı doğru hedef kitleyle buluşturmanın en etkili dijital pazarlama araçlarından biridir. Stratejik planlama, hedefleme ve analiz süreçleriyle reklam kampanyalarınızı optimize ediyoruz. Markanız için dönüşüm odaklı çözümler sunarak, bütçenizi en verimli şekilde kullanmanızı sağlıyoruz.",
     intro2:
       "Dijital reklamlar, markaların potansiyel müşterilere ulaşmasının en hızlı ve etkili yoludur. Renee Design Lab, Google Ads ve Meta reklam platformlarında hedef odaklı kampanyalar tasarlar ve yönetir. Bu reklamlar sayesinde markanız daha fazla görünürlük kazanır, dönüşüm oranlarınız artar ve bütçeniz en verimli şekilde kullanılır.",
-    image: "/media/services/reklam.jpg",
+    image: "/media/services/reklam.webp",
     imageAlt:
       "Reklam kampanyalarının performans paneli",
     deliverables: [
@@ -480,10 +507,13 @@ export const services = [
     num: "10",
     title: "Influencer Marketing",
     short: "Doğru iş birlikleriyle samimi ve güvenilir marka teması.",
+    seoTitle: "Influencer Marketing Ajansı Ankara",
+    seoDesc:
+      "Influencer marketing ajansı: doğru influencer seçimi, iş birliği kurgusu, içerik takibi ve performans ölçümüyle markanızın bilinirliğini artırın.",
     hero: "Hedef kitlenizle doğrudan bir bağ.",
     intro:
       "Influencer marketing, markanızın hedef kitlesine samimi ve etkili bir şekilde ulaşmanın en güçlü yollarından biridir. Doğru influencer iş birlikleriyle, ürün veya hizmetlerinizin güvenilir bir şekilde tanıtılmasını sağlıyoruz. Marka kimliğinize uygun içerik stratejileri geliştirerek, hedef kitlenizle doğrudan bir bağ kurmanıza yardımcı oluyoruz. Etkileşim ve dönüşüm odaklı kampanyalarla markanızın bilinirliğini artırıyor, dijital dünyada fark yaratıyoruz.",
-    image: "/media/services/influencer.jpg",
+    image: "/media/services/influencer.webp",
     imageAlt:
       "Marka çantasıyla sokakta yürüyen kişi",
     deliverables: [
@@ -522,9 +552,9 @@ export const cases = [
     sector: "Endüstriyel Üretim",
     year: "2024",
     kind: "Kurumsal Kimlik",
-    cover: "/media/work/arni/2.jpg",
+    cover: "/media/work/arni/2.webp",
     coverAlt: "Arni kurumsal kimlik kartvizit uygulaması",
-    hero: "/media/work/arni/4.jpg",
+    hero: "/media/work/arni/4.webp",
     heroAlt: "Arni logosunun bina cephesi uygulaması",
     summary:
       "Endüstriyel bir üretici için, modüler bir işaretten türeyen ve cepheden kırtasiyeye kadar ölçeklenen sakin ama karakterli bir kurumsal kimlik.",
@@ -543,32 +573,32 @@ export const cases = [
     palette: ["#2B2FE0", "#8FA9A6", "#3E403F", "#7BF0C6", "#F2F2F2"],
     images: [
       {
-        src: "/media/work/arni/1.jpg",
+        src: "/media/work/arni/1.webp",
         alt: "Arni marka işaretinin mobil uygulaması",
         span: "span-5",
       },
       {
-        src: "/media/work/arni/2.jpg",
+        src: "/media/work/arni/2.webp",
         alt: "Arni kartvizit tasarımı — ön ve arka yüz",
         span: "span-7",
       },
       {
-        src: "/media/work/arni/3.jpg",
+        src: "/media/work/arni/3.webp",
         alt: "Marka işaretinden türetilen desen sistemi",
         span: "span-6",
       },
       {
-        src: "/media/work/arni/6.jpg",
+        src: "/media/work/arni/6.webp",
         alt: "Arni marka renk paleti",
         span: "span-6",
       },
       {
-        src: "/media/work/arni/5.jpg",
+        src: "/media/work/arni/5.webp",
         alt: "Kurumsal defter ve basılı set uygulaması",
         span: "span-7",
       },
       {
-        src: "/media/work/arni/4.jpg",
+        src: "/media/work/arni/4.webp",
         alt: "Bina cephesinde logo uygulaması",
         span: "span-5",
       },
@@ -580,9 +610,9 @@ export const cases = [
     sector: "Kahve & Perakende",
     year: "2024",
     kind: "Kurumsal Kimlik",
-    cover: "/media/work/deru/1.jpg",
+    cover: "/media/work/deru/1.webp",
     coverAlt: "Deru kahve bardağı ve ambalaj serisi",
-    hero: "/media/work/deru/5.jpg",
+    hero: "/media/work/deru/5.webp",
     heroAlt: "Deru kahve kutusu ve ambalaj seti",
     summary:
       "Bir kahve markası için; karakter illüstrasyonlarıyla kurulan, raftaki her üründe kendini belli eden neşeli ve genişleyebilir bir kimlik.",
@@ -601,33 +631,33 @@ export const cases = [
     palette: ["#C6E24B", "#A79BE0", "#E8873B", "#1D1D1B", "#FFFFFF"],
     images: [
       {
-        src: "/media/work/deru/1.jpg",
+        src: "/media/work/deru/1.webp",
         alt: "Deru bardak ve ambalaj kolleksiyonu",
         span: "span-7",
       },
-      { src: "/media/work/deru/2.jpg", alt: "Deru logotype", span: "span-5" },
+      { src: "/media/work/deru/2.webp", alt: "Deru logotype", span: "span-5" },
       {
-        src: "/media/work/deru/3.jpg",
+        src: "/media/work/deru/3.webp",
         alt: "Karakter illüstrasyonlarının renk bloklarıyla kullanımı",
         span: "span-6",
       },
       {
-        src: "/media/work/deru/4.jpg",
+        src: "/media/work/deru/4.webp",
         alt: "Kahve karakterlerinden oluşan yüzey deseni",
         span: "span-6",
       },
       {
-        src: "/media/work/deru/5.jpg",
+        src: "/media/work/deru/5.webp",
         alt: "Kutu içi ambalaj seti sunumu",
         span: "span-8",
       },
       {
-        src: "/media/work/deru/7.jpg",
+        src: "/media/work/deru/7.webp",
         alt: "Dondurma kabı ve ambalaj uygulaması",
         span: "span-4",
       },
       {
-        src: "/media/work/deru/8.jpg",
+        src: "/media/work/deru/8.webp",
         alt: "Kurabiye kutusu ve kampanya tipografisi",
         span: "span-12",
       },
@@ -639,9 +669,9 @@ export const cases = [
     sector: "Yenilenebilir Enerji",
     year: "2024",
     kind: "Kurumsal Kimlik",
-    cover: "/media/work/erts/2.jpg",
+    cover: "/media/work/erts/2.webp",
     coverAlt: "ERTS logosunun rüzgar enerjisi görseliyle kullanımı",
-    hero: "/media/work/erts/w1.jpg",
+    hero: "/media/work/erts/w1.webp",
     heroAlt: "ERTS logosunun rüzgar türbini üzerindeki uygulaması",
     summary:
       "Temiz enerji üreticisi ERTS için; rüzgarı ve yaprağı aynı formda birleştiren bir marka işareti ve tüm iletişimi taşıyan bir piktogram sistemi.",
@@ -660,42 +690,42 @@ export const cases = [
     palette: ["#263635", "#B9ED74", "#A89EEF", "#D4622C", "#FFFFFF"],
     images: [
       {
-        src: "/media/work/erts/2.jpg",
+        src: "/media/work/erts/2.webp",
         alt: "ERTS logosunun açık hava uygulaması",
         span: "span-5",
       },
       {
-        src: "/media/work/erts/5.jpg",
+        src: "/media/work/erts/5.webp",
         alt: "Marka işaretinin renkli zemin uygulamaları",
         span: "span-7",
       },
       {
-        src: "/media/work/erts/3.jpg",
+        src: "/media/work/erts/3.webp",
         alt: "Logo yapısı ve oran kılavuzu",
         span: "span-6",
       },
       {
-        src: "/media/work/erts/7.jpg",
+        src: "/media/work/erts/7.webp",
         alt: "ERTS renk paleti",
         span: "span-6",
       },
       {
-        src: "/media/work/erts/8.jpg",
+        src: "/media/work/erts/8.webp",
         alt: "Marka piktogram ailesi",
         span: "span-5",
       },
       {
-        src: "/media/work/erts/6.jpg",
+        src: "/media/work/erts/6.webp",
         alt: "Bez çanta uygulaması",
         span: "span-7",
       },
       {
-        src: "/media/work/erts/9.jpg",
+        src: "/media/work/erts/9.webp",
         alt: "Sosyal medya kampanya serisi",
         span: "span-6",
       },
       {
-        src: "/media/work/erts/10.jpg",
+        src: "/media/work/erts/10.webp",
         alt: "Açık hava ve promosyon ürün uygulamaları",
         span: "span-6",
       },
@@ -707,9 +737,9 @@ export const cases = [
     sector: "Kahve & Yaşam",
     year: "2024",
     kind: "Kurumsal Kimlik",
-    cover: "/media/work/every/1.jpg",
+    cover: "/media/work/every/1.webp",
     coverAlt: "Every markası zarf ve kırtasiye uygulaması",
-    hero: "/media/work/every/3.jpg",
+    hero: "/media/work/every/3.webp",
     heroAlt: "Every markasının sosyal medya profil düzeni",
     summary:
       "Günün her saatine yayılan bir kahve markası için; tek çizgiyle kurulan, sakin ve zamansız bir kimlik.",
@@ -728,17 +758,17 @@ export const cases = [
     palette: ["#111111", "#F4F4F2", "#A9C6D8", "#DDDDDD", "#000000"],
     images: [
       {
-        src: "/media/work/every/1.jpg",
+        src: "/media/work/every/1.webp",
         alt: "Every markası zarf ve kırtasiye seti",
         span: "span-6",
       },
       {
-        src: "/media/work/every/2.jpg",
+        src: "/media/work/every/2.webp",
         alt: "Tek çizgiyle kurulan koşan fincan illüstrasyonu",
         span: "span-6",
       },
       {
-        src: "/media/work/every/3.jpg",
+        src: "/media/work/every/3.webp",
         alt: "Every sosyal medya profil ve içerik düzeni",
         span: "span-12",
       },
@@ -750,9 +780,9 @@ export const cases = [
     sector: "Moda & Aksesuar",
     year: "2023",
     kind: "Kurumsal Kimlik",
-    cover: "/media/work/peralta/3.jpg",
+    cover: "/media/work/peralta/3.webp",
     coverAlt: "Peralta logotype ve eğri sistemi",
-    hero: "/media/work/peralta/2.jpg",
+    hero: "/media/work/peralta/2.webp",
     heroAlt: "Peralta ürün etiketleri ve renk uygulamaları",
     summary:
       "Bir moda ve aksesuar markası için; tekrar eden eğrilerden doğan, etiketten ambalaja kadar zarif bir işaret sistemi.",
@@ -770,17 +800,17 @@ export const cases = [
     palette: ["#000000", "#E7C7C4", "#B9C6AE", "#2F5D5B", "#FFFFFF"],
     images: [
       {
-        src: "/media/work/peralta/3.jpg",
+        src: "/media/work/peralta/3.webp",
         alt: "Peralta logotype ve eğri sistemi",
         span: "span-7",
       },
       {
-        src: "/media/work/peralta/1.jpg",
+        src: "/media/work/peralta/1.webp",
         alt: "Monogramın yapı kılavuzu",
         span: "span-5",
       },
       {
-        src: "/media/work/peralta/2.jpg",
+        src: "/media/work/peralta/2.webp",
         alt: "Ürün etiketleri ve sezon renkleri",
         span: "span-12",
       },
@@ -792,9 +822,9 @@ export const cases = [
     sector: "Yapay Zeka & Reklam",
     year: "2024",
     kind: "Kurumsal Kimlik",
-    cover: "/media/work/tepsta/w1.jpg",
+    cover: "/media/work/tepsta/w1.webp",
     coverAlt: "Tepsta markasının sahne ekranı uygulaması",
-    hero: "/media/work/tepsta/7.jpg",
+    hero: "/media/work/tepsta/7.webp",
     heroAlt: "Tepsta afiş uygulamaları",
     summary:
       "Yapay zeka ile çalışan bir reklam ajansı için; yön işaretleri ve topografik desenler üzerine kurulu, iddialı ve dijital bir kimlik.",
@@ -813,42 +843,42 @@ export const cases = [
     palette: ["#2440F5", "#5B84F0", "#111C3D", "#C9D4E8", "#FFFFFF"],
     images: [
       {
-        src: "/media/work/tepsta/2.jpg",
+        src: "/media/work/tepsta/2.webp",
         alt: "Tepsta marka manifestosu afişi",
         span: "span-5",
       },
       {
-        src: "/media/work/tepsta/w1.jpg",
+        src: "/media/work/tepsta/w1.webp",
         alt: "Sahne ekranında marka uygulaması",
         span: "span-7",
       },
       {
-        src: "/media/work/tepsta/6.jpg",
+        src: "/media/work/tepsta/6.webp",
         alt: "Marka ikon ve form ailesi",
         span: "span-6",
       },
       {
-        src: "/media/work/tepsta/5.jpg",
+        src: "/media/work/tepsta/5.webp",
         alt: "Tepsta mavi renk skalası",
         span: "span-6",
       },
       {
-        src: "/media/work/tepsta/4.jpg",
+        src: "/media/work/tepsta/4.webp",
         alt: "Helvetica Neue tipografi sistemi",
         span: "span-5",
       },
       {
-        src: "/media/work/tepsta/7.jpg",
+        src: "/media/work/tepsta/7.webp",
         alt: "Açık hava afiş uygulamaları",
         span: "span-7",
       },
       {
-        src: "/media/work/tepsta/w9.jpg",
+        src: "/media/work/tepsta/w9.webp",
         alt: "Dijital mecra uygulamaları",
         span: "span-6",
       },
       {
-        src: "/media/work/tepsta/w3.jpg",
+        src: "/media/work/tepsta/w3.webp",
         alt: "Bez çanta ve anahtar kelime sistemi",
         span: "span-6",
       },
@@ -897,7 +927,7 @@ export const references = [
   { n: 34, name: "Modadil", sector: "Eğitim" },
   { n: 35, name: "Bayer CropScience", sector: "Tarım" },
   { n: 36, name: "Derin Akademi", sector: "Eğitim" },
-].map((r) => ({ ...r, src: `/media/refs/${r.n}.png` }));
+].map((r) => ({ ...r, src: `/media/refs/${r.n}.webp` }));
 
 export const refSectors = [
   "Tümü",

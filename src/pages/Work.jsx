@@ -2,10 +2,11 @@ import { useMemo, useState } from "react";
 import { useLang } from "../i18n";
 import Hl from "../components/Hl";
 import useSeo from "../hooks/useSeo";
+import { breadcrumbLd } from "../seo/head";
 import { CaseCard, CtaBand, PageHead } from "../components/UI";
 
 export default function Work() {
-  const { t, d } = useLang();
+  const { lang, t, d } = useLang();
   const { cases } = d;
   const w = t.work;
   const ALL = t.common.all;
@@ -25,6 +26,12 @@ export default function Work() {
     title: w.seoTitle,
     description: w.seoDesc,
     path: "/calismalar",
+    jsonLd: [
+      breadcrumbLd(lang, [
+        { name: t.common.home, path: "/" },
+        { name: w.crumb, path: "/calismalar" },
+      ]),
+    ],
   });
 
   return (

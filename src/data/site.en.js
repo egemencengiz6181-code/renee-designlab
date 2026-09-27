@@ -133,6 +133,9 @@ export const services = [
   {
     title: "Social Media Management",
     short: "Content and campaign management that turns followers into customers.",
+    seoTitle: "Social Media Management Agency in Ankara",
+    seoDesc:
+      "Social media management in Ankara: strategy, content calendars, reels and post design, community management and reporting that turn followers into customers.",
     hero: "The right message, at the right time.",
     intro:
       "Social media is one of the most important platforms where your brand communicates directly with its audience. With strategic planning aligned with your brand identity, creative content production and effective campaign management, we turn your followers into customers. We boost engagement by delivering the right message to your audience at the right time.",
@@ -160,6 +163,9 @@ export const services = [
     title: "Corporate Identity Design",
     short:
       "A system that keeps your brand's personality consistent across every touchpoint.",
+    seoTitle: "Corporate Identity Design in Ankara",
+    seoDesc:
+      "Corporate identity design in Ankara: logo, color palette, typography, stationery and brand guidelines that keep your brand consistent across every channel.",
     hero: "A brand's strength comes from having a consistent identity.",
     intro:
       "Corporate identity represents your brand's personality. With your logo, color palette, typography, business cards, letterhead and other visual elements, we help your brand build a consistent and powerful image. With identity designs tailored to your needs, we help you stand out in your industry.",
@@ -188,6 +194,9 @@ export const services = [
   {
     title: "Digital Marketing & SEO",
     short: "Visibility in search engines, sustainable traffic online.",
+    seoTitle: "SEO & Digital Marketing Agency in Ankara",
+    seoDesc:
+      "SEO and digital marketing agency in Ankara: technical SEO, keyword research, content optimization, local SEO and Google Ads to rank higher and grow traffic.",
     hero: "Rise to the top of search results.",
     intro:
       "We develop SEO and digital marketing strategies to increase your brand's visibility in the digital world. With search engine optimization (SEO), Google Ads campaigns and social media ad management, we help you reach your target audience quickly and effectively.",
@@ -215,6 +224,9 @@ export const services = [
   {
     title: "Logo Design",
     short: "The face of your brand: modern, minimalist and memorable marks.",
+    seoTitle: "Professional Logo Design in Ankara",
+    seoDesc:
+      "Professional logo design in Ankara: modern, minimalist, memorable logos that reflect your brand's vision, delivered in every format with usage guidelines.",
     hero: "A logo is the face of a brand.",
     intro:
       "We design modern, minimalist and memorable logos that reflect your brand's vision and values. We create strong visual symbols that stay in your audience's minds.",
@@ -242,6 +254,9 @@ export const services = [
   {
     title: "Web Design & Development",
     short: "We build your digital storefront from scratch, experience first.",
+    seoTitle: "Web Design & Development in Ankara",
+    seoDesc:
+      "Web design and development in Ankara: fast, mobile-friendly, SEO-ready and user-focused websites built from scratch as your brand's digital storefront.",
     hero: "A new step on the WEB.",
     intro:
       "We develop websites — your business's storefront in the digital world — with user-friendly interfaces and mobile-responsive designs. With fast, aesthetic and SEO-friendly web solutions, we boost your online visibility and help you reach your target audience effectively.",
@@ -269,6 +284,9 @@ export const services = [
   {
     title: "Brand Strategy & Consulting",
     short: "Long-term positioning and competitive advantage.",
+    seoTitle: "Brand Strategy & Consulting in Ankara",
+    seoDesc:
+      "Brand strategy and consulting: brand audits, competitive analysis, positioning and a communication roadmap to secure your brand's place in the market.",
     hero: "Secure a solid place for your brand in the market.",
     intro:
       "We build long-term strategies by analyzing your brand's goals, competitive advantages and values. We develop solutions that strengthen your brand, solidify your position in the market and increase customer loyalty.",
@@ -294,6 +312,9 @@ export const services = [
   {
     title: "3D Product Rendering & Animation",
     short: "Showcase your products realistically in the digital world.",
+    seoTitle: "3D Product Rendering & Animation",
+    seoDesc:
+      "3D product rendering and animation for e-commerce, catalogs and campaigns: photorealistic visuals, ready even before your product is manufactured.",
     hero: "Reshape your 3D world.",
     intro:
       "3D product renders and animations are among the most innovative ways to showcase your brand's products impressively. With high-quality visualizations and realistic animations, we tell your products' story and leave a strong impression on potential customers. From design to delivery, we create creative solutions tailored to your brand's needs.",
@@ -319,6 +340,9 @@ export const services = [
   {
     title: "Production",
     short: "Shooting and editing that turn your brand story into a visual feast.",
+    seoTitle: "Video & Photo Production for Brands",
+    seoDesc:
+      "Video and photo production in Ankara: commercials, promo videos and product photography, with concept, storyboard, shoot, editing and grading in one team.",
     hero: "A new perspective on your products.",
     intro:
       "Production is one of the most effective ways to bring your brand's vision to life. With professional equipment and a creative eye, we turn your brand story into a visual feast. From video shoots to photo production, we create high-quality, original content at every stage.",
@@ -346,6 +370,9 @@ export const services = [
   {
     title: "Google & Meta Ads Management",
     short: "High-return campaigns with data-driven optimization.",
+    seoTitle: "Google Ads & Meta Ads Management",
+    seoDesc:
+      "Google Ads and Meta (Facebook, Instagram) ads management: conversion tracking, targeting, A/B testing and budget optimization for a higher return on ad spend.",
     hero: "High ROI with performance-driven ad management.",
     intro:
       "Google and Meta ad management is one of the most effective digital marketing tools for connecting your brand with the right audience. We optimize your ad campaigns through strategic planning, targeting and analysis. With conversion-focused solutions, we help you use your budget as efficiently as possible.",
@@ -374,6 +401,9 @@ export const services = [
     title: "Influencer Marketing",
     short:
       "Genuine, trustworthy brand touchpoints through the right partnerships.",
+    seoTitle: "Influencer Marketing Agency in Ankara",
+    seoDesc:
+      "Influencer marketing agency in Ankara: the right creators, partnership planning, content tracking and performance measurement to grow brand awareness.",
     hero: "A direct connection with your audience.",
     intro:
       "Influencer marketing is one of the most powerful ways to reach your brand's target audience genuinely and effectively. Through the right influencer partnerships, we make sure your products or services are promoted credibly. By developing content strategies aligned with your brand identity, we help you build a direct connection with your audience. With engagement- and conversion-driven campaigns, we increase your brand awareness and help you make a difference in the digital world.",

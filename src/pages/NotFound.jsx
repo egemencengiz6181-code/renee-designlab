@@ -12,6 +12,7 @@ export default function NotFound() {
     title: nf.seoTitle,
     description: nf.seoDesc,
     path: "/404",
+    noindex: true,
   });
 
   return (

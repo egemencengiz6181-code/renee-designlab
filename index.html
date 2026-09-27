@@ -7,49 +7,51 @@
     <link rel="apple-touch-icon" href="/media/brand/renee-icon.png" />
     <meta name="theme-color" content="#000000" />
 
-    <title>Renee Design Lab — Yaratıcılığın işaret ettiği sınırların ötesinde</title>
-    <meta
-      name="description"
-      content="Renee Design Lab; kurumsal kimlik, logo tasarımı, web tasarım, sosyal medya yönetimi, SEO, 3D render ve prodüksiyon hizmetleri sunan Ankara merkezli tasarım ve reklam ajansıdır."
-    />
-    <link rel="canonical" href="https://reneedesignlab.com/" />
-    <link rel="alternate" hreflang="tr" href="https://reneedesignlab.com/" />
-    <link rel="alternate" hreflang="en" href="https://reneedesignlab.com/en" />
-    <link rel="alternate" hreflang="x-default" href="https://reneedesignlab.com/" />
-    <meta property="og:locale:alternate" content="en_US" />
-    <meta name="robots" content="index, follow, max-image-preview:large" />
-
-    <meta property="og:type" content="website" />
-    <meta property="og:locale" content="tr_TR" />
-    <meta property="og:site_name" content="Renee Design Lab" />
-    <meta property="og:title" content="Renee Design Lab — Yaratıcılığın işaret ettiği sınırların ötesinde" />
-    <meta
-      property="og:description"
-      content="Tasarımın estetik ve stratejik gücünü birleştirerek markaların ihtiyaçlarına yaratıcı ve sürdürülebilir çözümler sunan yeni nesil tasarım ve reklam ajansı."
-    />
-    <meta property="og:image" content="https://reneedesignlab.com/media/general/renee-2.jpg" />
-    <meta property="og:url" content="https://reneedesignlab.com/" />
-    <meta name="twitter:card" content="summary_large_image" />
+    <!-- Sayfaya özel başlık, açıklama, canonical, hreflang, Open Graph ve
+         JSON-LD etiketleri derleme sırasında buraya yazılır
+         (scripts/prerender.mjs). -->
+    <!--seo-->
+    <title>Renee Design Lab | Ankara Tasarım ve Reklam Ajansı</title>
+    <!--/seo-->
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
+      rel="preload"
+      as="style"
       href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap"
-      rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap"
+      />
+      <!-- JavaScript kapalıyken kayarak giriş animasyonlu içerik gizli kalmasın. -->
+      <style>
+        .rv, .rv-line, .rv-word, .fade-in { opacity: 1 !important; transform: none !important; }
+      </style>
+    </noscript>
 
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "ProfessionalService",
+        "@type": ["ProfessionalService", "Organization"],
+        "@id": "https://reneedesignlab.com/#organization",
         "name": "Renee Design Lab",
         "alternateName": "Renee",
-        "description": "Kurumsal kimlik, logo tasarımı, web tasarım ve geliştirme, sosyal medya yönetimi, dijital pazarlama, SEO, 3D render ve prodüksiyon hizmetleri sunan tasarım ve reklam ajansı.",
+        "description": "Ankara merkezli tasarım ve reklam ajansı: kurumsal kimlik, logo tasarımı, web tasarım ve geliştirme, sosyal medya yönetimi, dijital pazarlama, SEO, 3D render ve prodüksiyon.",
         "url": "https://reneedesignlab.com/",
         "logo": "https://reneedesignlab.com/media/brand/renee-logo.png",
         "image": "https://reneedesignlab.com/media/general/renee-2.jpg",
-        "email": ["info@reneedesignlab.com", "egemen@reneedesignlab.com"],
+        "email": "info@reneedesignlab.com",
         "telephone": "+90-532-504-66-06",
+        "founder": { "@type": "Person", "name": "Egemen Cengiz" },
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "ODTÜ Teknokent",
@@ -57,8 +59,25 @@
           "addressRegion": "Ankara",
           "addressCountry": "TR"
         },
-        "areaServed": "TR",
+        "openingHoursSpecification": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "09:00",
+          "closes": "18:00"
+        },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "sales",
+          "telephone": "+90-532-504-66-06",
+          "email": "info@reneedesignlab.com",
+          "availableLanguage": ["Turkish", "English"]
+        },
+        "areaServed": [
+          { "@type": "City", "name": "Ankara" },
+          { "@type": "Country", "name": "Türkiye" }
+        ],
         "slogan": "Yaratıcılığın işaret ettiği sınırların ötesinde",
+        "knowsLanguage": ["tr", "en"],
         "knowsAbout": [
           "Kurumsal Kimlik Tasarımı",
           "Logo Tasarımı",
@@ -75,7 +94,7 @@
     </script>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root"><!--app--></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

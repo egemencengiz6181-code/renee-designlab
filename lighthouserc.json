@@ -1,0 +1,32 @@
+{
+  "ci": {
+    "collect": {
+      "startServerCommand": "npx --yes serve dist -l 4321",
+      "startServerReadyPattern": "Accepting connections",
+      "url": [
+        "http://localhost:4321/",
+        "http://localhost:4321/hizmetler",
+        "http://localhost:4321/hizmetler/logo-tasarimi",
+        "http://localhost:4321/hizmetler/kurumsal-kimlik-tasarimi",
+        "http://localhost:4321/hizmetler/web-tasarim-gelistirme",
+        "http://localhost:4321/hizmetler/dijital-pazarlama-seo",
+        "http://localhost:4321/calismalar/erts",
+        "http://localhost:4321/iletisim",
+        "http://localhost:4321/en",
+        "http://localhost:4321/en/services/logo-design"
+      ],
+      "numberOfRuns": 1,
+      "settings": { "chromeFlags": "--no-sandbox --headless=new" }
+    },
+    "assert": {
+      "assertions": {
+        "categories:seo": ["error", { "minScore": 1 }],
+        "categories:accessibility": ["error", { "minScore": 0.95 }],
+        "categories:best-practices": ["warn", { "minScore": 0.95 }],
+        "categories:performance": ["warn", { "minScore": 0.8 }],
+        "cumulative-layout-shift": ["warn", { "maxNumericValue": 0.1 }]
+      }
+    },
+    "upload": { "target": "temporary-public-storage" }
+  }
+}

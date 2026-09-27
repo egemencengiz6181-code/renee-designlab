@@ -9,7 +9,8 @@ Hizmet Sunumu** dokümanlarından türetilmiştir.
 ```bash
 npm install
 npm run dev      # geliştirme sunucusu
-npm run build    # üretim derlemesi -> dist/
+npm run build    # üretim derlemesi + ön-çizim + SEO denetimi -> dist/
+npm run images   # yeni görseller için WebP kopyası ve ölçü kaydı üretir
 npm run preview  # derlemeyi yerelde önizle
 ```
 
@@ -18,8 +19,29 @@ npm run preview  # derlemeyi yerelde önizle
 Proje deponun kök dizinindedir; Vercel ve Netlify ek ayar gerektirmeden algılar.
 
 - Framework: Vite · Build: `npm run build` · Çıktı: `dist`
-- Tek sayfa uygulaması olduğu için derin bağlantı yönlendirmeleri hazırdır:
-  Vercel için `vercel.json`, Netlify için `public/_redirects`.
+- Her adres derlemede ayrı bir HTML dosyası olarak ön-çizilir
+  (`dist/hakkimizda.html`, `dist/en/about.html` …). Vercel `cleanUrls` ile,
+  Netlify varsayılan olarak bunları uzantısız adreslerden sunar; bilinmeyen
+  adresler gerçek 404 koduyla `404.html` görür.
+
+## SEO
+
+- **Ön-çizim** (`scripts/prerender.mjs`): arama motorları ve sosyal ağlar her
+  sayfanın içeriğini, başlığını, açıklamasını, canonical/hreflang ve JSON-LD
+  verisini JavaScript beklemeden görür. `sitemap.xml` ve `llms.txt` de her
+  derlemede güncel adreslerden üretilir.
+- **Tek kaynak**: sayfa başı etiketleri `src/seo/head.js` içinde üretilir;
+  sayfalar `useSeo()` ile başlık, açıklama ve yapılandırılmış veri verir.
+- **Hizmet sayfaları**: her hizmetin `seoTitle` ve `seoDesc` alanları
+  (`src/data/site.js`, İngilizcesi `site.en.js`) arama sonuçlarında görünen
+  başlık ve açıklamadır. Başlık ≤ 60, açıklama ≤ 160 karakter tutulmalı.
+- **Otomatik denetim**: her derleme; eksik başlık/açıklama, yinelenen başlık,
+  birden fazla `<h1>`, alt metni olmayan görsel gibi sorunları raporlar.
+  GitHub Actions (`.github/workflows/seo.yml`) her push'ta ve her pazartesi
+  bu denetimi ve Lighthouse'u çalıştırır; SEO puanı 100'ün altına düşerse iş
+  başarısız olur.
+- **Görseller**: `public/media` altına yeni görsel eklediğinizde
+  `npm run images` çalıştırıp kodda `.webp` yolunu kullanın.
 
 ## Sayfalar
 

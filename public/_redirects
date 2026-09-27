@@ -1,1 +1,3 @@
-/*    /index.html   200
+# Her sayfa derlemede ön-çizilir (dist/*.html). Bilinmeyen adresler
+# gerçek 404 durum koduyla 404.html sayfasını görür.
+/*    /404.html   404

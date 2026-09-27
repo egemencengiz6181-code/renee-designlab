@@ -32,7 +32,7 @@ export default function Marquee({
       aria-label={ariaLabel}
     >
       <div className="marquee-track">{track}</div>
-      <div className="marquee-track" aria-hidden="true">
+      <div className="marquee-track" aria-hidden="true" inert>
         {track}
       </div>
     </div>

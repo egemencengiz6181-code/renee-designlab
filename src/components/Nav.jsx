@@ -47,7 +47,7 @@ export default function Nav() {
             aria-label={`${company.name} — ${t.nav.homeAria}`}
           >
             <img
-              src="/media/brand/renee-logo-white-trim.png"
+              src="/media/brand/renee-logo-white-trim.webp"
               alt=""
               width="210"
               height="91"
@@ -75,10 +75,10 @@ export default function Nav() {
               className="lang-switch"
               hrefLang={other}
               lang={other}
-              aria-label={t.lang.switchLabel}
               title={t.lang.switchLabel}
             >
               {t.lang.switchTo}
+              <span className="sr-only"> — {t.lang.switchLabel}</span>
             </Link>
             <Magnetic strength={0.25}>
               <Link to={lp("/iletisim")} className="nav-cta">
