@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import { about, company } from "../data/site";
+import { useLang } from "../i18n";
+import Hl from "../components/Hl";
 import useSeo from "../hooks/useSeo";
 import Reveal from "../components/Reveal";
 import Marquee from "../components/Marquee";
@@ -7,25 +8,23 @@ import { ArrowUpRight, Sparkle } from "../components/Mark";
 import { CtaBand, PageHead, SectionHead } from "../components/UI";
 
 export default function About() {
+  const { t, d, lp } = useLang();
+  const { about, company } = d;
+  const a = t.about;
+
   useSeo({
-    title: "Hakkımızda",
-    description:
-      "Renee Design Lab; yaratıcılık, estetik ve stratejiyi birleştirerek markalara geleceği inşa eden yenilikçi çözümler sunan bir tasarım ve reklam ajansıdır. Misyonumuz, vizyonumuz ve çalışma kültürümüz.",
+    title: a.seoTitle,
+    description: a.seoDesc,
     path: "/hakkimizda",
   });
 
   return (
     <>
       <PageHead
-        label="Biz kimiz"
-        title={
-          <>
-            Markaların <span className="serif-i t-purple">yol arkadaşı</span>{" "}
-            olan bir tasarım laboratuvarı.
-          </>
-        }
+        label={a.label}
+        title={<Hl parts={a.title} className="serif-i t-purple" />}
         lede={about.intro}
-        crumbs={[{ label: "Anasayfa", to: "/" }, { label: "Hakkımızda" }]}
+        crumbs={[{ label: t.common.home, to: "/" }, { label: a.crumb }]}
       />
 
       {/* --------------------------------------------------------- görsel */}
@@ -35,7 +34,7 @@ export default function About() {
             <div style={{ position: "relative", overflow: "hidden" }}>
               <img
                 src="/media/general/renee-1.jpg"
-                alt="Renee marka kimliğiyle tasarlanan bez çanta uygulaması"
+                alt={a.imageAlt}
                 style={{
                   width: "100%",
                   height: "clamp(280px, 52svh, 620px)",
@@ -54,13 +53,13 @@ export default function About() {
             <div className="c4">
               <p className="mono-label row" style={{ gap: ".55rem" }}>
                 <Sparkle size={9} variant="purple" />
-                Renee hakkında
+                {a.aboutLabel}
               </p>
               <h2
                 className="h3"
                 style={{ marginTop: "1.4rem", maxWidth: "14ch" }}
               >
-                Güzel görünen değil, işe yarayan tasarım.
+                {a.aboutTitle}
               </h2>
             </div>
             <div className="c-r6 stack gap-m">
@@ -83,7 +82,7 @@ export default function About() {
                 className="noise-panel"
                 style={{ padding: "clamp(1.8rem, 4vw, 3rem)", height: "100%" }}
               >
-                <p className="mono-label t-lime">Misyon</p>
+                <p className="mono-label t-lime">{a.mission}</p>
                 <p className="lede" style={{ marginTop: "1.4rem" }}>
                   {about.mission}
                 </p>
@@ -102,7 +101,7 @@ export default function About() {
                   className="mono-label"
                   style={{ color: "rgba(255,255,255,.75)" }}
                 >
-                  Vizyon
+                  {a.vision}
                 </p>
                 <p
                   className="lede"
@@ -129,8 +128,7 @@ export default function About() {
                 margin: "0 auto",
               }}
             >
-              “Temel değerlerimiz; <span className="serif-i t-lime">güven</span>
-              , şeffaflık ve sorumluluktur.”
+              <Hl parts={a.quote} />
             </p>
           </Reveal>
         </div>
@@ -141,7 +139,7 @@ export default function About() {
         <div className="wrap">
           <div className="grid-12" style={{ rowGap: "2rem" }}>
             <div className="c4">
-              <h2 className="h3">Şirket kültürü</h2>
+              <h2 className="h3">{a.culture}</h2>
             </div>
             <div className="c-r6">
               <p className="body">{about.culture}</p>
@@ -154,8 +152,8 @@ export default function About() {
       <section className="section">
         <div className="wrap">
           <SectionHead
-            label="Değerlerimiz"
-            title="Her projede aynı dört ilke."
+            label={a.valuesLabel}
+            title={a.valuesTitle}
           />
           <div className="grid-12" style={{ rowGap: "2.5rem" }}>
             {about.values.map((v, i) => (
@@ -212,7 +210,7 @@ export default function About() {
       {/* -------------------------------------------------------- neden biz */}
       <section className="section">
         <div className="wrap">
-          <SectionHead label="Neden Renée?" title="Üç net sebep." />
+          <SectionHead label={a.whyLabel} title={a.whyTitle} />
           <div className="grid-12" style={{ rowGap: "2rem" }}>
             {about.why.map((w, i) => (
               <Reveal key={w.title} delay={i * 0.07} className="c4">
@@ -245,13 +243,12 @@ export default function About() {
         <div className="wrap">
           <div className="grid-12" style={{ rowGap: "2.5rem" }}>
             <div className="c5">
-              <p className="mono-label">Stratejik yaklaşımımız</p>
+              <p className="mono-label">{a.strategyLabel}</p>
               <h2
                 className="h2"
                 style={{ marginTop: "1.4rem", maxWidth: "12ch" }}
               >
-                Her projeye <span className="serif-i t-purple">stratejik</span>{" "}
-                bir gözle.
+                <Hl parts={a.strategyTitle} className="serif-i t-purple" />
               </h2>
               <p
                 className="body"
@@ -290,8 +287,8 @@ export default function About() {
       <section className="section">
         <div className="wrap">
           <SectionHead
-            label="Yaratıcı çözümlerimiz"
-            title="Hikayenizi doğru anlatmak için."
+            label={a.creativeLabel}
+            title={a.creativeTitle}
           />
           <p
             className="lede"
@@ -315,7 +312,7 @@ export default function About() {
       {/* ------------------------------------------------------------ süreç */}
       <section className="section">
         <div className="wrap">
-          <SectionHead label="Çalışma sürecimiz" title="Keşiften teslimata." />
+          <SectionHead label={a.processLabel} title={a.processTitle} />
           {about.process.map((p, i) => (
             <Reveal key={p.n} delay={i * 0.05}>
               <div className="process-step">
@@ -347,16 +344,16 @@ export default function About() {
             }}
           >
             <div>
-              <p className="mono-label">Kurumsal kimliğimiz</p>
+              <p className="mono-label">{a.identityLabel}</p>
               <p
                 className="h3"
                 style={{ marginTop: ".8rem", maxWidth: "22ch" }}
               >
-                Kendi marka rehberimizi de açık paylaşıyoruz.
+                {a.identityTitle}
               </p>
             </div>
-            <Link to="/kurumsal-kimlik" className="btn">
-              Kimlik rehberi
+            <Link to={lp("/kurumsal-kimlik")} className="btn">
+              {a.identityBtn}
               <ArrowUpRight className="arrow" />
             </Link>
           </div>
@@ -364,9 +361,9 @@ export default function About() {
       </section>
 
       <CtaBand
-        label="Tanışalım"
-        title="Aynı masaya oturalım."
-        text={`${company.address.line1}, ${company.address.line2} adresindeki ofisimizde ya da online olarak, projenizi birlikte konuşalım.`}
+        label={a.ctaLabel}
+        title={a.ctaTitle}
+        text={a.ctaText(`${company.address.line1}, ${company.address.line2}`)}
       />
     </>
   );

@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import { about, cases, company, references, stats } from "../data/site";
+import { useLang } from "../i18n";
+import Hl from "../components/Hl";
 import useSeo from "../hooks/useSeo";
 import useParallax from "../hooks/useParallax";
 import Reveal, { RevealLines, RevealWords } from "../components/Reveal";
@@ -16,6 +17,7 @@ import { CaseCard, CtaBand, SectionHead, ServiceList } from "../components/UI";
 /* ------------------------------------------------------------------- hero */
 
 function Hero() {
+  const { t, d, lp } = useLang();
   const orbRef = useParallax({
     transform: (p) => `translateY(${p * 160}px) rotate(${p * 90}deg)`,
   });
@@ -64,18 +66,18 @@ function Hero() {
           }}
         >
           <Sparkle size={10} variant="lime" />
-          Ankara · Tasarım ve Reklam Ajansı
+          {t.home.heroLabel}
         </p>
 
         <h1 className="display hero-title">
           <RevealLines
-            lines={["Yaratıcılığın", "işaret ettiği"]}
+            lines={t.home.heroLines}
             delay={0.15}
             stagger={0.09}
           />
           <span className="reveal-mask">
             <span className="rv-line rv-in" style={{ "--rv-delay": "0.33s" }}>
-              <span className="serif-i t-purple">sınırların</span> ötesinde
+              <Hl parts={t.home.heroLast} className="serif-i t-purple" />
             </span>
           </span>
         </h1>
@@ -83,7 +85,7 @@ function Hero() {
         <div className="hero-meta">
           <div className="c5">
             <p className="lede">
-              <RevealWords text={company.tagline} delay={0.5} />
+              <RevealWords text={d.company.tagline} delay={0.5} />
             </p>
           </div>
 
@@ -93,13 +95,13 @@ function Hero() {
               style={{ gap: "1rem", "--rv-y": "16px", "--rv-delay": "0.7s" }}
             >
               <Magnetic strength={0.22}>
-                <Link to="/calismalar" className="btn">
-                  Çalışmalarımız
+                <Link to={lp("/calismalar")} className="btn">
+                  {t.home.work}
                   <ArrowUpRight className="arrow" />
                 </Link>
               </Magnetic>
-              <Link to="/hizmetler" className="btn btn-ghost">
-                Hizmetler
+              <Link to={lp("/hizmetler")} className="btn btn-ghost">
+                {t.home.services}
               </Link>
             </div>
           </div>
@@ -119,7 +121,7 @@ function Hero() {
           <span className="bob" style={{ display: "flex" }}>
             <ArrowDown size={13} />
           </span>
-          Kaydırın
+          {t.home.scroll}
         </div>
       </div>
     </section>
@@ -129,6 +131,8 @@ function Hero() {
 /* ---------------------------------------------------------------- şeritler */
 
 function ClaimTicker() {
+  const { t } = useLang();
+
   return (
     <div
       style={{
@@ -139,16 +143,7 @@ function ClaimTicker() {
       }}
     >
       <Marquee speed={30}>
-        {[
-          "KURUMSAL KİMLİK",
-          "LOGO TASARIMI",
-          "WEB TASARIM",
-          "SOSYAL MEDYA",
-          "SEO",
-          "3D RENDER",
-          "PRODÜKSİYON",
-          "REKLAM YÖNETİMİ",
-        ].map((w, i) => (
+        {t.home.ticker.map((w, i) => (
           <span
             key={w}
             className={`ticker-word ${i % 2 === 1 ? "ticker-outline" : ""}`}
@@ -167,6 +162,8 @@ function ClaimTicker() {
 }
 
 function LogoBand() {
+  const { t, d, lp } = useLang();
+  const { references } = d;
   const rowA = references.slice(0, 18);
   const rowB = references.slice(18);
 
@@ -174,7 +171,7 @@ function LogoBand() {
   // ekrandan çıkan logolar geç yüklenip akışta boşluk bırakır.
   const row = (items) =>
     items.map((r) => (
-      <Link key={r.n} to="/referanslar" title={r.name}>
+      <Link key={r.n} to={lp("/referanslar")} title={r.name}>
         <img src={r.src} alt={r.name} width="160" height="64" />
       </Link>
     ));
@@ -186,7 +183,7 @@ function LogoBand() {
           className="mono-label"
           style={{ textAlign: "center", marginBottom: "clamp(2rem,4vw,3rem)" }}
         >
-          Bizimle çalışan markalar
+          {t.home.brands}
         </p>
       </div>
       <div className="stack gap-m logo-strip">
@@ -202,6 +199,9 @@ function LogoBand() {
 /* ------------------------------------------------------------------ bölümler */
 
 function Intro() {
+  const { t, d, lp } = useLang();
+  const { about, stats } = d;
+
   return (
     <section className="section">
       <div className="wrap">
@@ -209,15 +209,14 @@ function Intro() {
           <div className="c5">
             <p className="mono-label row" style={{ gap: ".55rem" }}>
               <Sparkle size={9} variant="purple" />
-              Biz kimiz
+              {t.home.introLabel}
             </p>
             <Reveal delay={0.05}>
               <h2
                 className="h2"
                 style={{ marginTop: "1.5rem", maxWidth: "13ch" }}
               >
-                Tasarım <span className="serif-i t-lime">estetiktir</span>,
-                strateji yön verir.
+                <Hl parts={t.home.introTitle} />
               </h2>
             </Reveal>
           </div>
@@ -226,8 +225,8 @@ function Intro() {
             <p className="lede">{about.intro}</p>
             <p className="body">{about.intro2}</p>
             <div className="row" style={{ gap: "1rem", marginTop: ".8rem" }}>
-              <Link to="/hakkimizda" className="btn btn-ghost">
-                Hakkımızda
+              <Link to={lp("/hakkimizda")} className="btn btn-ghost">
+                {t.home.about}
                 <ArrowUpRight className="arrow" />
               </Link>
             </div>
@@ -259,6 +258,7 @@ function Intro() {
 }
 
 function Showreel() {
+  const { t } = useLang();
   // Görsel, bölüm ekranda ilerledikçe hafifçe küçülür.
   const imgRef = useParallax({
     range: "enter",
@@ -273,7 +273,7 @@ function Showreel() {
         <img
           ref={imgRef}
           src="/media/general/renee-3.jpg"
-          alt="Renee marka kimliğinin nesne uygulamaları"
+          alt={t.home.showreelAlt}
           style={{
             width: "100%",
             height: "100%",
@@ -302,15 +302,13 @@ function Showreel() {
         >
           <div>
             <p className="mono-label" style={{ marginBottom: "1rem" }}>
-              Marka felsefemiz
+              {t.home.philosophy}
             </p>
             <p
               className="h3 serif"
               style={{ maxWidth: "24ch", lineHeight: 1.12 }}
             >
-              “Her renk, her çizgi ve her detay bir hikaye anlatır;{" "}
-              <span className="serif-i t-lime">Renee</span> ile kimliğinizi
-              yeniden keşfedin.”
+              <Hl parts={t.home.quote} />
             </p>
           </div>
         </div>
@@ -320,15 +318,17 @@ function Showreel() {
 }
 
 function ServicesBlock() {
+  const { t, lp } = useLang();
+
   return (
     <section className="section">
       <div className="wrap">
         <SectionHead
-          label="Hizmetlerimiz"
-          title="Uçtan uca, tek bir ekip."
+          label={t.home.servicesLabel}
+          title={t.home.servicesTitle}
           right={
-            <Link to="/hizmetler" className="btn btn-ghost">
-              Tüm hizmetler
+            <Link to={lp("/hizmetler")} className="btn btn-ghost">
+              {t.home.allServices}
               <ArrowUpRight className="arrow" />
             </Link>
           }
@@ -340,15 +340,17 @@ function ServicesBlock() {
 }
 
 function WorkBlock() {
+  const { t, d, lp } = useLang();
+
   return (
     <section className="section">
       <div className="wrap">
         <SectionHead
-          label="Seçili çalışmalar"
-          title="Kimlikten uygulamaya."
+          label={t.home.workLabel}
+          title={t.home.workTitle}
           right={
-            <Link to="/calismalar" className="btn btn-ghost">
-              Tüm çalışmalar
+            <Link to={lp("/calismalar")} className="btn btn-ghost">
+              {t.home.allWork}
               <ArrowUpRight className="arrow" />
             </Link>
           }
@@ -361,7 +363,7 @@ function WorkBlock() {
             gap: "var(--gutter)",
           }}
         >
-          {cases.slice(0, 3).map((c, i) => (
+          {d.cases.slice(0, 3).map((c, i) => (
             <CaseCard key={c.slug} item={c} index={i} />
           ))}
         </div>
@@ -371,10 +373,13 @@ function WorkBlock() {
 }
 
 function ValuesBlock() {
+  const { t, d } = useLang();
+  const { about } = d;
+
   return (
     <section className="section">
       <div className="wrap">
-        <SectionHead label="Değerlerimiz" title="Neden Renée?" />
+        <SectionHead label={t.home.valuesLabel} title={t.home.valuesTitle} />
         <div className="grid-12" style={{ rowGap: "2.5rem" }}>
           {about.values.map((v, i) => (
             <Reveal
@@ -432,15 +437,17 @@ function ValuesBlock() {
 }
 
 function ProcessBlock() {
+  const { t, d } = useLang();
+
   return (
     <section className="section">
       <div className="wrap">
         <SectionHead
-          label="Çalışma sürecimiz"
-          title="Dört adımda net bir akış."
+          label={t.home.processLabel}
+          title={t.home.processTitle}
         />
         <div>
-          {about.process.map((p, i) => (
+          {d.about.process.map((p, i) => (
             <Reveal key={p.n} delay={i * 0.05}>
               <div className="process-step">
                 <span className="h3 t-purple tnum">{p.n}</span>
@@ -465,10 +472,10 @@ function ProcessBlock() {
 /* --------------------------------------------------------------------- sayfa */
 
 export default function Home() {
+  const { t } = useLang();
   useSeo({
-    title: "Yaratıcılığın işaret ettiği sınırların ötesinde",
-    description:
-      "Renee Design Lab; kurumsal kimlik, logo tasarımı, web tasarım, sosyal medya yönetimi, SEO, 3D render ve prodüksiyon hizmetleri sunan Ankara merkezli tasarım ve reklam ajansı.",
+    title: t.home.seoTitle,
+    description: t.home.seoDesc,
     path: "/",
   });
 

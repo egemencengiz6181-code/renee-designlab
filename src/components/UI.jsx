@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import { services } from "../data/site";
+import { useLang } from "../i18n";
 import { ArrowUpRight, Plus, Sparkle } from "./Mark";
 import Reveal from "./Reveal";
 
@@ -30,6 +30,8 @@ export function SectionHead({ label, title, right, id }) {
 /* --------------------------------------------------------- sayfa başlıkları */
 
 export function PageHead({ label, title, lede, crumbs = [] }) {
+  const { t, lp } = useLang();
+
   return (
     <section className="page-head">
       <div
@@ -44,11 +46,11 @@ export function PageHead({ label, title, lede, crumbs = [] }) {
       />
       <div className="wrap" style={{ position: "relative", zIndex: 1 }}>
         {crumbs.length > 0 && (
-          <nav className="crumb" aria-label="Site yolu">
+          <nav className="crumb" aria-label={t.common.crumb}>
             {crumbs.map((c, i) => (
               <span key={i} className="row" style={{ gap: ".6rem" }}>
                 {c.to ? (
-                  <Link to={c.to}>{c.label}</Link>
+                  <Link to={lp(c.to)}>{c.label}</Link>
                 ) : (
                   <span>{c.label}</span>
                 )}
@@ -88,7 +90,9 @@ export function PageHead({ label, title, lede, crumbs = [] }) {
 
 /* ------------------------------------------------------------ hizmet listesi */
 
-export function ServiceList({ items = services, showPreview = true }) {
+export function ServiceList({ items, showPreview = true }) {
+  const { d, lp } = useLang();
+  const list = items ?? d.services;
   const [active, setActive] = useState(null);
   const preview = useRef(null);
 
@@ -104,10 +108,10 @@ export function ServiceList({ items = services, showPreview = true }) {
         className="srv-list"
         onPointerMove={showPreview ? onMove : undefined}
       >
-        {items.map((s, i) => (
+        {list.map((s, i) => (
           <Reveal key={s.slug} delay={(i % 6) * 0.035} y={18} duration={0.7}>
             <Link
-              to={`/hizmetler/${s.slug}`}
+              to={lp(`/hizmetler/${s.slug}`)}
               className="srv-row"
               onPointerEnter={() => setActive(s)}
               onPointerLeave={() => setActive(null)}
@@ -178,9 +182,11 @@ export function Accordion({ items }) {
 /* ---------------------------------------------------------------- vaka kartı */
 
 export function CaseCard({ item, index = 0 }) {
+  const { lp } = useLang();
+
   return (
     <Reveal delay={(index % 3) * 0.08} y={30}>
-      <Link to={`/calismalar/${item.slug}`} className="card">
+      <Link to={lp(`/calismalar/${item.slug}`)} className="card">
         <div className="card-media">
           <img src={item.cover} alt={item.coverAlt} loading="lazy" />
         </div>
@@ -204,11 +210,9 @@ export function CaseCard({ item, index = 0 }) {
 
 /* -------------------------------------------------------------------- CTA */
 
-export function CtaBand({
-  label = "Tanışalım",
-  title = "Bir sonraki markanız bizimle konuşsun.",
-  text = "Projenizi anlatın; keşif görüşmesinde ihtiyacınıza en uygun yol haritasını birlikte çıkaralım.",
-}) {
+export function CtaBand({ label, title, text }) {
+  const { t, lp } = useLang();
+
   return (
     <section className="section">
       <div className="wrap">
@@ -236,26 +240,26 @@ export function CtaBand({
               style={{ gap: ".55rem", marginBottom: "1.2rem" }}
             >
               <Sparkle size={9} variant="lime" />
-              {label}
+              {label ?? t.cta.label}
             </p>
             <Reveal>
               <h2 className="h2" style={{ maxWidth: "16ch" }}>
-                {title}
+                {title ?? t.cta.title}
               </h2>
             </Reveal>
             <p
               className="lede"
               style={{ maxWidth: "52ch", marginTop: "1.4rem" }}
             >
-              {text}
+              {text ?? t.cta.text}
             </p>
             <div className="row" style={{ gap: "1rem", marginTop: "2.4rem" }}>
-              <Link to="/iletisim" className="btn">
-                İletişime geçin
+              <Link to={lp("/iletisim")} className="btn">
+                {t.cta.contact}
                 <ArrowUpRight className="arrow" />
               </Link>
-              <Link to="/calismalar" className="btn btn-ghost">
-                Çalışmaları inceleyin
+              <Link to={lp("/calismalar")} className="btn btn-ghost">
+                {t.cta.work}
               </Link>
             </div>
           </div>

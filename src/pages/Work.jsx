@@ -1,41 +1,39 @@
 import { useMemo, useState } from "react";
-import { cases } from "../data/site";
+import { useLang } from "../i18n";
+import Hl from "../components/Hl";
 import useSeo from "../hooks/useSeo";
 import { CaseCard, CtaBand, PageHead } from "../components/UI";
 
 export default function Work() {
-  const [filter, setFilter] = useState("Tümü");
+  const { t, d } = useLang();
+  const { cases } = d;
+  const w = t.work;
+  const ALL = t.common.all;
+  const [filter, setFilter] = useState(ALL);
 
   const sectors = useMemo(
-    () => ["Tümü", ...Array.from(new Set(cases.map((c) => c.sector)))],
-    [],
+    () => [ALL, ...Array.from(new Set(cases.map((c) => c.sector)))],
+    [ALL, cases],
   );
 
   const list = useMemo(
-    () =>
-      filter === "Tümü" ? cases : cases.filter((c) => c.sector === filter),
-    [filter],
+    () => (filter === ALL ? cases : cases.filter((c) => c.sector === filter)),
+    [filter, ALL, cases],
   );
 
   useSeo({
-    title: "Çalışmalar",
-    description:
-      "Arni, Deru, ERTS, Every, Peralta ve Tepsta markaları için hazırladığımız kurumsal kimlik çalışmaları — konseptten uygulamaya vaka incelemeleri.",
+    title: w.seoTitle,
+    description: w.seoDesc,
     path: "/calismalar",
   });
 
   return (
     <>
       <PageHead
-        label="Çalışmalar"
-        title={
-          <>
-            Marka marka, <span className="serif-i t-purple">kimlik</span>{" "}
-            hikayeleri.
-          </>
-        }
-        lede="Her proje kendi hikayesiyle başlar. Aşağıda; problemi, kurduğumuz sistemi ve ortaya çıkan uygulamaları marka marka inceleyebilirsiniz."
-        crumbs={[{ label: "Anasayfa", to: "/" }, { label: "Çalışmalar" }]}
+        label={w.label}
+        title={<Hl parts={w.title} className="serif-i t-purple" />}
+        lede={w.lede}
+        crumbs={[{ label: t.common.home, to: "/" }, { label: w.crumb }]}
       />
 
       <section className="section-tight">
@@ -69,7 +67,7 @@ export default function Work() {
               </button>
             ))}
             <span className="mono-label tnum" style={{ marginLeft: "auto" }}>
-              {list.length} çalışma
+              {w.count(list.length)}
             </span>
           </div>
 
@@ -89,9 +87,9 @@ export default function Work() {
       </section>
 
       <CtaBand
-        label="Sıradaki siz olun"
-        title="Markanızın hikayesini birlikte kuralım."
-        text="Yeni bir kimlik ya da mevcut kimliğin yenilenmesi — hangi noktada olursanız olun, süreci sizin için netleştirelim."
+        label={w.ctaLabel}
+        title={w.ctaTitle}
+        text={w.ctaText}
       />
     </>
   );

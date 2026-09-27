@@ -1,17 +1,18 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { company, nav, services } from "../data/site";
+import { useLang } from "../i18n";
+import Hl from "./Hl";
 import { ArrowUpRight, Sparkle } from "./Mark";
 import Reveal from "./Reveal";
 import Magnetic from "./Magnetic";
 
-function AnkaraClock() {
+function AnkaraClock({ lang }) {
   const [time, setTime] = useState("");
 
   useEffect(() => {
     const tick = () => {
       setTime(
-        new Intl.DateTimeFormat("tr-TR", {
+        new Intl.DateTimeFormat(lang === "en" ? "en-GB" : "tr-TR", {
           hour: "2-digit",
           minute: "2-digit",
           second: "2-digit",
@@ -22,12 +23,15 @@ function AnkaraClock() {
     tick();
     const id = setInterval(tick, 1000);
     return () => clearInterval(id);
-  }, []);
+  }, [lang]);
 
   return <span className="tnum">Ankara {time}</span>;
 }
 
 export default function Footer() {
+  const { lang, t, d, lp } = useLang();
+  const { company, nav, services } = d;
+
   return (
     <footer className="footer">
       <div className="wrap">
@@ -35,16 +39,15 @@ export default function Footer() {
           <div className="c6">
             <Reveal>
               <p className="mono-label" style={{ marginBottom: "1.4rem" }}>
-                Bir sonraki iş
+                {t.footer.next}
               </p>
               <h2 className="h2" style={{ maxWidth: "16ch" }}>
-                Markanızı <span className="serif-i t-lime">yeniden</span>{" "}
-                şekillendirelim.
+                <Hl parts={t.footer.title} />
               </h2>
               <div className="row" style={{ gap: "1rem", marginTop: "2.2rem" }}>
                 <Magnetic strength={0.22}>
-                  <Link to="/iletisim" className="btn">
-                    Projenizi anlatın
+                  <Link to={lp("/iletisim")} className="btn">
+                    {t.footer.cta}
                     <ArrowUpRight className="arrow" />
                   </Link>
                 </Magnetic>
@@ -57,13 +60,13 @@ export default function Footer() {
 
           <div className="c2">
             <p className="mono-label" style={{ marginBottom: "1.2rem" }}>
-              Menü
+              {t.footer.menu}
             </p>
             <ul className="stack gap-xs" style={{ listStyle: "none" }}>
               {nav.map((n) => (
                 <li key={n.to}>
                   <Link
-                    to={n.to}
+                    to={lp(n.to)}
                     className="link-u body"
                     style={{ color: "rgba(255,255,255,.75)" }}
                   >
@@ -76,13 +79,13 @@ export default function Footer() {
 
           <div className="c2">
             <p className="mono-label" style={{ marginBottom: "1.2rem" }}>
-              Hizmetler
+              {t.footer.services}
             </p>
             <ul className="stack gap-xs" style={{ listStyle: "none" }}>
               {services.slice(0, 6).map((s) => (
                 <li key={s.slug}>
                   <Link
-                    to={`/hizmetler/${s.slug}`}
+                    to={lp(`/hizmetler/${s.slug}`)}
                     className="link-u body"
                     style={{ color: "rgba(255,255,255,.75)" }}
                   >
@@ -91,8 +94,8 @@ export default function Footer() {
                 </li>
               ))}
               <li>
-                <Link to="/hizmetler" className="link-u body t-lime">
-                  Tümü
+                <Link to={lp("/hizmetler")} className="link-u body t-lime">
+                  {t.footer.all}
                 </Link>
               </li>
             </ul>
@@ -100,7 +103,7 @@ export default function Footer() {
 
           <div className="c2">
             <p className="mono-label" style={{ marginBottom: "1.2rem" }}>
-              İletişim
+              {t.footer.contact}
             </p>
             <address
               className="stack gap-xs body"
@@ -137,13 +140,13 @@ export default function Footer() {
 
         <div className="footer-bottom">
           <span>
-            © {new Date().getFullYear()} {company.name}. Tüm hakları saklıdır.
+            © {new Date().getFullYear()} {company.name}. {t.footer.rights}
           </span>
           <span className="row" style={{ gap: ".5rem" }}>
             <Sparkle size={9} variant="purple" />
             {company.claim}
           </span>
-          <AnkaraClock />
+          <AnkaraClock lang={lang} />
         </div>
       </div>
     </footer>

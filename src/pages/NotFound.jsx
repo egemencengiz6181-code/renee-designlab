@@ -1,12 +1,16 @@
 import { Link } from "react-router-dom";
 import useSeo from "../hooks/useSeo";
-import { nav } from "../data/site";
+import { useLang } from "../i18n";
+import Hl from "../components/Hl";
 import { ArrowUpRight, BrandMark } from "../components/Mark";
 
 export default function NotFound() {
+  const { t, d, lp } = useLang();
+  const nf = t.notFound;
+
   useSeo({
-    title: "Sayfa bulunamadı",
-    description: "Aradığınız sayfa taşınmış ya da hiç var olmamış olabilir.",
+    title: nf.seoTitle,
+    description: nf.seoDesc,
     path: "/404",
   });
 
@@ -39,29 +43,28 @@ export default function NotFound() {
       </div>
 
       <div className="wrap" style={{ position: "relative", zIndex: 1 }}>
-        <p className="mono-label">Hata 404</p>
+        <p className="mono-label">{nf.label}</p>
         <h1 className="display" style={{ margin: "1.5rem 0" }}>
-          Kayıp <span className="serif-i t-purple">sayfa</span>
+          <Hl parts={nf.title} className="serif-i t-purple" />
         </h1>
         <p className="lede" style={{ maxWidth: "44ch" }}>
-          Aradığınız sayfa taşınmış ya da hiç var olmamış olabilir. Aşağıdaki
-          bağlantılardan devam edebilirsiniz.
+          {nf.text}
         </p>
 
         <div
           className="row"
           style={{ gap: ".6rem", marginTop: "2.5rem", flexWrap: "wrap" }}
         >
-          {nav.map((n) => (
-            <Link key={n.to} to={n.to} className="chip">
+          {d.nav.map((n) => (
+            <Link key={n.to} to={lp(n.to)} className="chip">
               {n.label}
             </Link>
           ))}
         </div>
 
         <div style={{ marginTop: "2.5rem" }}>
-          <Link to="/" className="btn">
-            Anasayfaya dön
+          <Link to={lp("/")} className="btn">
+            {nf.back}
             <ArrowUpRight className="arrow" />
           </Link>
         </div>

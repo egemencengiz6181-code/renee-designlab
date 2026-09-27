@@ -1,5 +1,5 @@
 import { Link, Navigate, useParams } from "react-router-dom";
-import { about, getService, services } from "../data/site";
+import { useLang } from "../i18n";
 import useSeo from "../hooks/useSeo";
 import Reveal from "../components/Reveal";
 import Magnetic from "../components/Magnetic";
@@ -8,20 +8,30 @@ import { Accordion, SectionHead } from "../components/UI";
 
 export default function ServiceDetail() {
   const { slug } = useParams();
-  const service = getService(slug);
+  const { t, d, lp, slugOf } = useLang();
+  const { about, services } = d;
+  const service = services.find((s) => slugOf(s) === slug);
+  // Diğer dilin slug'ıyla gelindiyse doğru adrese yönlendir.
+  const moved = !service
+    ? services.find((s) => s.slug === slug || s.slugEn === slug)
+    : null;
+  const st = t.service;
 
   useSeo({
     title: service?.title,
     description: service
       ? `${service.short} ${service.intro}`.slice(0, 300)
       : "",
-    path: `/hizmetler/${slug}`,
+    path: `/hizmetler/${service?.slug ?? slug}`,
     image: service?.image,
   });
 
-  if (!service) return <Navigate to="/hizmetler" replace />;
+  if (moved) {
+    return <Navigate to={lp(`/hizmetler/${moved.slug}`)} replace />;
+  }
+  if (!service) return <Navigate to={lp("/hizmetler")} replace />;
 
-  const index = services.findIndex((s) => s.slug === slug);
+  const index = services.indexOf(service);
   const next = services[(index + 1) % services.length];
   const related = (service.related || [])
     .map((r) => services.find((s) => s.slug === r))
@@ -42,17 +52,17 @@ export default function ServiceDetail() {
           }}
         />
         <div className="wrap" style={{ position: "relative", zIndex: 1 }}>
-          <nav className="crumb" aria-label="Site yolu">
-            <Link to="/">Anasayfa</Link>
+          <nav className="crumb" aria-label={t.common.crumb}>
+            <Link to={lp("/")}>{t.common.home}</Link>
             <span aria-hidden="true">/</span>
-            <Link to="/hizmetler">Hizmetler</Link>
+            <Link to={lp("/hizmetler")}>{t.services.crumb}</Link>
             <span aria-hidden="true">/</span>
             <span>{service.title}</span>
           </nav>
 
           <div className="row" style={{ gap: ".8rem", marginBottom: "1.5rem" }}>
             <span className="chip chip-purple tnum">{service.num}</span>
-            <span className="mono-label">Hizmet</span>
+            <span className="mono-label">{st.tag}</span>
           </div>
 
           <Reveal>
@@ -99,7 +109,7 @@ export default function ServiceDetail() {
             <div className="c4">
               <p className="mono-label row" style={{ gap: ".55rem" }}>
                 <Sparkle size={9} variant="lime" />
-                Yaklaşımımız
+                {st.approach}
               </p>
             </div>
             <div className="c-r6 stack gap-m">
@@ -113,7 +123,7 @@ export default function ServiceDetail() {
       {/* ----------------------------------------------------------- kapsam */}
       <section className="section-tight">
         <div className="wrap">
-          <SectionHead label="Kapsam" title="Neleri içerir?" />
+          <SectionHead label={st.scopeLabel} title={st.scopeTitle} />
           <div>
             {service.deliverables.map((d, i) => (
               <Reveal
@@ -145,7 +155,7 @@ export default function ServiceDetail() {
       {/* ------------------------------------------------------------- süreç */}
       <section className="section">
         <div className="wrap">
-          <SectionHead label="Süreç" title="Dört adımda ilerliyoruz." />
+          <SectionHead label={st.processLabel} title={st.processTitle} />
           <div className="grid-12" style={{ rowGap: "2rem" }}>
             {about.process.map((p, i) => (
               <Reveal
@@ -177,7 +187,7 @@ export default function ServiceDetail() {
       {service.faq?.length > 0 && (
         <section className="section-tight">
           <div className="wrap">
-            <SectionHead label="Sık sorulanlar" title="Merak edilenler." />
+            <SectionHead label={st.faqLabel} title={st.faqTitle} />
             <div style={{ maxWidth: "78ch" }}>
               <Accordion items={service.faq} />
             </div>
@@ -190,8 +200,8 @@ export default function ServiceDetail() {
         <section className="section">
           <div className="wrap">
             <SectionHead
-              label="İlgili hizmetler"
-              title="Birlikte daha iyi çalışır."
+              label={st.relatedLabel}
+              title={st.relatedTitle}
             />
             <div
               style={{
@@ -204,7 +214,7 @@ export default function ServiceDetail() {
               {related.map((r, i) => (
                 <Reveal key={r.slug} delay={i * 0.06}>
                   <Link
-                    to={`/hizmetler/${r.slug}`}
+                    to={lp(`/hizmetler/${r.slug}`)}
                     className="card"
                     style={{ height: "100%" }}
                   >
@@ -233,27 +243,27 @@ export default function ServiceDetail() {
             style={{ padding: "clamp(1.8rem, 5vw, 3.5rem)", gap: "2rem" }}
           >
             <div>
-              <p className="mono-label">Bu hizmetle ilgileniyor musunuz?</p>
+              <p className="mono-label">{st.interested}</p>
               <h2
                 className="h3"
                 style={{ marginTop: "1rem", maxWidth: "20ch" }}
               >
-                {service.title} için teklif alın.
+                {st.quoteTitle(service.title)}
               </h2>
             </div>
             <Magnetic strength={0.2}>
               <Link
-                to={`/iletisim?hizmet=${service.slug}`}
+                to={lp(`/iletisim?hizmet=${service.slug}`)}
                 className="btn btn-purple"
               >
-                Teklif isteyin
+                {st.quoteBtn}
                 <ArrowUpRight className="arrow" />
               </Link>
             </Magnetic>
           </div>
 
           <Link
-            to={`/hizmetler/${next.slug}`}
+            to={lp(`/hizmetler/${next.slug}`)}
             className="row between"
             style={{
               marginTop: "clamp(2rem, 5vw, 3.5rem)",
@@ -262,7 +272,7 @@ export default function ServiceDetail() {
               gap: "1rem",
             }}
           >
-            <span className="mono-label">Sonraki hizmet</span>
+            <span className="mono-label">{st.next}</span>
             <span className="h3 row" style={{ gap: ".8rem" }}>
               {next.title}
               <ArrowUpRight size={22} />

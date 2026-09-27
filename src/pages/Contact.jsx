@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
-import { budgets, company, services } from "../data/site";
+import { useLang } from "../i18n";
+import Hl from "../components/Hl";
 import useSeo from "../hooks/useSeo";
 import Reveal from "../components/Reveal";
 import Magnetic from "../components/Magnetic";
@@ -8,6 +9,9 @@ import { ArrowUpRight, Sparkle } from "../components/Mark";
 import { PageHead } from "../components/UI";
 
 export default function Contact() {
+  const { lang, t, d } = useLang();
+  const { budgets, company, services } = d;
+  const c = t.contact;
   const [params] = useSearchParams();
   const [sent, setSent] = useState(false);
   const [form, setForm] = useState({
@@ -21,17 +25,18 @@ export default function Contact() {
   });
 
   useSeo({
-    title: "İletişim",
-    description: `Renee Design Lab ile iletişime geçin. ${company.address.line1}, ${company.address.line2}. Telefon: ${company.phone} — E-posta: ${company.email}`,
+    title: c.seoTitle,
+    description: c.seoDesc(company),
     path: "/iletisim",
   });
 
+  // Hizmet sayfasından gelindiyse ilgili hizmeti önceden seç.
+  // Form değeri her iki dilde de Türkçe slug olarak tutulur.
   useEffect(() => {
-    const s = params.get("hizmet");
-    if (s && services.some((x) => x.slug === s)) {
-      setForm((f) => ({ ...f, service: s }));
-    }
-  }, [params]);
+    const s = params.get(lang === "en" ? "service" : "hizmet");
+    const svc = s && services.find((x) => x.slug === s || x.slugEn === s);
+    if (svc) setForm((f) => ({ ...f, service: svc.slug }));
+  }, [params, lang, services]);
 
   const update = (k) => (e) => setForm((f) => ({ ...f, [k]: e.target.value }));
 
@@ -42,17 +47,18 @@ export default function Contact() {
    */
   const onSubmit = (e) => {
     e.preventDefault();
+    const m = c.mail;
     const svc = services.find((s) => s.slug === form.service);
-    const subject = `Teklif talebi — ${form.company || form.name}`;
+    const subject = `${m.subject} — ${form.company || form.name}`;
     const body = [
-      `Ad Soyad: ${form.name}`,
-      `Firma: ${form.company}`,
-      `E-posta: ${form.email}`,
-      `Telefon: ${form.phone}`,
-      `Hizmet: ${svc ? svc.title : "Belirtilmedi"}`,
-      `Bütçe: ${form.budget || "Belirtilmedi"}`,
+      `${m.name}: ${form.name}`,
+      `${m.company}: ${form.company}`,
+      `${m.email}: ${form.email}`,
+      `${m.phone}: ${form.phone}`,
+      `${m.service}: ${svc ? svc.title : m.none}`,
+      `${m.budget}: ${form.budget || m.none}`,
       "",
-      "Proje detayı:",
+      m.details,
       form.message,
     ].join("\n");
 
@@ -64,18 +70,18 @@ export default function Contact() {
 
   const contactLines = [
     {
-      label: "Telefon",
+      label: c.phone,
       values: [{ value: company.phone, href: `tel:${company.phoneIntl}` }],
     },
     {
-      label: "E-posta",
+      label: c.email,
       values: [
         { value: company.email, href: `mailto:${company.email}` },
         { value: company.email2, href: `mailto:${company.email2}` },
       ],
     },
     {
-      label: "Adres",
+      label: c.address,
       external: true,
       values: [
         {
@@ -85,7 +91,7 @@ export default function Contact() {
       ],
     },
     {
-      label: "Web",
+      label: c.web,
       external: true,
       values: [{ value: company.site, href: `https://${company.site}` }],
     },
@@ -94,15 +100,10 @@ export default function Contact() {
   return (
     <>
       <PageHead
-        label="Tanışalım"
-        title={
-          <>
-            Projenizi <span className="serif-i t-lime">anlatın</span>, gerisini
-            konuşalım.
-          </>
-        }
-        lede="Formu doldurun ya da doğrudan arayın. Keşif görüşmesinde ihtiyacınızı netleştirip size özel bir yol haritası çıkaralım."
-        crumbs={[{ label: "Anasayfa", to: "/" }, { label: "İletişim" }]}
+        label={c.label}
+        title={<Hl parts={c.title} />}
+        lede={c.lede}
+        crumbs={[{ label: t.common.home, to: "/" }, { label: c.crumb }]}
       />
 
       {/* ------------------------------------------------------- iletişim şeridi */}
@@ -118,17 +119,17 @@ export default function Contact() {
               paddingTop: "2.5rem",
             }}
           >
-            {contactLines.map((c, i) => (
-              <Reveal key={c.label} delay={i * 0.06}>
-                <p className="mono-label">{c.label}</p>
+            {contactLines.map((line, i) => (
+              <Reveal key={line.label} delay={i * 0.06}>
+                <p className="mono-label">{line.label}</p>
                 <span className="stack gap-xs" style={{ marginTop: ".9rem" }}>
-                  {c.values.map((v) => (
+                  {line.values.map((v) => (
                     <a
                       key={v.value}
                       href={v.href}
                       className="link-u"
-                      target={c.external ? "_blank" : undefined}
-                      rel={c.external ? "noreferrer" : undefined}
+                      target={line.external ? "_blank" : undefined}
+                      rel={line.external ? "noreferrer" : undefined}
                       style={{
                         display: "inline-block",
                         fontSize: "clamp(1rem, 1.4vw, 1.2rem)",
@@ -152,24 +153,23 @@ export default function Contact() {
             <div className="c4">
               <p className="mono-label row" style={{ gap: ".55rem" }}>
                 <Sparkle size={9} variant="purple" />
-                Teklif formu
+                {c.formLabel}
               </p>
               <h2
                 className="h3"
                 style={{ marginTop: "1.3rem", maxWidth: "14ch" }}
               >
-                Birkaç soruyla başlayalım.
+                {c.formTitle}
               </h2>
               <p
                 className="body"
                 style={{ marginTop: "1.4rem", maxWidth: "38ch" }}
               >
-                Formu gönderdiğinizde bilgiler hazır bir e-posta taslağına
-                dönüşür. Dilerseniz doğrudan{" "}
+                {c.formNote[0]}
                 <a href={`tel:${company.phoneIntl}`} className="link-u t-lime">
                   {company.phone}
-                </a>{" "}
-                numarasından da ulaşabilirsiniz.
+                </a>
+                {c.formNote[1]}
               </p>
 
               <div
@@ -179,14 +179,14 @@ export default function Contact() {
                   border: "1px solid var(--line-soft)",
                 }}
               >
-                <p className="mono-label">Çalışma saatleri</p>
+                <p className="mono-label">{c.hours}</p>
                 <p
                   className="body"
                   style={{ marginTop: ".8rem", fontSize: ".9rem" }}
                 >
-                  Pazartesi – Cuma
+                  {c.days}
                   <br />
-                  09.00 – 18.00 (TSİ)
+                  {c.time}
                 </p>
               </div>
             </div>
@@ -201,57 +201,57 @@ export default function Contact() {
                 }}
               >
                 <div className="field">
-                  <label htmlFor="name">Ad Soyad *</label>
+                  <label htmlFor="name">{c.name}</label>
                   <input
                     id="name"
                     required
                     value={form.name}
                     onChange={update("name")}
-                    placeholder="Adınız"
+                    placeholder={c.namePh}
                     autoComplete="name"
                   />
                 </div>
                 <div className="field">
-                  <label htmlFor="company">Firma</label>
+                  <label htmlFor="company">{c.company}</label>
                   <input
                     id="company"
                     value={form.company}
                     onChange={update("company")}
-                    placeholder="Marka / firma adı"
+                    placeholder={c.companyPh}
                     autoComplete="organization"
                   />
                 </div>
                 <div className="field">
-                  <label htmlFor="email">E-posta *</label>
+                  <label htmlFor="email">{c.emailLabel}</label>
                   <input
                     id="email"
                     type="email"
                     required
                     value={form.email}
                     onChange={update("email")}
-                    placeholder="ornek@firma.com"
+                    placeholder={c.emailPh}
                     autoComplete="email"
                   />
                 </div>
                 <div className="field">
-                  <label htmlFor="phone">Telefon</label>
+                  <label htmlFor="phone">{c.phoneLabel}</label>
                   <input
                     id="phone"
                     type="tel"
                     value={form.phone}
                     onChange={update("phone")}
-                    placeholder="05xx xxx xx xx"
+                    placeholder={c.phonePh}
                     autoComplete="tel"
                   />
                 </div>
                 <div className="field">
-                  <label htmlFor="service">İlgilendiğiniz hizmet</label>
+                  <label htmlFor="service">{c.service}</label>
                   <select
                     id="service"
                     value={form.service}
                     onChange={update("service")}
                   >
-                    <option value="">Seçiniz</option>
+                    <option value="">{c.select}</option>
                     {services.map((s) => (
                       <option key={s.slug} value={s.slug}>
                         {s.title}
@@ -260,13 +260,13 @@ export default function Contact() {
                   </select>
                 </div>
                 <div className="field">
-                  <label htmlFor="budget">Bütçe aralığı</label>
+                  <label htmlFor="budget">{c.budget}</label>
                   <select
                     id="budget"
                     value={form.budget}
                     onChange={update("budget")}
                   >
-                    <option value="">Seçiniz</option>
+                    <option value="">{c.select}</option>
                     {budgets.map((b) => (
                       <option key={b} value={b}>
                         {b}
@@ -277,20 +277,20 @@ export default function Contact() {
               </div>
 
               <div className="field">
-                <label htmlFor="message">Projeniz *</label>
+                <label htmlFor="message">{c.message}</label>
                 <textarea
                   id="message"
                   required
                   value={form.message}
                   onChange={update("message")}
-                  placeholder="Markanızdan, hedeflerinizden ve beklediğiniz zaman planından kısaca bahsedin."
+                  placeholder={c.messagePh}
                 />
               </div>
 
               <div className="row between" style={{ gap: "1.5rem" }}>
                 <Magnetic strength={0.2}>
                   <button type="submit" className="btn">
-                    Gönder
+                    {c.send}
                     <ArrowUpRight className="arrow" />
                   </button>
                 </Magnetic>
@@ -302,7 +302,7 @@ export default function Contact() {
                     role="status"
                   >
                     <Sparkle size={11} variant="lime" />
-                    E-posta taslağınız hazırlandı.
+                    {c.sent}
                   </span>
                 )}
               </div>
@@ -322,7 +322,7 @@ export default function Contact() {
             }}
           >
             <iframe
-              title="Renee Design Lab ofis konumu"
+              title={c.mapTitle}
               src={`https://www.google.com/maps?q=${encodeURIComponent(company.mapQuery)}&output=embed`}
               width="100%"
               height="440"
@@ -351,7 +351,7 @@ export default function Contact() {
               className="link-u t-lime row"
               style={{ gap: ".4rem" }}
             >
-              Yol tarifi al <ArrowUpRight size={13} />
+              {c.directions} <ArrowUpRight size={13} />
             </a>
           </div>
         </div>

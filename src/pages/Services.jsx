@@ -1,30 +1,29 @@
 import { Link } from "react-router-dom";
-import { about, services } from "../data/site";
+import { useLang } from "../i18n";
+import Hl from "../components/Hl";
 import useSeo from "../hooks/useSeo";
 import Reveal from "../components/Reveal";
 import { ArrowUpRight, Sparkle } from "../components/Mark";
 import { CtaBand, PageHead, SectionHead, ServiceList } from "../components/UI";
 
 export default function Services() {
+  const { t, d, lp } = useLang();
+  const { about, services } = d;
+  const sv = t.services;
+
   useSeo({
-    title: "Hizmetlerimiz",
-    description:
-      "Sosyal medya yönetimi, kurumsal kimlik tasarımı, dijital pazarlama ve SEO, logo tasarımı, web tasarım ve geliştirme, marka stratejisi, 3D render, prodüksiyon, Google ve Meta reklam yönetimi, influencer marketing.",
+    title: sv.seoTitle,
+    description: sv.seoDesc,
     path: "/hizmetler",
   });
 
   return (
     <>
       <PageHead
-        label="Hizmetlerimiz"
-        title={
-          <>
-            Strateji, tasarım ve dijital{" "}
-            <span className="serif-i t-lime">tek çatı</span> altında.
-          </>
-        }
-        lede="Kurumsal kimlikten dijital dönüşüme, sosyal medya yönetiminden 3D görselleştirmeye kadar geniş bir hizmet yelpazesiyle markanızın iletişim ihtiyaçlarına uçtan uca çözümler üretiyoruz."
-        crumbs={[{ label: "Anasayfa", to: "/" }, { label: "Hizmetler" }]}
+        label={sv.label}
+        title={<Hl parts={sv.title} />}
+        lede={sv.lede}
+        crumbs={[{ label: t.common.home, to: "/" }, { label: sv.crumb }]}
       />
 
       <section className="section-tight">
@@ -37,10 +36,12 @@ export default function Services() {
       <section className="section">
         <div className="wrap">
           <SectionHead
-            label="Detaylar"
-            title="Her hizmetin kendi sayfası var."
+            label={sv.detailsLabel}
+            title={sv.detailsTitle}
             right={
-              <span className="mono-label tnum">{services.length} hizmet</span>
+              <span className="mono-label tnum">
+                {sv.count(services.length)}
+              </span>
             }
           />
           <div
@@ -54,7 +55,7 @@ export default function Services() {
             {services.map((s, i) => (
               <Reveal key={s.slug} delay={(i % 3) * 0.06}>
                 <Link
-                  to={`/hizmetler/${s.slug}`}
+                  to={lp(`/hizmetler/${s.slug}`)}
                   className="card"
                   style={{ height: "100%" }}
                 >
@@ -78,7 +79,7 @@ export default function Services() {
                         fontSize: ".85rem",
                       }}
                     >
-                      İncele <ArrowUpRight size={13} />
+                      {sv.explore} <ArrowUpRight size={13} />
                     </span>
                   </div>
                 </Link>
@@ -92,8 +93,8 @@ export default function Services() {
       <section className="section">
         <div className="wrap">
           <SectionHead
-            label="Nasıl çalışıyoruz"
-            title="Şeffaf ve öngörülebilir bir süreç."
+            label={sv.howLabel}
+            title={sv.howTitle}
           />
           <div className="grid-12" style={{ rowGap: "2rem" }}>
             {about.process.map((p, i) => (
@@ -108,7 +109,9 @@ export default function Services() {
               >
                 <span className="row" style={{ gap: ".5rem" }}>
                   <Sparkle size={10} variant="purple" />
-                  <span className="mono-label">Adım {p.n}</span>
+                  <span className="mono-label">
+                    {sv.step} {p.n}
+                  </span>
                 </span>
                 <h3 className="h4" style={{ marginTop: "1rem" }}>
                   {p.title}
@@ -126,9 +129,9 @@ export default function Services() {
       </section>
 
       <CtaBand
-        label="Nereden başlamalı?"
-        title="Hangi hizmete ihtiyacınız olduğundan emin değil misiniz?"
-        text="Kısa bir keşif görüşmesiyle başlayalım; markanızın bugünkü durumuna bakıp en çok fark yaratacak adımı birlikte belirleyelim."
+        label={sv.ctaLabel}
+        title={sv.ctaTitle}
+        text={sv.ctaText}
       />
     </>
   );

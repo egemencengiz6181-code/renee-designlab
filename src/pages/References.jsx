@@ -1,37 +1,37 @@
 import { useMemo, useState } from "react";
-import { refSectors, references } from "../data/site";
+import { useLang } from "../i18n";
+import Hl from "../components/Hl";
 import useSeo from "../hooks/useSeo";
 import { CtaBand, PageHead } from "../components/UI";
 
 export default function References() {
-  const [filter, setFilter] = useState("Tümü");
+  const { t, d } = useLang();
+  const { refSectors, references } = d;
+  const rf = t.refs;
+  const ALL = refSectors[0];
+  const [filter, setFilter] = useState(ALL);
 
   const list = useMemo(
     () =>
-      filter === "Tümü"
+      filter === ALL
         ? references
         : references.filter((r) => r.sector === filter),
-    [filter],
+    [filter, ALL, references],
   );
 
   useSeo({
-    title: "Referanslarımız",
-    description:
-      "Eğitimden sağlığa, teknolojiden perakendeye 90'ı aşkın marka Renee Design Lab ile çalıştı. Final Okulları, Bayer, Medicana, Yataş Bedding, Altava Group ve daha fazlası.",
+    title: rf.seoTitle,
+    description: rf.seoDesc,
     path: "/referanslar",
   });
 
   return (
     <>
       <PageHead
-        label="Referanslar"
-        title={
-          <>
-            Bizimle çalışan <span className="serif-i t-lime">markalar</span>.
-          </>
-        }
-        lede="Eğitimden sağlığa, teknolojiden perakendeye kadar 90'ı aşkın markayla; kimlik, dijital ve iletişim projelerinde birlikte çalıştık. Aşağıda bu markalardan bir seçki yer alıyor."
-        crumbs={[{ label: "Anasayfa", to: "/" }, { label: "Referanslar" }]}
+        label={rf.label}
+        title={<Hl parts={rf.title} />}
+        lede={rf.lede}
+        crumbs={[{ label: t.common.home, to: "/" }, { label: rf.crumb }]}
       />
 
       <section className="section-tight">
@@ -65,7 +65,7 @@ export default function References() {
               </button>
             ))}
             <span className="mono-label tnum" style={{ marginLeft: "auto" }}>
-              {list.length} marka
+              {rf.count(list.length)}
             </span>
           </div>
 
@@ -77,7 +77,7 @@ export default function References() {
                 style={{ "--rv-delay": `${(i % 12) * 0.02}s` }}
                 title={r.name}
               >
-                <img src={r.src} alt={`${r.name} logosu`} loading="lazy" />
+                <img src={r.src} alt={rf.logoAlt(r.name)} loading="lazy" />
                 <span className="ref-name">{r.name}</span>
               </div>
             ))}
@@ -91,17 +91,15 @@ export default function References() {
               maxWidth: "60ch",
             }}
           >
-            Listelenen markalara ait logolar, yalnızca gerçekleştirilen iş
-            birliklerini belirtmek amacıyla kullanılmaktadır. Tüm marka ve logo
-            hakları ilgili kuruluşlara aittir.
+            {rf.note}
           </p>
         </div>
       </section>
 
       <CtaBand
-        label="Yeni iş birliği"
-        title="Listeye siz de katılın."
-        text="Markanızın bugünkü ihtiyacını konuşalım; size en uygun çalışma modelini birlikte belirleyelim."
+        label={rf.ctaLabel}
+        title={rf.ctaTitle}
+        text={rf.ctaText}
       />
     </>
   );

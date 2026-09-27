@@ -2,6 +2,7 @@ import { lazy, Suspense } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
 import Layout from "./components/Layout";
 import Home from "./pages/Home";
+import { toLang, useLang } from "./i18n";
 
 const About = lazy(() => import("./pages/About"));
 const Services = lazy(() => import("./pages/Services"));
@@ -22,6 +23,7 @@ function Page({ children }) {
 }
 
 function Loader() {
+  const { t } = useLang();
   return (
     <div
       style={{
@@ -34,10 +36,23 @@ function Loader() {
         textTransform: "uppercase",
       }}
     >
-      Yükleniyor
+      {t.common.loading}
     </div>
   );
 }
+
+/** Her sayfa hem Türkçe yolunda hem de /en altındaki karşılığında yaşar. */
+const ROUTES = [
+  ["/", Home],
+  ["/hakkimizda", About],
+  ["/hizmetler", Services],
+  ["/hizmetler/:slug", ServiceDetail],
+  ["/calismalar", Work],
+  ["/calismalar/:slug", CaseStudy],
+  ["/referanslar", References],
+  ["/kurumsal-kimlik", BrandGuide],
+  ["/iletisim", Contact],
+];
 
 export default function App() {
   const location = useLocation();
@@ -46,78 +61,19 @@ export default function App() {
     <Layout>
       <Suspense fallback={<Loader />}>
         <Routes location={location} key={location.pathname}>
-          <Route
-            path="/"
-            element={
-              <Page>
-                <Home />
-              </Page>
-            }
-          />
-          <Route
-            path="/hakkimizda"
-            element={
-              <Page>
-                <About />
-              </Page>
-            }
-          />
-          <Route
-            path="/hizmetler"
-            element={
-              <Page>
-                <Services />
-              </Page>
-            }
-          />
-          <Route
-            path="/hizmetler/:slug"
-            element={
-              <Page>
-                <ServiceDetail />
-              </Page>
-            }
-          />
-          <Route
-            path="/calismalar"
-            element={
-              <Page>
-                <Work />
-              </Page>
-            }
-          />
-          <Route
-            path="/calismalar/:slug"
-            element={
-              <Page>
-                <CaseStudy />
-              </Page>
-            }
-          />
-          <Route
-            path="/referanslar"
-            element={
-              <Page>
-                <References />
-              </Page>
-            }
-          />
-          <Route
-            path="/kurumsal-kimlik"
-            element={
-              <Page>
-                <BrandGuide />
-              </Page>
-            }
-          />
-          <Route
-            path="/iletisim"
-            element={
-              <Page>
-                <Contact />
-              </Page>
-            }
-          />
+          {ROUTES.flatMap(([path, Component]) =>
+            [path, toLang(path, "en")].map((p) => (
+              <Route
+                key={p}
+                path={p}
+                element={
+                  <Page>
+                    <Component />
+                  </Page>
+                }
+              />
+            )),
+          )}
           <Route
             path="*"
             element={

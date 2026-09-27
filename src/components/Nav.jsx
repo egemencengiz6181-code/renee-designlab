@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
-import { nav, company } from "../data/site";
+import { toLang, toTr, useLang } from "../i18n";
 import { ArrowUpRight, Sparkle } from "./Mark";
 import Magnetic from "./Magnetic";
 
@@ -8,6 +8,10 @@ export default function Nav() {
   const [stuck, setStuck] = useState(false);
   const [open, setOpen] = useState(false);
   const { pathname } = useLocation();
+  const { lang, t, d, lp } = useLang();
+  const { nav, company } = d;
+  const other = lang === "en" ? "tr" : "en";
+  const switchTo = toLang(toTr(pathname), other);
 
   useEffect(() => {
     const onScroll = () => setStuck(window.scrollY > 24);
@@ -38,9 +42,9 @@ export default function Nav() {
       <header className={`nav ${stuck || open ? "is-stuck" : ""}`}>
         <div className="nav-inner">
           <Link
-            to="/"
+            to={lp("/")}
             className="nav-logo"
-            aria-label={`${company.name} — anasayfa`}
+            aria-label={`${company.name} — ${t.nav.homeAria}`}
           >
             <img
               src="/media/brand/renee-logo-white-trim.png"
@@ -51,11 +55,11 @@ export default function Nav() {
             <span className="sr-only">{company.name}</span>
           </Link>
 
-          <nav className="nav-links" aria-label="Ana menü">
+          <nav className="nav-links" aria-label={t.nav.mainMenu}>
             {nav.slice(1).map((item) => (
               <NavLink
                 key={item.to}
-                to={item.to}
+                to={lp(item.to)}
                 className={({ isActive }) =>
                   `nav-link ${isActive ? "is-active" : ""}`
                 }
@@ -66,9 +70,19 @@ export default function Nav() {
           </nav>
 
           <div className="row" style={{ gap: ".75rem" }}>
+            <Link
+              to={switchTo}
+              className="lang-switch"
+              hrefLang={other}
+              lang={other}
+              aria-label={t.lang.switchLabel}
+              title={t.lang.switchLabel}
+            >
+              {t.lang.switchTo}
+            </Link>
             <Magnetic strength={0.25}>
-              <Link to="/iletisim" className="nav-cta">
-                Teklif Alın
+              <Link to={lp("/iletisim")} className="nav-cta">
+                {t.nav.cta}
                 <ArrowUpRight size={13} />
               </Link>
             </Magnetic>
@@ -78,7 +92,7 @@ export default function Nav() {
               onClick={() => setOpen((v) => !v)}
               aria-expanded={open}
               aria-controls="mobil-menu"
-              aria-label={open ? "Menüyü kapat" : "Menüyü aç"}
+              aria-label={open ? t.nav.close : t.nav.open}
             >
               <span />
             </button>
@@ -98,7 +112,7 @@ export default function Nav() {
                   "--rv-delay": `${0.06 + i * 0.045}s`,
                 }}
               >
-                <Link to={item.to} className="menu-item">
+                <Link to={lp(item.to)} className="menu-item">
                   <span className="idx">0{i + 1}</span>
                   <span>{item.label}</span>
                 </Link>

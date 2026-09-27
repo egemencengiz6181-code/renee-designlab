@@ -1,11 +1,13 @@
 import { useState } from "react";
-import { brandGuide, company } from "../data/site";
+import { useLang } from "../i18n";
+import Hl from "../components/Hl";
 import useSeo from "../hooks/useSeo";
 import Reveal, { useReveal } from "../components/Reveal";
 import { ArrowUpRight, BrandMark, Sparkle } from "../components/Mark";
 import { CtaBand, PageHead, SectionHead } from "../components/UI";
 
 function ColorCard({ c, i }) {
+  const { t } = useLang();
   const [copied, setCopied] = useState(false);
   const dark = c.hex === "#000000";
 
@@ -41,7 +43,7 @@ function ColorCard({ c, i }) {
         textAlign: "left",
         width: "100%",
       }}
-      aria-label={`${c.name} rengini kopyala`}
+      aria-label={t.guide.copy(c.name)}
     >
       <div style={{ opacity: 0.85, fontSize: ".8rem", lineHeight: 1.7 }}>
         <div>{c.rgb}</div>
@@ -57,7 +59,7 @@ function ColorCard({ c, i }) {
           {c.hex}
         </div>
         <div style={{ opacity: 0.8, fontSize: ".85rem", marginTop: ".3rem" }}>
-          {copied ? "Kopyalandı" : c.name}
+          {copied ? t.guide.copied : c.name}
         </div>
       </div>
     </button>
@@ -65,25 +67,23 @@ function ColorCard({ c, i }) {
 }
 
 export default function BrandGuide() {
+  const { t, d } = useLang();
+  const { brandGuide, company } = d;
+  const g = t.guide;
+
   useSeo({
-    title: "Kurumsal Kimlik Rehberi",
-    description:
-      "Renee Design Lab kurumsal kimlik rehberi: logo kullanımı, renk paleti (#8766e8, #c9fc4a, #000000), Helvetica Neue tipografi sistemi, kurumsal dokümanlar ve ikon anlayışı.",
+    title: g.seoTitle,
+    description: g.seoDesc,
     path: "/kurumsal-kimlik",
   });
 
   return (
     <>
       <PageHead
-        label="Kurumsal kimlik rehberi"
-        title={
-          <>
-            Kendi <span className="serif-i t-purple">kimliğimizi</span> nasıl
-            kuruyoruz?
-          </>
-        }
+        label={g.label}
+        title={<Hl parts={g.title} className="serif-i t-purple" />}
         lede={brandGuide.intro}
-        crumbs={[{ label: "Anasayfa", to: "/" }, { label: "Kurumsal Kimlik" }]}
+        crumbs={[{ label: t.common.home, to: "/" }, { label: g.crumb }]}
       />
 
       {/* -------------------------------------------------------------- alıntı */}
@@ -110,7 +110,7 @@ export default function BrandGuide() {
       {/* ---------------------------------------------------------------- logo */}
       <section className="section">
         <div className="wrap">
-          <SectionHead label="Marka işareti" title="Renee logo." />
+          <SectionHead label={g.logoLabel} title={g.logoTitle} />
           <div className="grid-12" style={{ rowGap: "2rem" }}>
             <div className="c5">
               <p className="lede">{brandGuide.logoQuote}</p>
@@ -162,7 +162,7 @@ export default function BrandGuide() {
               >
                 <img
                   src="/media/brand/renee-logo-white-trim.png"
-                  alt="Renee logosunun mor zemin üzerindeki beyaz versiyonu"
+                  alt={g.logoWhiteAlt}
                   style={{ maxWidth: "78%" }}
                 />
               </div>
@@ -177,7 +177,7 @@ export default function BrandGuide() {
               >
                 <img
                   src="/media/brand/renee-logo-trim.png"
-                  alt="Renee logosunun beyaz zemin üzerindeki ana versiyonu"
+                  alt={g.logoMainAlt}
                   style={{ maxWidth: "78%" }}
                 />
               </div>
@@ -226,9 +226,9 @@ export default function BrandGuide() {
       <section className="section">
         <div className="wrap">
           <SectionHead
-            label="Renk paleti"
-            title="Üç renk, tek karakter."
-            right={<span className="mono-label">Kopyalamak için tıklayın</span>}
+            label={g.colorLabel}
+            title={g.colorTitle}
+            right={<span className="mono-label">{g.colorHint}</span>}
           />
           <p
             className="lede"
@@ -247,7 +247,7 @@ export default function BrandGuide() {
       {/* ---------------------------------------------------------- tipografi */}
       <section className="section">
         <div className="wrap">
-          <SectionHead label="Tipografi" title={brandGuide.typography.name} />
+          <SectionHead label={g.typeLabel} title={brandGuide.typography.name} />
           <div className="grid-12" style={{ rowGap: "2rem" }}>
             <div className="c4">
               <p className="body">{brandGuide.typography.note}</p>
@@ -278,7 +278,7 @@ export default function BrandGuide() {
       {/* ------------------------------------------------------------ dökümanlar */}
       <section className="section">
         <div className="wrap">
-          <SectionHead label="Kurumsal kimlik" title="Dökümanları." />
+          <SectionHead label={g.docsLabel} title={g.docsTitle} />
           <div className="grid-12" style={{ rowGap: "1.5rem" }}>
             {brandGuide.documents.map((d, i) => (
               <Reveal
@@ -331,7 +331,7 @@ export default function BrandGuide() {
                 className="mono-label"
                 style={{ color: "rgba(255,255,255,.75)" }}
               >
-                Marka ikon anlayışı
+                {g.iconLabel}
               </p>
               <p
                 className="h3"
@@ -393,12 +393,12 @@ export default function BrandGuide() {
             style={{ padding: "clamp(1.6rem, 4vw, 3rem)", gap: "1.5rem" }}
           >
             <div>
-              <p className="mono-label">Dokümanlar</p>
+              <p className="mono-label">{g.downloadLabel}</p>
               <p
                 className="h3"
                 style={{ marginTop: ".8rem", maxWidth: "24ch" }}
               >
-                Kimlik rehberimizi ve hizmet sunumumuzu inceleyin.
+                {g.downloadTitle}
               </p>
             </div>
             <div className="row" style={{ gap: "1rem" }}>
@@ -408,7 +408,7 @@ export default function BrandGuide() {
                 target="_blank"
                 rel="noreferrer"
               >
-                Kimlik rehberi (PDF)
+                {g.guidePdf}
                 <ArrowUpRight className="arrow" />
               </a>
               <a
@@ -417,7 +417,7 @@ export default function BrandGuide() {
                 target="_blank"
                 rel="noreferrer"
               >
-                Hizmet sunumu (PDF)
+                {g.deckPdf}
                 <ArrowUpRight className="arrow" />
               </a>
             </div>
@@ -451,9 +451,9 @@ export default function BrandGuide() {
       </section>
 
       <CtaBand
-        label="Marka kimliği"
-        title="Sizin için de böyle bir sistem kuralım."
-        text="Logodan tipografiye, renk paletinden görsel iletişim diline kadar her detayı özenle planlıyor; markanızın tüm mecralarda tutarlı temsil edilmesini sağlıyoruz."
+        label={g.ctaLabel}
+        title={g.ctaTitle}
+        text={g.ctaText}
       />
     </>
   );

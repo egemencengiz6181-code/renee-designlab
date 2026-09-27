@@ -1,5 +1,5 @@
 import { Link, Navigate, useParams } from "react-router-dom";
-import { cases, getCase } from "../data/site";
+import { useLang } from "../i18n";
 import useSeo from "../hooks/useSeo";
 import useParallax from "../hooks/useParallax";
 import Reveal from "../components/Reveal";
@@ -8,7 +8,10 @@ import { SectionHead } from "../components/UI";
 
 export default function CaseStudy() {
   const { slug } = useParams();
-  const item = getCase(slug);
+  const { t, d, lp } = useLang();
+  const { cases } = d;
+  const item = cases.find((c) => c.slug === slug);
+  const ct = t.case;
   const bgRef = useParallax({ transform: (p) => `translateY(${p * 18}%)` });
 
   useSeo({
@@ -18,9 +21,9 @@ export default function CaseStudy() {
     image: item?.cover,
   });
 
-  if (!item) return <Navigate to="/calismalar" replace />;
+  if (!item) return <Navigate to={lp("/calismalar")} replace />;
 
-  const index = cases.findIndex((c) => c.slug === slug);
+  const index = cases.indexOf(item);
   const next = cases[(index + 1) % cases.length];
 
   return (
@@ -32,10 +35,10 @@ export default function CaseStudy() {
         </div>
 
         <div className="wrap" style={{ position: "relative", zIndex: 1 }}>
-          <nav className="crumb" aria-label="Site yolu">
-            <Link to="/">Anasayfa</Link>
+          <nav className="crumb" aria-label={t.common.crumb}>
+            <Link to={lp("/")}>{t.common.home}</Link>
             <span aria-hidden="true">/</span>
-            <Link to="/calismalar">Çalışmalar</Link>
+            <Link to={lp("/calismalar")}>{t.work.crumb}</Link>
             <span aria-hidden="true">/</span>
             <span>{item.name}</span>
           </nav>
@@ -72,25 +75,25 @@ export default function CaseStudy() {
             }}
           >
             <div className="c3">
-              <p className="mono-label">Marka</p>
+              <p className="mono-label">{ct.brand}</p>
               <p className="h4" style={{ marginTop: ".8rem" }}>
                 {item.name}
               </p>
             </div>
             <div className="c3">
-              <p className="mono-label">Sektör</p>
+              <p className="mono-label">{ct.sector}</p>
               <p className="h4" style={{ marginTop: ".8rem" }}>
                 {item.sector}
               </p>
             </div>
             <div className="c3">
-              <p className="mono-label">Yıl</p>
+              <p className="mono-label">{ct.year}</p>
               <p className="h4 tnum" style={{ marginTop: ".8rem" }}>
                 {item.year}
               </p>
             </div>
             <div className="c3">
-              <p className="mono-label">Hizmetler</p>
+              <p className="mono-label">{ct.services}</p>
               <ul
                 className="stack gap-xs"
                 style={{ listStyle: "none", marginTop: ".8rem" }}
@@ -112,7 +115,7 @@ export default function CaseStudy() {
           <div className="grid-12" style={{ rowGap: "3rem" }}>
             <Reveal className="c4">
               <p className="mono-label row" style={{ gap: ".5rem" }}>
-                <Sparkle size={9} variant="purple" /> Problem
+                <Sparkle size={9} variant="purple" /> {ct.problem}
               </p>
               <p className="body" style={{ marginTop: "1.2rem" }}>
                 {item.challenge}
@@ -120,7 +123,7 @@ export default function CaseStudy() {
             </Reveal>
             <Reveal delay={0.07} className="c4">
               <p className="mono-label row" style={{ gap: ".5rem" }}>
-                <Sparkle size={9} variant="lime" /> Yaklaşım
+                <Sparkle size={9} variant="lime" /> {ct.approach}
               </p>
               <p className="body" style={{ marginTop: "1.2rem" }}>
                 {item.approach}
@@ -128,7 +131,7 @@ export default function CaseStudy() {
             </Reveal>
             <Reveal delay={0.14} className="c4">
               <p className="mono-label row" style={{ gap: ".5rem" }}>
-                <Sparkle size={9} variant="purple" /> Sonuç
+                <Sparkle size={9} variant="purple" /> {ct.result}
               </p>
               <p className="body" style={{ marginTop: "1.2rem" }}>
                 {item.result}
@@ -146,9 +149,9 @@ export default function CaseStudy() {
             style={{ gap: "2rem", alignItems: "flex-end" }}
           >
             <div>
-              <p className="mono-label">Renk paleti</p>
+              <p className="mono-label">{ct.palette}</p>
               <p className="h4" style={{ marginTop: ".8rem" }}>
-                {item.name} için kurulan skala
+                {ct.paletteTitle(item.name)}
               </p>
             </div>
             <div className="swatches">
@@ -172,7 +175,7 @@ export default function CaseStudy() {
       {/* ------------------------------------------------------------ galeri */}
       <section className="section">
         <div className="wrap">
-          <SectionHead label="Uygulamalar" title="Sistemin sahadaki hali." />
+          <SectionHead label={ct.galleryLabel} title={ct.galleryTitle} />
           <div className="gallery">
             {item.images.map((img, i) => (
               <Reveal
@@ -197,7 +200,7 @@ export default function CaseStudy() {
       <section className="section">
         <div className="wrap">
           <Link
-            to={`/calismalar/${next.slug}`}
+            to={lp(`/calismalar/${next.slug}`)}
             className="card"
             style={{ display: "block" }}
           >
@@ -232,7 +235,7 @@ export default function CaseStudy() {
                     "linear-gradient(0deg, rgba(0,0,0,.85), transparent)",
                 }}
               >
-                <p className="mono-label">Sonraki çalışma</p>
+                <p className="mono-label">{ct.next}</p>
                 <h2
                   className="h2 row"
                   style={{ gap: "1rem", marginTop: ".8rem" }}

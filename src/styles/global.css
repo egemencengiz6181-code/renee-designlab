@@ -525,6 +525,29 @@ h5 {
   background: var(--lime);
 }
 
+.lang-switch {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  height: 40px;
+  padding: 0 0.85rem;
+  border: 1px solid var(--line);
+  border-radius: 99px;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.8);
+  transition:
+    border-color 0.35s var(--ease),
+    color 0.35s var(--ease);
+}
+
+.lang-switch:hover {
+  border-color: var(--lime);
+  color: var(--lime);
+}
+
 .burger {
   display: none;
   width: 44px;
@@ -579,6 +602,10 @@ h5 {
   }
   .burger {
     display: flex;
+  }
+  .lang-switch {
+    min-width: 44px;
+    height: 44px;
   }
 }
 

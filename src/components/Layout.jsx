@@ -3,6 +3,7 @@ import { useLocation } from "react-router-dom";
 import Nav from "./Nav";
 import Footer from "./Footer";
 import Cursor from "./Cursor";
+import { useLang } from "../i18n";
 
 /** Sayfa kaydırma ilerlemesini gösteren ince çizgi. */
 function ScrollProgress() {
@@ -45,10 +46,16 @@ function ScrollToTop() {
 }
 
 export default function Layout({ children }) {
+  const { lang, t } = useLang();
+
+  useEffect(() => {
+    document.documentElement.lang = lang;
+  }, [lang]);
+
   return (
     <>
       <a href="#main" className="skip-link">
-        İçeriğe geç
+        {t.common.skip}
       </a>
       <ScrollToTop />
       <ScrollProgress />

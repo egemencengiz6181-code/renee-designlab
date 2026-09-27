@@ -152,6 +152,7 @@ export const about = {
 export const services = [
   {
     slug: "sosyal-medya-yonetimi",
+    slugEn: "social-media-management",
     num: "01",
     title: "Sosyal Medya Yönetimi",
     short: "Takipçiyi müşteriye dönüştüren içerik ve kampanya yönetimi.",
@@ -186,6 +187,7 @@ export const services = [
   },
   {
     slug: "kurumsal-kimlik-tasarimi",
+    slugEn: "corporate-identity-design",
     num: "02",
     title: "Kurumsal Kimlik Tasarımı",
     short: "Markanızın kişiliğini tüm temas noktalarında tutarlı kılan sistem.",
@@ -223,6 +225,7 @@ export const services = [
   },
   {
     slug: "dijital-pazarlama-seo",
+    slugEn: "digital-marketing-seo",
     num: "03",
     title: "Dijital Pazarlama ve SEO",
     short: "Arama motorlarında görünürlük, dijitalde sürdürülebilir trafik.",
@@ -259,6 +262,7 @@ export const services = [
   },
   {
     slug: "logo-tasarimi",
+    slugEn: "logo-design",
     num: "04",
     title: "Logo Tasarımı",
     short: "Markanın yüzü: modern, minimalist ve akılda kalıcı simgeler.",
@@ -295,6 +299,7 @@ export const services = [
   },
   {
     slug: "web-tasarim-gelistirme",
+    slugEn: "web-design-development",
     num: "05",
     title: "Web Tasarım ve Geliştirme",
     short: "Dijital vitrininizi sıfırdan, deneyim odaklı kurgulıyoruz.",
@@ -331,6 +336,7 @@ export const services = [
   },
   {
     slug: "marka-stratejisi-danismanlik",
+    slugEn: "brand-strategy-consulting",
     num: "06",
     title: "Marka Stratejisi ve Danışmanlık",
     short: "Uzun vadeli konumlandırma ve rekabet avantajı kurgusu.",
@@ -365,6 +371,7 @@ export const services = [
   },
   {
     slug: "3d-urun-render-animasyon",
+    slugEn: "3d-product-rendering-animation",
     num: "07",
     title: "3D Ürün Renderı ve Animasyonları",
     short: "Ürünlerinizi dijital dünyada gerçekçi biçimde sahneleyin.",
@@ -395,6 +402,7 @@ export const services = [
   },
   {
     slug: "produksiyon",
+    slugEn: "production",
     num: "08",
     title: "Prodüksiyon",
     short: "Marka hikayenizi görsel bir şölene dönüştüren çekim ve kurgu.",
@@ -431,6 +439,7 @@ export const services = [
   },
   {
     slug: "google-meta-reklam-yonetimi",
+    slugEn: "google-meta-ads-management",
     num: "09",
     title: "Google ve Meta Reklam Yönetimi",
     short: "Veri odaklı optimizasyonla yüksek geri dönüşlü kampanyalar.",
@@ -467,6 +476,7 @@ export const services = [
   },
   {
     slug: "influencer-marketing",
+    slugEn: "influencer-marketing",
     num: "10",
     title: "Influencer Marketing",
     short: "Doğru iş birlikleriyle samimi ve güvenilir marka teması.",
