@@ -39,6 +39,7 @@ export const nav = [
   { to: "/calismalar", label: "Çalışmalar" },
   { to: "/referanslar", label: "Referanslar" },
   { to: "/kurumsal-kimlik", label: "Kurumsal Kimlik" },
+  { to: "/blog", label: "Blog" },
   { to: "/iletisim", label: "İletişim" },
 ];
 

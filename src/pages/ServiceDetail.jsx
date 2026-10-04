@@ -1,5 +1,7 @@
 import { Link, Navigate, useParams } from "react-router-dom";
 import { useLang } from "../i18n";
+import { posts } from "../data/blog";
+import PostCard from "../components/PostCard";
 import useSeo from "../hooks/useSeo";
 import { BRAND, breadcrumbLd, faqLd, serviceLd } from "../seo/head";
 import Reveal from "../components/Reveal";
@@ -236,6 +238,29 @@ export default function ServiceDetail() {
             <SectionHead label={st.faqLabel} title={st.faqTitle} />
             <div style={{ maxWidth: "78ch" }}>
               <Accordion items={service.faq} />
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* ------------------------------------------------------- ilgili yazılar */}
+      {posts.some((p) => p.service === service.slug) && (
+        <section className="section-tight">
+          <div className="wrap">
+            <SectionHead label={t.blog.label} title={st.postsTitle} />
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns:
+                  "repeat(auto-fill, minmax(min(100%, 300px), 1fr))",
+                gap: "var(--gutter)",
+              }}
+            >
+              {posts
+                .filter((p) => p.service === service.slug)
+                .map((p, i) => (
+                  <PostCard key={p.slug} post={p} index={i} />
+                ))}
             </div>
           </div>
         </section>

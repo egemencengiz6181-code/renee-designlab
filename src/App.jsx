@@ -12,6 +12,8 @@ const CaseStudy = lazy(() => import("./pages/CaseStudy"));
 const References = lazy(() => import("./pages/References"));
 const BrandGuide = lazy(() => import("./pages/BrandGuide"));
 const Contact = lazy(() => import("./pages/Contact"));
+const Blog = lazy(() => import("./pages/Blog"));
+const BlogPost = lazy(() => import("./pages/BlogPost"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 /**
@@ -51,6 +53,8 @@ const ROUTES = [
   ["/calismalar/:slug", CaseStudy],
   ["/referanslar", References],
   ["/kurumsal-kimlik", BrandGuide],
+  ["/blog", Blog],
+  ["/blog/:slug", BlogPost],
   ["/iletisim", Contact],
 ];
 

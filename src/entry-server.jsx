@@ -4,6 +4,7 @@ import { prerenderToNodeStream } from "react-dom/static";
 import { StaticRouter } from "react-router-dom";
 import App from "./App";
 import { cases, services } from "./data/site";
+import { posts } from "./data/blog";
 import { toLang } from "./i18n";
 import { collectHead } from "./seo/head";
 
@@ -23,6 +24,8 @@ export function routes() {
     ...cases.map((c) => `/calismalar/${c.slug}`),
     "/referanslar",
     "/kurumsal-kimlik",
+    "/blog",
+    ...posts.map((p) => `/blog/${p.slug}`),
     "/iletisim",
   ];
   return tr.map((p) => ({ tr: p, en: toLang(p, "en") }));

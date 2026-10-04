@@ -22,6 +22,7 @@ export const nav = [
   { label: "Work" },
   { label: "References" },
   { label: "Brand Identity" },
+  { label: "Blog" },
   { label: "Contact" },
 ];
 

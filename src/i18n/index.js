@@ -2,6 +2,7 @@ import { useMemo } from "react";
 import { useLocation } from "react-router-dom";
 import * as trData from "../data/site";
 import * as enData from "../data/site.en";
+import { posts } from "../data/blog";
 import strings from "./strings";
 
 /* ==========================================================================
@@ -41,6 +42,9 @@ export function toLang(trPath, lang) {
   if (first === "hizmetler" && second) {
     slug = trData.services.find((s) => s.slug === second)?.slugEn ?? second;
   }
+  if (first === "blog" && second) {
+    slug = posts.find((p) => p.slug === second)?.slugEn ?? second;
+  }
   const parts = [PAGES[first] ?? first, slug, ...rest].filter(Boolean);
   let q = query;
   if (first === "iletisim" && q) {
@@ -63,6 +67,9 @@ export function toTr(pathname) {
   let slug = second;
   if (first === "services" && second) {
     slug = trData.services.find((s) => s.slugEn === second)?.slug ?? second;
+  }
+  if (first === "blog" && second) {
+    slug = posts.find((p) => p.slugEn === second)?.slug ?? second;
   }
   return `/${[PAGES_REV[first] ?? first, slug, ...rest].filter(Boolean).join("/")}`;
 }

@@ -13,9 +13,6 @@
 /iletisime-gec/  /iletisim  301
 /sektorler  /referanslar  301
 /sektorler/  /referanslar  301
-/blog  /  301
-/blog/  /  301
-/blog/*  /  301
 
 # Her sayfa derlemede ön-çizilir (dist/*.html). Bilinmeyen adresler
 # gerçek 404 durum koduyla 404.html sayfasını görür.

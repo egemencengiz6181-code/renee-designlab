@@ -1664,3 +1664,34 @@ h5 {
     display: none;
   }
 }
+
+/* ----------------------------------------------------------------- blog */
+
+.prose {
+  max-width: 68ch;
+  margin-inline: auto;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: clamp(1rem, 1.25vw, 1.1rem);
+  line-height: 1.75;
+}
+
+.prose > * + * {
+  margin-top: 1.15em;
+}
+
+.prose h2 {
+  color: var(--white);
+  margin-top: 1.4em;
+}
+
+.prose ul {
+  padding-left: 1.2em;
+}
+
+.prose li + li {
+  margin-top: 0.45em;
+}
+
+.prose li::marker {
+  color: var(--lime);
+}
