@@ -26,8 +26,8 @@ export const company = {
   mapQuery: "ODTÜ Teknokent Çankaya Ankara",
   social: [
     { name: "Instagram", handle: "@reneedesignlab", url: "https://www.instagram.com/reneedesignlab/" },
+    { name: "LinkedIn", handle: "renee-designlab", url: "https://www.linkedin.com/company/renee-designlab/" },
     { name: "X", handle: "@ReneeDesignLab", url: "https://x.com/ReneeDesignLab" },
-    { name: "Tumblr", handle: "renee-design-lab", url: "https://renee-design-lab.tumblr.com/" },
   ],
   founder: "Egemen Cengiz",
 };
